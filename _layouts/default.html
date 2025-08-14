@@ -13,28 +13,48 @@
   <!-- Global CSS -->
   <link rel="stylesheet" href="/kdarc-lab/assets/css/global.css" />
 
+  <!-- Particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   <style>
     body {
       font-family: 'Raleway', sans-serif;
       background-color: #f8f9fa;
     }
 
-    .lab-banner {
-      background-color: rgba(52, 58, 64, 0.85); /* 半透明深灰背景 */
+    /* 粒子背景容器 */
+    #hero-section {
+      position: relative;
+      height: 400px;
       color: white;
-      padding: 100px 20px;
       text-align: center;
-      backdrop-filter: blur(4px);
+      background-color: #0a0a0a;
+      overflow: hidden;
     }
 
-    .lab-banner h1 {
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      padding-top: 120px;
+    }
+
+    .hero-text h1 {
       font-size: 3rem;
       font-weight: 700;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     }
 
-    .lab-banner p {
+    .hero-text p {
       font-size: 1.3rem;
       margin-top: 10px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     }
 
     .content-wrapper {
@@ -56,11 +76,14 @@
   {% include navbar.html %}
 
   {% if page.url == "/" %}
-    <!-- 首页横幅 -->
-    <div class="lab-banner">
+  <!-- 首页横幅：粒子动态背景 -->
+  <div id="hero-section">
+    <div id="particles-js"></div>
+    <div class="hero-text">
       <h1>Korean Data and Resource Center</h1>
       <p>Multilingual NLP · LLM Safety · Cross-cultural AI</p>
     </div>
+  </div>
   {% endif %}
 
   <!-- 正文区域 -->
@@ -73,7 +96,57 @@
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 粒子动画初始化 -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 60,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": {
+          "value": 0.5,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 120,
+          "color": "#aaaaaa",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
+
 
 
