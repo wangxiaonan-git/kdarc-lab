@@ -1,176 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>KDARC Lab | Multilingual NLP & LLM Safety</title>
+<style>
+  body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f8f9fa;
+  }
 
-  <!-- 正文页面字体 -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
+  #hero-section {
+    position: relative;
+    height: 400px;
+    color: black;
+    text-align: center;
+    background-color: #f5f3ee; /* 宣纸感淡米白 */
+    overflow: hidden;
+  }
 
-  <!-- 大标题专用字体 Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  #tsparticles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
 
-  <!-- 粒子字体（韩文+中文） -->
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Zhi+Mang+Xing&display=swap" rel="stylesheet" />
+  .hero-text {
+    position: relative;
+    z-index: 1;
+    padding-top: 120px;
+  }
 
-  <!-- Bootstrap & Global -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/kdarc-lab/assets/css/global.css" />
+  .hero-text h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: #222;
+    text-shadow: none;
+  }
 
-  <!-- tsParticles -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  .hero-text p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    color: #333;
+    text-shadow: none;
+  }
 
-  <style>
-    body {
-      font-family: 'Raleway', sans-serif;
-      background-color: #f8f9fa;
-    }
+  canvas {
+    font-family: 'Nanum Brush Script', 'Zhi Mang Xing', sans-serif !important;
+  }
+</style>
 
-    #hero-section {
-      position: relative;
-      height: 400px;
-      color: white;
-      text-align: center;
-      background-color: #0a0a0a;
-      overflow: hidden;
-    }
+...
 
-    #tsparticles {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 1;
-      padding-top: 120px;
-    }
-
-    .hero-text h1 {
-      font-size: 3rem;
-      font-weight: 500;
-      font-family: 'Inter', sans-serif;
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    }
-
-    .hero-text p {
-      font-size: 1.3rem;
-      margin-top: 10px;
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    }
-
-    .content-wrapper {
-      padding: 100px 0 60px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      border-radius: 8px;
-    }
-
-    .container-narrow {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    /* 粒子 canvas 字体（韩语手写 + 中文手写） */
-    canvas {
-      font-family: 'Nanum Brush Script', 'Zhi Mang Xing', sans-serif !important;
-    }
-
-    /* 网站顶部品牌名的字体 */
-    .navbar-brand {
-      font-family: 'Inter', sans-serif !important;
-      font-weight: 500;
-    }
-
-    /* 页面内其他自定义标题（如 profile 页面标题） */
-    .page-title {
-      font-family: 'Inter', sans-serif !important;
-      font-weight: 500;
-    }
-  </style>
-</head>
-
-<body>
-  {% include navbar.html %}
-
-  {% if page.url == "/" %}
-  <div id="hero-section">
-    <div id="tsparticles"></div>
-    <div class="hero-text">
-      <h1>Korean Data and Resource Center</h1>
-      <p>Multilingual NLP · LLM Safety · Cross‑cultural AI</p>
-    </div>
+{% if page.url == "/" %}
+<div id="hero-section">
+  <div id="tsparticles"></div>
+  <div class="hero-text">
+    <h1>Korean Data and Resource Center</h1>
+    <p>Multilingual NLP · LLM Safety · Cross‑cultural AI</p>
   </div>
-  {% endif %}
+</div>
+{% endif %}
 
-  <div class="container container-narrow content-wrapper mt-5 px-4 py-5">
-    {{ content }}
-  </div>
+...
 
-  {% include footer.html %}
+<!-- tsParticles 粒子配置 -->
+<script>
+  tsParticles.load("tsparticles", {
+    fullScreen: { enable: false },
+    background: { color: "#f5f3ee" },
+    particles: {
+      number: { value: 50 },
+      shape: {
+        type: "char",
+        character: [
+          // 韩文字符
+          { value: "한", font: "Nanum Brush Script", weight: "700" },
+          { value: "글", font: "Nanum Brush Script", weight: "700" },
+          { value: "말", font: "Nanum Brush Script", weight: "700" },
+          { value: "뜻", font: "Nanum Brush Script", weight: "700" },
+          { value: "자", font: "Nanum Brush Script", weight: "700" },
+          { value: "학", font: "Nanum Brush Script", weight: "700" },
+          { value: "지", font: "Nanum Brush Script", weight: "700" },
+          { value: "식", font: "Nanum Brush Script", weight: "700" },
+          { value: "데", font: "Nanum Brush Script", weight: "700" },
+          { value: "이", font: "Nanum Brush Script", weight: "700" },
+          { value: "터", font: "Nanum Brush Script", weight: "700" },
 
-  <!-- JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- tsParticles 粒子云配置 -->
-  <script>
-    tsParticles.load("tsparticles", {
-      fullScreen: { enable: false },
-      background: { color: "#0a0a0a" },
-      particles: {
-        number: { value: 50 },
-        shape: {
-          type: "char",
-          character: [
-            // 韩文（Nanum Brush Script）
-            { value: "한", font: "Nanum Brush Script", weight: "700" },
-            { value: "글", font: "Nanum Brush Script", weight: "700" },
-            { value: "말", font: "Nanum Brush Script", weight: "700" },
-            { value: "뜻", font: "Nanum Brush Script", weight: "700" },
-            { value: "자", font: "Nanum Brush Script", weight: "700" },
-            { value: "학", font: "Nanum Brush Script", weight: "700" },
-            { value: "지", font: "Nanum Brush Script", weight: "700" },
-            { value: "식", font: "Nanum Brush Script", weight: "700" },
-            { value: "데", font: "Nanum Brush Script", weight: "700" },
-            { value: "이", font: "Nanum Brush Script", weight: "700" },
-            { value: "터", font: "Nanum Brush Script", weight: "700" },
-
-            // 中文手写字体（Zhi Mang Xing）
-            { value: "文", font: "Zhi Mang Xing", weight: "700" },
-            { value: "学", font: "Zhi Mang Xing", weight: "700" },
-            { value: "人", font: "Zhi Mang Xing", weight: "700" },
-            { value: "言", font: "Zhi Mang Xing", weight: "700" },
-            { value: "智", font: "Zhi Mang Xing", weight: "700" },
-            { value: "心", font: "Zhi Mang Xing", weight: "700" },
-            { value: "安", font: "Zhi Mang Xing", weight: "700" }
-          ]
-        },
-        color: { value: "#ffffff" },
-        opacity: { value: 0.75 },
-        size: { value: 22, random: true },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          outModes: { default: "bounce" }
-        }
+          // 中文手写
+          { value: "文", font: "Zhi Mang Xing", weight: "700" },
+          { value: "學", font: "Zhi Mang Xing", weight: "700" },
+          { value: "智", font: "Zhi Mang Xing", weight: "700" },
+          { value: "人", font: "Zhi Mang Xing", weight: "700" },
+          { value: "言", font: "Zhi Mang Xing", weight: "700" },
+          { value: "心", font: "Zhi Mang Xing", weight: "700" },
+          { value: "安", font: "Zhi Mang Xing", weight: "700" }
+        ]
       },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "grab" },
-          onClick: { enable: false }
-        },
-        modes: {
-          grab: { distance: 120, links: { opacity: 0.5 } }
-        }
+      color: { value: "#666666" },  // 更柔和的文字颜色
+      opacity: { value: 0.55 },
+      size: { value: 22, random: true },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        outModes: { default: "bounce" }
+      }
+    },
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "grab" },
+        onClick: { enable: false }
       },
-      retina_detect: true
-    });
-  </script>
-</body>
-</html>
+      modes: {
+        grab: { distance: 120, links: { opacity: 0.4 } }
+      }
+    },
+    retina_detect: true
+  });
+</script>
 
