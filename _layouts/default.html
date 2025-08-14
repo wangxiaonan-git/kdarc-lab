@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>KDARC Lab | Multilingual NLP & LLM Safety</title>
 
-  <!-- Google Fonts -->
+  <!-- 正文页面用的字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- 粒子用的字体（手写） -->
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Zhi+Mang+Xing&display=swap" rel="stylesheet" />
 
   <!-- Bootstrap & Global CSS -->
@@ -17,7 +20,7 @@
 
   <style>
     body {
-      font-family: 'Zhi Mang Xing', 'Nanum Brush Script', sans-serif;
+      font-family: 'Raleway', sans-serif;
       background-color: #f8f9fa;
     }
 
@@ -67,6 +70,7 @@
       margin: 0 auto;
     }
 
+    /* 只设置粒子 canvas 的字体 */
     canvas {
       font-family: 'Nanum Brush Script', 'Zhi Mang Xing', sans-serif !important;
     }
@@ -106,7 +110,7 @@
         shape: {
           type: "char",
           character: [
-            // 韩语（70%）
+            // 韩文（手写）
             { value: "한", font: "Nanum Brush Script", weight: "700" },
             { value: "글", font: "Nanum Brush Script", weight: "700" },
             { value: "말", font: "Nanum Brush Script", weight: "700" },
@@ -119,7 +123,7 @@
             { value: "이", font: "Nanum Brush Script", weight: "700" },
             { value: "터", font: "Nanum Brush Script", weight: "700" },
 
-            // 中文共通字（30%）
+            // 中文（共通字，用手写字体）
             { value: "文", font: "Zhi Mang Xing", weight: "700" },
             { value: "学", font: "Zhi Mang Xing", weight: "700" },
             { value: "人", font: "Zhi Mang Xing", weight: "700" },
@@ -153,6 +157,4 @@
   </script>
 </body>
 </html>
-
-
 
