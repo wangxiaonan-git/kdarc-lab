@@ -1,161 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>KDARC Lab | Multilingual NLP & LLM Safety</title>
+---
+layout: default
+title: Homepage
+navbar_name: Home
+num_selected: 10
+---
 
-  <!-- 主内容字体 -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
+<!-- Profile card -->
+{% include widgets/profile_card.html %}
 
-  <!-- 粒子字体：韩文手写 + 中文手写 -->
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Zhi+Mang+Xing&display=swap" rel="stylesheet" />
+{% if site.data.display.homepage.show_experience %}
+{% include widgets/experience_card.html %}
+{% endif %}
 
-  <!-- Bootstrap 和全局 CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/kdarc-lab/assets/css/global.css" />
-
-  <!-- tsParticles 动态粒子库 -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-
-  <style>
-    body {
-      font-family: 'Raleway', sans-serif;
-      background-color: #f8f9fa;
-    }
-
-    #hero-section {
-      position: relative;
-      height: 400px;
-      color: black;
-      text-align: center;
-      background-color: #f5f3ee; /* 宣纸色 */
-      overflow: hidden;
-    }
-
-    #tsparticles {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 1;
-      padding-top: 120px;
-    }
-
-    .hero-text h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      color: black;
-    }
-
-    .hero-text p {
-      font-size: 1.3rem;
-      margin-top: 10px;
-      color: black;
-    }
-
-    .content-wrapper {
-      padding-top: 100px;
-      padding-bottom: 60px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      border-radius: 8px;
-    }
-
-    .container-narrow {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    /* 设置粒子 canvas 的字体 */
-    canvas {
-      font-family: 'Nanum Brush Script', 'Zhi Mang Xing', sans-serif !important;
-    }
-  </style>
-</head>
-
-<body>
-  {% include navbar.html %}
-
-  {% if page.url == "/" %}
-  <!-- 首页横幅 -->
-  <div id="hero-section">
-    <div id="tsparticles"></div>
-    <div class="hero-text">
-      <h1>Korean Data and Resource Center</h1>
-      <p>Multilingual NLP · LLM Safety · Cross‑cultural AI</p>
+<!-- Research Project Section -->
+<div class="row mt-3">
+  <div class="col">
+    <div class="card border-0 shadow-sm" style="background-color: #f5f3ee;">
+      <div class="card-body p-4">
+        <h6 style="color: black;">Research Project Experience</h6>
+        <ul class="list-unstyled mt-3 small">
+          <li class="mb-3">
+            <strong>Development of Personal Information De-identification Technology in Suspected Criminal Data: Early Detection Technology for Emerging Voice Phishing Scams</strong><br />
+            Funded by Institute of Information & communications Technology Planning & Evaluation, Republic of Korea.<br />
+            <em>May 01 2025 – Dec 31 2028</em>
+          </li>
+          <li class="mb-3">
+            <strong>Development of Multimodal Al-based Personal Information Detection, Tracking, and De-identification Technology</strong><br />
+            Funded by KISA (Korean Internet & Security Agency), Ministry of Science and ICT, Republic of Korea.<br />
+            <em>Apr 01 2025 – Dec 31 2027</em>
+          </li>
+          <li class="mb-3">
+            <strong>Establishment of Localization Strategies for Overseas Datasets in AI Safety Evaluation</strong><br />
+            Funded by Telecommunications Technology Association (TTA), Republic of Korea.<br />
+            <em>Dec 12 2024 – Dec 31 2024</em>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-  {% endif %}
+</div>
 
-  <!-- 页面主内容区域 -->
-  <div class="container container-narrow content-wrapper mt-5 px-4 py-5">
-    {{ content }}
+<!-- Publications Section -->
+<div class="row mt-3">
+  <div class="col">
+    <div class="card border-0 shadow-sm" style="background-color: #f5f3ee;">
+      <div class="card-body p-4">
+        <h6 class="font-weight-bold mb-3">Publications</h6>
+
+        <div class="mb-3">
+          <h6 class="mb-1 d-flex align-items-center">
+            <span>Toward Reliable VLM: A Fine-Grained Benchmark and Framework for Exposure, Bias, and Inference in Korean Street Views</span>
+            <span class="badge ml-2" style="background-color: #7B68EE; color: white;">LLM Safety</span>
+            <span class="badge ml-1" style="background-color: #9370DB; color: white;">Multimodality</span>
+          </h6>
+          <p class="mb-1 small">
+            <strong>Xiaonan Wang</strong>, Bo Shao, and Hansaem Kim
+          </p>
+          <p class="mb-2" style="font-size: 0.9rem; color: #4e4e4e;"><em>Under Review</em></p>
+          <a href="" class="btn btn-sm" style="background-color: #4a3c2c; color: white;">Under Review</a>
+        </div>
+
+        <div class="mb-3">
+          <h6 class="mb-1 d-flex align-items-center">
+            <span>FLUID QA: A Multilingual Benchmark for Figurative Language Usage in Dialogue across English, Chinese, and Korean</span>
+            <span class="badge ml-2" style="background-color: #f78fdd; color: white;">Culture</span>
+            <span class="badge ml-1" style="background-color: #ffc107; color: white;">NLP</span>
+          </h6>
+          <p class="mb-1 small">
+            Seoyoon Park, Hyeji Choi, Minseon Kim, An Subin, <strong>Xiaonan Wang</strong>, Gyuri Choi, and Hansaem Kim
+          </p>
+          <p class="mb-2" style="font-size: 0.9rem; color: #4e4e4e;"><em>Under Review</em></p>
+          <a href="" class="btn btn-sm" style="background-color: #4a3c2c; color: white;">Under Review</a>
+        </div>
+
+        <div class="mb-3">
+          <h6 class="mb-1 d-flex align-items-center">
+            <span>Benchmarking Korean Idiom Understanding: A Comparative Analysis of Local and Global Models</span>
+            <span class="badge ml-2" style="background-color: #f78fdd; color: white;">Culture</span>
+            <span class="badge ml-1" style="background-color: #ffc107; color: white;">NLP</span>
+          </h6>
+          <p class="mb-1 small">
+            <strong>Xiaonan Wang</strong>, Seoyoon Park, and Hansaem Kim
+          </p>
+          <p class="mb-2" style="font-size: 0.9rem; color: #4e4e4e;"><em>RANLP 2025 (Recent Advances in Natural Language Precessing 2025)</em></p>
+          <a href="" class="btn btn-sm" style="background-color: #4a3c2c; color: white;">to be released</a>
+        </div>
+
+        <div class="mb-3">
+          <h6 class="mb-1 d-flex align-items-center">
+            <span>KULTURE Bench: A Benchmark for Assessing Language Model in Korean Cultural Context</span>
+            <span class="badge ml-2" style="background-color: #f78fdd; color: white;">Culture</span>
+            <span class="badge ml-1" style="background-color: #ffc107; color: white;">NLP</span>
+          </h6>
+          <p class="mb-1 small">
+            <strong>Xiaonan Wang</strong>, Jinyoung Yeo, Joon-Ho Lim, and Hansaem Kim
+          </p>
+          <p class="mb-2" style="font-size: 0.9rem; color: #4e4e4e;"><em>PACLIC 2024 (the 38th Pacific Asia Conference on Language, Information and Computation)</em></p>
+          <a href="https://aclanthology.org/2024.paclic-1.88/" class="btn btn-sm" style="background-color: #4a3c2c; color: white;">ACL Anthology</a>
+        </div>
+
+      </div>
+    </div>
   </div>
+</div>
 
-  {% include footer.html %}
-
-  <!-- JS 文件 -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- 粒子云初始化 -->
-  <script>
-    tsParticles.load("tsparticles", {
-      fullScreen: { enable: false },
-      background: { color: "#f5f3ee" },
-      particles: {
-        number: { value: 50 },
-        shape: {
-          type: "char",
-          character: [
-            // 韩文字符（手写字体）
-            { value: "한", font: "Nanum Brush Script", weight: "700" },
-            { value: "글", font: "Nanum Brush Script", weight: "700" },
-            { value: "지", font: "Nanum Brush Script", weight: "700" },
-            { value: "식", font: "Nanum Brush Script", weight: "700" },
-            { value: "학", font: "Nanum Brush Script", weight: "700" },
-            { value: "데", font: "Nanum Brush Script", weight: "700" },
-            { value: "이", font: "Nanum Brush Script", weight: "700" },
-            { value: "터", font: "Nanum Brush Script", weight: "700" },
-            { value: "자", font: "Nanum Brush Script", weight: "700" },
-            { value: "말", font: "Nanum Brush Script", weight: "700" },
-
-            // 中文（手写繁体）
-            { value: "文", font: "Zhi Mang Xing", weight: "700" },
-            { value: "學", font: "Zhi Mang Xing", weight: "700" },
-            { value: "人", font: "Zhi Mang Xing", weight: "700" },
-            { value: "智", font: "Zhi Mang Xing", weight: "700" },
-            { value: "心", font: "Zhi Mang Xing", weight: "700" },
-            { value: "安", font: "Zhi Mang Xing", weight: "700" }
-          ]
-        },
-        color: { value: "#555555" },
-        opacity: { value: 0.6 },
-        size: { value: 24, random: true },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          outModes: { default: "bounce" }
-        }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "grab" },
-          onClick: { enable: false }
-        },
-        modes: {
-          grab: { distance: 120, links: { opacity: 0.4 } }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
-</body>
-</html>
+<!-- Visitor map -->
+<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ede7e7&w=180&t=n&d=2hdELQUXGbZXhd7nU8b6DM0o0lTQDMdsI0TK710fQRU&co=6e9dbf&cmo=1b6de2&cmn=461b91&ct=1c1717"></script>
 
