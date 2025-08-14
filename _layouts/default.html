@@ -34,6 +34,16 @@
       background-color: #f5f3ee; /* 宣纸风格背景 */
       overflow: hidden;
     }
+    
+  .container-narrow {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container-home {
+  max-width: 1450px;  /* 比如你想让首页窄一些 */
+  margin: 0 auto;
+}
 
     #tsparticles {
       position: absolute;
@@ -107,9 +117,10 @@
   {% endif %}
 
   <!-- 主体内容区域 -->
-  <div class="container container-narrow content-wrapper mt-5 px-4 py-5">
-    {{ content }}
-  </div>
+<div class="content-wrapper mt-5 px-4 py-5
+  {% if page.url == "/" %} container-home {% else %} container-narrow {% endif %}">
+  {{ content }}
+</div>
 
   {% include footer.html %}
 
