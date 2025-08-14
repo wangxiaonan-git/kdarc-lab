@@ -3,105 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Xiaonan Wang | Computational Linguistics</title>
+  <title>KDARC Lab | Multilingual NLP & LLM Safety</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/global.css" />
+  <!-- Bootstrap & Fonts -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/images/badges/yonsei.png" />
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/kdarc-lab/assets/css/global.css" />
 
-  <!-- AOS Animation CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Smooth scroll style -->
   <style>
-    html {
-      scroll-behavior: smooth;
+    body {
+      font-family: 'Raleway', sans-serif;
     }
-
-    blockquote {
-      font-style: italic;
-      color: #555;
-      border-left: 10px solid #3498db;
-      background: #ecf5fc;
-      padding: 15px 20px;
-      margin: 20px 0;
-      max-width: 920px;
-      width: 100%;
-      position: relative;
-      quotes: "“" "”" "‘" "’";
+    .lab-banner {
+      background: url('/kdarc-lab/assets/images/banner.jpg') center center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
     }
-    blockquote:before {
-      color: #3498db;
-      content: open-quote;
-      font-size: 2em;
-      position: absolute;
-      left: 10px;
-      top: 10px;
+    .lab-banner h1 {
+      font-size: 3rem;
+      font-weight: 700;
     }
-    blockquote:after {
-      color: #3498db;
-      content: close-quote;
-      font-size: 2em;
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
+    .lab-banner p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+    }
+    .content-wrapper {
+      padding-top: 100px;
+      padding-bottom: 60px;
     }
   </style>
 </head>
 
-<body class="bg-light" {{ page.body_attr }}>
+<body>
   {% include navbar.html %}
 
-  <!-- Add padding-top to avoid navbar cover -->
-  <div class="container pt-5">
-    {{content}}
+  {% if page.url == "/" %}
+    <!-- 首页横幅 -->
+    <div class="lab-banner">
+      <h1>Korean Data and Resource Center</h1>
+      <p>Multilingual NLP · LLM Safety · Cross-cultural AI</p>
+    </div>
+  {% endif %}
+
+  <!-- 正文区域 -->
+  <div class="container content-wrapper">
+    {{ content }}
   </div>
 
   {% include footer.html %}
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/github-buttons/2.14.2/buttons.min.js" integrity="sha512-OYwZx04hKFeFNYrWxIyo3atgGpb+cxU0ENWBZs72X7T9U+NoHPM1ftUn/Mfw7dRDXrqWA6M1wBg6z6fGE32aeA==" crossorigin="anonymous"></script>
-  <script src="assets/js/common.js"></script>
-
-  <!-- AOS Animation Script -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 600,
-      offset: 200,
-      delay: 100,
-      once: true,
-      easing: 'ease-out-cubic',
-      anchorPlacement: 'top-bottom'
-    });
-  </script>
-
-  <!-- Coze (commented) -->
-<!--
-  <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/0.1.0-beta.6/libs/cn/index.js"></script>
-  <script>
-    new CozeWebSDK.WebChatClient({
-      config: {
-        bot_id: '7417394284674301961',
-      },
-      componentProps: {
-        title: 'Coze',
-      },
-    });
-  </script>
--->
+  <!-- JS 资源 -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
