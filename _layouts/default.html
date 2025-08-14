@@ -117,8 +117,7 @@
   {% endif %}
 
   <!-- 主体内容区域 -->
-<div class="content-wrapper mt-5 px-4 py-5
-  {% if page.url == "/" %} container-home {% else %} container-narrow {% endif %}">
+<div class="{% if page.url == "/" %}container-home{% else %}container-narrow{% endif %} content-wrapper mt-5 px-4 py-5">
   {{ content }}
 </div>
 
