@@ -8,7 +8,7 @@
   <!-- Bootstrap & Fonts -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Nanum+Brush+Script&family=Ma+Shan+Zheng&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Nanum+Brush+Script&family=Zhi+Mang+Xing&display=swap" rel="stylesheet" />
 
   <!-- Global CSS -->
   <link rel="stylesheet" href="/kdarc-lab/assets/css/global.css" />
@@ -69,9 +69,8 @@
       margin: 0 auto;
     }
 
-    /* 粒子字体 fallback 设置 */
     canvas {
-      font-family: 'Nanum Brush Script', 'Ma Shan Zheng', cursive !important;
+      font-family: 'Nanum Brush Script', 'Zhi Mang Xing', cursive !important;
     }
   </style>
 </head>
@@ -80,7 +79,7 @@
   {% include navbar.html %}
 
   {% if page.url == "/" %}
-  <!-- 首页横幅：繁体书法字符粒子云 -->
+  <!-- 首页横幅：韩文+繁体书法粒子 -->
   <div id="hero-section">
     <div id="tsparticles"></div>
     <div class="hero-text">
@@ -101,23 +100,41 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- 粒子云初始化：繁体有意义单字 -->
+  <!-- 粒子云初始化：韩文 70% + 中文繁体 30% -->
   <script>
     tsParticles.load("tsparticles", {
       fullScreen: { enable: false },
       background: { color: "#0a0a0a" },
       particles: {
-        number: { value: 40 },
+        number: { value: 45 },
         shape: {
           type: "char",
           character: [
-            { value: "韓", font: "Nanum Brush Script", weight: "700" },
-            { value: "國", font: "Nanum Brush Script", weight: "700" },
-            { value: "語", font: "Nanum Brush Script", weight: "700" },
-            { value: "訓", font: "Nanum Brush Script", weight: "700" },
-            { value: "民", font: "Nanum Brush Script", weight: "700" },
-            { value: "正", font: "Nanum Brush Script", weight: "700" },
-            { value: "音", font: "Nanum Brush Script", weight: "700" }
+            // 韩文（70%）
+            { value: "한", font: "Nanum Brush Script", weight: "700" },
+            { value: "글", font: "Nanum Brush Script", weight: "700" },
+            { value: "말", font: "Nanum Brush Script", weight: "700" },
+            { value: "뜻", font: "Nanum Brush Script", weight: "700" },
+            { value: "자", font: "Nanum Brush Script", weight: "700" },
+            { value: "학", font: "Nanum Brush Script", weight: "700" },
+            { value: "지", font: "Nanum Brush Script", weight: "700" },
+            { value: "식", font: "Nanum Brush Script", weight: "700" },
+            { value: "안", font: "Nanum Brush Script", weight: "700" },
+            { value: "전", font: "Nanum Brush Script", weight: "700" },
+            { value: "모", font: "Nanum Brush Script", weight: "700" },
+            { value: "델", font: "Nanum Brush Script", weight: "700" },
+            { value: "데", font: "Nanum Brush Script", weight: "700" },
+            { value: "이", font: "Nanum Brush Script", weight: "700" },
+            { value: "터", font: "Nanum Brush Script", weight: "700" },
+
+            // 中文繁体（30%）
+            { value: "韓", font: "Zhi Mang Xing", weight: "700" },
+            { value: "國", font: "Zhi Mang Xing", weight: "700" },
+            { value: "語", font: "Zhi Mang Xing", weight: "700" },
+            { value: "訓", font: "Zhi Mang Xing", weight: "700" },
+            { value: "民", font: "Zhi Mang Xing", weight: "700" },
+            { value: "正", font: "Zhi Mang Xing", weight: "700" },
+            { value: "音", font: "Zhi Mang Xing", weight: "700" }
           ]
         },
         color: { value: "#ffffff" },
