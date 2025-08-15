@@ -70,5 +70,47 @@ html {
 .badge:hover {
   transform: scale(1.05);
 }
+/* Lab Members Section */
+.lab-section {
+  padding: 60px 0;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.15); /* 有质感的浅分割线 */
+  margin-bottom: 30px;
+}
+
+.lab-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.lab-info {
+  flex: 1;
+  font-size: 16px;
+}
+
+.lab-info h2 {
+  font-weight: 700;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.lab-photo {
+  flex: 0 0 200px;
+  text-align: right;
+}
+
+.circular-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 
