@@ -4,61 +4,77 @@ title: Members
 ---
 
 <style>
-/* 页面整体布局 */
-.member-section {
-  margin-bottom: 60px;
+/* 页面整体 */
+.members-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-.member-title {
+/* Section 标题 */
+.member-section-title {
   font-size: 26px;
   font-weight: 700;
-  margin-bottom: 25px;
+  margin: 40px 0 20px;
   border-left: 5px solid #1e73be;
   padding-left: 12px;
 }
 
-/* 单个成员卡片 */
+/* 两列网格布局 */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px 50px;
+}
+
+@media (max-width: 768px) {
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 单个人员卡片 */
 .member-card {
   display: flex;
-  align-items: center;
-  margin-bottom: 50px;
+  align-items: flex-start;
 }
 
 .member-photo {
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 30px;
-  border: 3px solid #eee;
+  margin-right: 20px;
+  border: 2px solid #ddd;
 }
 
+/* 文本信息 */
 .member-info h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .member-role {
-  font-size: 16px;
+  font-size: 15px;
   color: #666;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .member-email {
-  font-size: 15px;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 
 .member-research {
-  font-size: 15px;
+  font-size: 14px;
   color: #444;
   margin-bottom: 8px;
 }
 
 .member-website a {
-  font-size: 15px;
   color: #1e73be;
+  font-size: 14px;
   text-decoration: none;
 }
 .member-website a:hover {
@@ -66,12 +82,13 @@ title: Members
 }
 </style>
 
-<div class="container-narrow">
 
-  <!-- ===================== PI ===================== -->
-  <div class="member-section">
-    <div class="member-title">Principal Investigator</div>
+<div class="members-container">
 
+  <!-- ====================== PI ====================== -->
+  <div class="member-section-title">Principal Investigator</div>
+
+  <div class="member-grid">
     <div class="member-card">
       <img src="/kdarc-lab/assets/images/photo/hansaem.jpg" class="member-photo">
       <div class="member-info">
@@ -81,18 +98,18 @@ title: Members
         <div class="member-research">
           Research Interests: Korean NLP, Language Resources, LLM Safety, Multimodal Reasoning
         </div>
-        <div class="member-website">
-          <a href="https://scholar.google.com/">Website</a>
-        </div>
+        <div class="member-website"><a href="#">Website</a></div>
       </div>
     </div>
   </div>
 
-  <!-- ===================== Research Assistants ===================== -->
-  <div class="member-section">
-    <div class="member-title">Research Assistants</div>
 
-    <!-- 你自己 -->
+  <!-- ====================== RAs ====================== -->
+  <div class="member-section-title">Research Assistants</div>
+
+  <div class="member-grid">
+
+    <!-- Xiaonan -->
     <div class="member-card">
       <img src="/kdarc-lab/assets/images/photo/xiaonan.jpg" class="member-photo">
       <div class="member-info">
@@ -102,15 +119,13 @@ title: Members
         <div class="member-research">
           Research Interests: Multilingual NLP, Evaluation, Geolocation, LLM Safety, Cultural AI
         </div>
-        <div class="member-website">
-          <a href="#">Website</a>
-        </div>
+        <div class="member-website"><a href="#">Website</a></div>
       </div>
     </div>
 
-    <!-- 例子：再加一个 RA -->
+    <!-- Gyuri -->
     <div class="member-card">
-      <img src="/kdarc-lab/assets/images/photo/student1.jpg" class="member-photo">
+      <img src="/kdarc-lab/assets/images/photo/gyuri.jpg" class="member-photo">
       <div class="member-info">
         <h3>Gyuri Choi</h3>
         <div class="member-role">Research Assistant</div>
@@ -118,12 +133,10 @@ title: Members
         <div class="member-research">
           Research Interests: Korean Linguistics, PII Detection, Dialogue Systems
         </div>
-        <div class="member-website">
-          <a href="#">Website</a>
-        </div>
+        <div class="member-website"><a href="#">Website</a></div>
       </div>
     </div>
 
   </div>
-
 </div>
+
