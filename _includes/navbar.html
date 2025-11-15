@@ -1,37 +1,22 @@
-<!-- ============================
-     YONSEI PREMIUM NAVIGATION FINAL
-     - Glass Blur
-     - Underline Animation
-     - Gradient Top Bar
-     - Global Uniform Fix
-=============================== -->
+<!-- ======================================================
+     YONSEI PREMIUM NAVIGATION — GLOW EDITION (FINAL)
+     - Removed top gradient bar
+     - Added AI-style blue glow hover effect
+     - High-end underline animation
+     - Global override for full-page consistency
+======================================================= -->
 
 <style>
-/* --- FORCE OVERRIDE ANY THEME --- */
+/* Force override everything */
 #mainNavbar * {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
   box-sizing: border-box !important;
 }
 
-/* --- YONSEI SIGNATURE TOP GRADIENT BAR --- */
-.navbar-top-gradient {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 100%;
-  z-index: 1001;
-  background: linear-gradient(90deg,
-      #003f8c 0%,
-      #0058c9 30%,
-      #0074ff 60%,
-      #4da8ff 100%);
-}
-
-/* --- MAIN NAVBAR --- */
+/* ----- MAIN NAVBAR ----- */
 .navbar-premium {
   position: fixed;
-  top: 4px; /* gradient bar height */
+  top: 0;
   width: 100%;
   padding: 14px 0;
   background: rgba(255, 255, 255, 0.65);
@@ -39,79 +24,87 @@
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   transition: background 0.35s ease, box-shadow 0.35s ease;
   z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 /* Scroll 状态 */
 .navbar-premium.scrolled {
-  background: #ffffff;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* --- BRAND --- */
+/* ----- BRAND ----- */
 .navbar-brand-premium {
   font-size: 21px;
   font-weight: 600;
   color: #1a1a1a !important;
-  letter-spacing: 0.35px;
+  letter-spacing: 0.2px;
+  transition: opacity .25s ease;
 }
 
-/* --- NAV LINKS --- */
+.navbar-brand-premium:hover {
+  opacity: 0.75;
+}
+
+/* ----- NAV LINKS ----- */
 .nav-premium .nav-link {
   position: relative;
   font-size: 15px;
   font-weight: 500;
   color: #333 !important;
   padding: 8px 20px !important;
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition: all .25s ease;
 }
 
-/* Hover 上浮 */
+/* Hover 微上浮 */
 .nav-premium .nav-link:hover {
   color: #0058c9 !important;
   transform: translateY(-1px);
 }
 
-/* --- PREMIUM UNDERLINE ANIMATION --- */
-.nav-premium .nav-link:after {
+/* --------- BLUE GLOW (AI Lab Style) --------- */
+.nav-premium .nav-link:hover {
+  text-shadow: 0 0 6px rgba(0, 123, 255, 0.55);
+}
+
+/* Active 也有轻微光晕 */
+.nav-premium .nav-link.active {
+  color: #0047e6 !important;
+  font-weight: 600;
+  text-shadow: 0 0 7px rgba(0, 95, 230, 0.45);
+}
+
+/* Underline animation */
+.nav-premium .nav-link::after {
   content: "";
   position: absolute;
   bottom: 2px;
   left: 16%;
   width: 68%;
   height: 2.5px;
-  background: linear-gradient(90deg, #0047e6 0%, #4da8ff 100%);
+  background: linear-gradient(90deg, #0053ff 0%, #4da8ff 100%);
   border-radius: 4px;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.28s ease;
 }
 
-.nav-premium .nav-link:hover:after,
-.nav-premium .nav-link.active:after {
+.nav-premium .nav-link:hover::after,
+.nav-premium .nav-link.active::after {
   transform: scaleX(1);
 }
 
-/* Active 状态 */
-.nav-premium .nav-link.active {
-  color: #0047e6 !important;
-  font-weight: 600;
-}
-
-/* For mobile dropdown */
+/* Mobile toggler */
 .navbar-toggler {
   outline: none !important;
   border: none !important;
 }
 </style>
 
-
-<!-- ========== HTML NAVBAR ========== -->
-<div class="navbar-top-gradient"></div>
-
+<!-- NAVBAR HTML -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-premium" id="mainNavbar">
   <div class="container">
 
-    <!-- Brand -->
     <a class="navbar-brand navbar-brand-premium" href="/kdarc-lab/">
       Yonsei Korean Data Resource Center
     </a>
@@ -145,7 +138,7 @@
 </nav>
 
 <script>
-// Scroll 状态切换
+// Scroll effect
 document.addEventListener("scroll", function () {
   const navbar = document.getElementById("mainNavbar");
   if (window.scrollY > 12) navbar.classList.add("scrolled");
