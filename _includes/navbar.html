@@ -1,24 +1,44 @@
 <!-- ============================
-     YONSEI PREMIUM GLASS NAVBAR
+     YONSEI PREMIUM NAVIGATION FINAL
+     - Glass Blur
+     - Underline Animation
+     - Gradient Top Bar
+     - Global Uniform Fix
 =============================== -->
 
 <style>
-/* Font */
-.navbar-premium * {
+/* --- FORCE OVERRIDE ANY THEME --- */
+#mainNavbar * {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+  box-sizing: border-box !important;
 }
 
-/* Base navbar */
-.navbar-premium {
+/* --- YONSEI SIGNATURE TOP GRADIENT BAR --- */
+.navbar-top-gradient {
   position: fixed;
   top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  z-index: 1001;
+  background: linear-gradient(90deg,
+      #003f8c 0%,
+      #0058c9 30%,
+      #0074ff 60%,
+      #4da8ff 100%);
+}
+
+/* --- MAIN NAVBAR --- */
+.navbar-premium {
+  position: fixed;
+  top: 4px; /* gradient bar height */
   width: 100%;
   padding: 14px 0;
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   transition: background 0.35s ease, box-shadow 0.35s ease;
-  z-index: 999;
+  z-index: 1000;
 }
 
 /* Scroll 状态 */
@@ -27,48 +47,71 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
-/* Brand */
+/* --- BRAND --- */
 .navbar-brand-premium {
   font-size: 21px;
   font-weight: 600;
-  letter-spacing: 0.35px;
   color: #1a1a1a !important;
+  letter-spacing: 0.35px;
 }
 
-/* Brand hover */
-.navbar-brand-premium:hover {
-  opacity: 0.8;
-}
-
-/* Nav item */
+/* --- NAV LINKS --- */
 .nav-premium .nav-link {
+  position: relative;
   font-size: 15px;
   font-weight: 500;
   color: #333 !important;
   padding: 8px 20px !important;
-  transition: all 0.25s ease;
-  border-radius: 6px;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-/* Hover */
+/* Hover 上浮 */
 .nav-premium .nav-link:hover {
-  background: rgba(0, 85, 255, 0.08);
-  color: #0047e6 !important;
+  color: #0058c9 !important;
   transform: translateY(-1px);
 }
 
-/* Active */
+/* --- PREMIUM UNDERLINE ANIMATION --- */
+.nav-premium .nav-link:after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 16%;
+  width: 68%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #0047e6 0%, #4da8ff 100%);
+  border-radius: 4px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s ease;
+}
+
+.nav-premium .nav-link:hover:after,
+.nav-premium .nav-link.active:after {
+  transform: scaleX(1);
+}
+
+/* Active 状态 */
 .nav-premium .nav-link.active {
   color: #0047e6 !important;
   font-weight: 600;
-  background: rgba(0, 85, 255, 0.1);
+}
+
+/* For mobile dropdown */
+.navbar-toggler {
+  outline: none !important;
+  border: none !important;
 }
 </style>
+
+
+<!-- ========== HTML NAVBAR ========== -->
+<div class="navbar-top-gradient"></div>
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-premium" id="mainNavbar">
   <div class="container">
 
-    <!-- BRAND LOGO -->
+    <!-- Brand -->
     <a class="navbar-brand navbar-brand-premium" href="/kdarc-lab/">
       Yonsei Korean Data Resource Center
     </a>
@@ -79,21 +122,34 @@
 
     <div class="collapse navbar-collapse nav-premium" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/members.html">Members</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/publications.html">Publications</a></li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/kdarc-lab/">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if page.url contains 'members' %}active{% endif %}" href="/kdarc-lab/members.html">Members</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if page.url contains 'projects' %}active{% endif %}" href="/kdarc-lab/projects.html">Projects</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if page.url contains 'publications' %}active{% endif %}" href="/kdarc-lab/publications.html">Publications</a>
+        </li>
+
       </ul>
     </div>
-
   </div>
 </nav>
 
 <script>
-// Scroll 时改变 navbar 状态
+// Scroll 状态切换
 document.addEventListener("scroll", function () {
   const navbar = document.getElementById("mainNavbar");
   if (window.scrollY > 12) navbar.classList.add("scrolled");
   else navbar.classList.remove("scrolled");
 });
 </script>
+
