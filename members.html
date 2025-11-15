@@ -1,142 +1,154 @@
----
-layout: default
-title: Members
----
+<!-- ======= TEAM PAGE ======= -->
 
 <style>
-/* 页面整体 */
-.members-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
+.team-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Section 标题 */
-.member-section-title {
+.team-title {
   font-size: 26px;
   font-weight: 700;
-  margin: 40px 0 20px;
-  border-left: 5px solid #1e73be;
+  margin: 35px 0 20px;
+  border-left: 5px solid #2f80ed;
   padding-left: 12px;
 }
 
-/* 两列网格布局 */
-.member-grid {
+.team-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 40px 50px;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 26px;
 }
 
-@media (max-width: 768px) {
-  .member-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 单个人员卡片 */
 .member-card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px 26px;
   display: flex;
-  align-items: flex-start;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: all 0.2s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
 .member-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 20px;
-  border: 2px solid #ddd;
+  width: 105px !important;
+  height: 105px !important;
+  min-width: 105px !important;
+  min-height: 105px !important;
+  max-width: 105px !important;
+  max-height: 105px !important;
+  
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  aspect-ratio: 1/1 !important;
+  display: block;
 }
 
-/* 文本信息 */
-.member-info h3 {
+.member-info {
+  flex: 1;
+}
+
+.member-name {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .member-role {
   font-size: 15px;
   color: #666;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .member-email {
   font-size: 14px;
-  margin-bottom: 8px;
+  color: #444;
+  margin-bottom: 10px;
 }
 
-.member-research {
+.member-interests {
   font-size: 14px;
   color: #444;
+  line-height: 1.45;
   margin-bottom: 8px;
 }
 
-.member-website a {
-  color: #1e73be;
+.member-website {
   font-size: 14px;
-  text-decoration: none;
-}
-.member-website a:hover {
-  text-decoration: underline;
+  color: #2f80ed;
 }
 </style>
 
 
-<div class="members-container">
 
-  <!-- ====================== PI ====================== -->
-  <div class="member-section-title">Principal Investigator</div>
+<!-- ===================== PI SECTION ===================== -->
 
-  <div class="member-grid">
+<div class="team-section">
+  <div class="team-title">Principal Investigator</div>
+
+  <div class="team-grid">
+
     <div class="member-card">
-      <img src="/kdarc-lab/assets/images/photo/hansaem.jpg" class="member-photo">
+      <img class="member-photo" src="/assets/img/kim.jpg" alt="Hansaem Kim">
       <div class="member-info">
-        <h3>Dr. Hansaem Kim</h3>
+        <div class="member-name">Dr. Hansaem Kim</div>
         <div class="member-role">Professor</div>
-        <div class="member-email">📩 khss@yonsei.ac.kr</div>
-        <div class="member-research">
-          Research Interests: Korean NLP, Language Resources, LLM Safety, Multimodal Reasoning
-        </div>
-        <div class="member-website"><a href="#">Website</a></div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ====================== RAs ====================== -->
-  <div class="member-section-title">Research Assistants</div>
-
-  <div class="member-grid">
-
-    <!-- Xiaonan -->
-    <div class="member-card">
-      <img src="/kdarc-lab/assets/images/photo/xiaonan.jpg" class="member-photo">
-      <div class="member-info">
-        <h3>Xiaonan Wang</h3>
-        <div class="member-role">PhD Student</div>
-        <div class="member-email">📩 xiaonan@yonsei.ac.kr</div>
-        <div class="member-research">
-          Research Interests: Multilingual NLP, Evaluation, Geolocation, LLM Safety, Cultural AI
-        </div>
-        <div class="member-website"><a href="#">Website</a></div>
-      </div>
-    </div>
-
-    <!-- Gyuri -->
-    <div class="member-card">
-      <img src="/kdarc-lab/assets/images/photo/gyuri.jpg" class="member-photo">
-      <div class="member-info">
-        <h3>Gyuri Choi</h3>
-        <div class="member-role">Research Assistant</div>
-        <div class="member-email">📩 gyuri@yonsei.ac.kr</div>
-        <div class="member-research">
-          Research Interests: Korean Linguistics, PII Detection, Dialogue Systems
-        </div>
-        <div class="member-website"><a href="#">Website</a></div>
+        <div class="member-email">📧 khss@yonsei.ac.kr</div>
+        <a class="member-website" href="#" target="_blank">Website</a>
       </div>
     </div>
 
   </div>
 </div>
+
+
+
+<!-- ===================== RESEARCH ASSISTANTS ===================== -->
+
+<div class="team-section">
+  <div class="team-title">Research Assistants</div>
+
+  <div class="team-grid">
+
+    <!-- Xiaonan -->
+    <div class="member-card">
+      <img class="member-photo" src="/assets/img/xiaonan.jpg" alt="Xiaonan">
+      <div class="member-info">
+        <div class="member-name">Xiaonan Wang</div>
+        <div class="member-role">PhD Student</div>
+        <div class="member-email">📧 xiaonan@yonsei.ac.kr</div>
+        <div class="member-interests">
+          Research Interests: Multilingual NLP, Evaluation, Geolocation, LLM Safety, Cultural AI
+        </div>
+        <a class="member-website" href="#" target="_blank">Website</a>
+      </div>
+    </div>
+
+    <!-- Gyuri -->
+    <div class="member-card">
+      <img class="member-photo" src="/assets/img/gyuri.jpg" alt="Gyuri">
+      <div class="member-info">
+        <div class="member-name">Gyuri Choi</div>
+        <div class="member-role">Research Assistant</div>
+        <div class="member-email">📧 gyuri@yonsei.ac.kr</div>
+        <div class="member-interests">
+          Research Interests: Korean Linguistics, PII Detection, Dialogue Systems
+        </div>
+        <a class="member-website" href="#" target="_blank">Website</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======= END TEAM PAGE ======= -->
+
 
