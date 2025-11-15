@@ -6,150 +6,124 @@
   <title>Korean Data Resource Center</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Bootstrap & Global -->
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/kdarc-lab/assets/css/global.css" />
 
+  <!-- Global custom CSS -->
   <style>
-    /* ===== 全站字体 ===== */
     body {
-      font-family: 'Raleway', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #f8f9fa;
     }
 
-    /* ===== 顶部 Hero Banner ===== */
-    .hero-banner {
-      width: 100%;
-      height: 430px;
-      background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
-      background-size: cover;
-      background-position: center 25%;
-      background-repeat: no-repeat;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
+    /* ===== Navbar 统一高端设计 ===== */
+    .navbar {
+      padding: 12px 0;
+      background: white !important;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }
 
-    /* ===== 底部 Blur Gradient（高端感） ===== */
-.hero-gradient {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 160px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0) 0%,
-    rgba(0,0,0,0.38) 100%
-  );
-  z-index: 1;
-}
-
-
-    /* ===== 黑色 Overlay（增强对比） ===== */
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.28);
-      z-index: 0;
-    }
-
-    /* ===== Banner 文字区域 ===== */
-    .hero-center {
-      position: relative;
-      z-index: 3;
-      text-align: center;
-      color: white;
-      padding: 0 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-
-      /* 淡入动画 */
-      animation: fadeIn 1.2s ease-out forwards;
-      opacity: 0;
-    }
-
-    .hero-center h1 {
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
-      font-size: 52px;
+    .navbar-brand {
       font-weight: 600;
-      margin-bottom: 14px;
+      font-size: 20px;
     }
 
-    .hero-center p {
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
-      font-size: 26px; /* ← 加大两号 */
-      font-weight: 300;
-      line-height: 1.45;
-      max-width: 1000px;
-      margin: 0 auto;
-      opacity: 0.92;
+    /* Menu 字体 */
+    .nav-link {
+      font-weight: 500;
+      font-size: 16px;
+      color: #333 !important;
+      padding: 10px 18px !important;
+      position: relative;
+      transition: all 0.25s ease;
     }
 
-    /* ===== Fade-in 动画 ===== */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
+    /* Hover 蓝色光晕特效 */
+    .nav-link:hover {
+      color: #0d6efd !important;
+      text-shadow: 0 0 8px rgba(13,110,253,0.4);
     }
 
-    /* ===== Container 宽度 ===== */
-    .container-home {
-      max-width: 1450px;
-      margin: 0 auto;
+    /* Active 状态可选（可删除） */
+    .nav-item.active .nav-link {
+      color: #0d6efd !important;
+      font-weight: 600;
     }
 
-    .container-narrow {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* ===== 白色内容卡片 ===== */
+    /* ===== 内容外框（全站统一） ===== */
     .content-wrapper {
-      padding: 100px 0 60px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      border-radius: 8px;
+      max-width: 1450px;
+      margin: 120px auto 60px; /* 顶部有空间避免 navbar 挡住 */
+      padding: 60px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* 宽度统一（全站） */
+    .container-unified {
+      max-width: 1400px;
+      margin: 0 auto;
     }
   </style>
+
 </head>
 
 <body>
 
-  {% include navbar.html %}
+  <!-- 全站统一 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/kdarc-lab/">
+        Yonsei Korean Data Resource Center
+      </a>
 
-  {% if page.url == "/" %}
-  <div class="hero-banner">
-    <div class="hero-overlay"></div>
-    <div class="hero-gradient"></div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="hero-center">
-      <h1>Korean Data Resource Center</h1>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
 
-      <p>
-        Advancing intelligence data and evaluation science for reliable, multilingual, and culturally aware AI.
-      </p>
+          <li class="nav-item {% if page.url == '/' %}active{% endif %}">
+            <a class="nav-link" href="/kdarc-lab/">Home</a>
+          </li>
+
+          <li class="nav-item {% if page.url contains 'members' %}active{% endif %}">
+            <a class="nav-link" href="/kdarc-lab/members.html">Members</a>
+          </li>
+
+          <li class="nav-item {% if page.url contains 'projects' %}active{% endif %}">
+            <a class="nav-link" href="/kdarc-lab/projects.html">Projects</a>
+          </li>
+
+          <li class="nav-item {% if page.url contains 'publications' %}active{% endif %}">
+            <a class="nav-link" href="/kdarc-lab/publications.html">Publications</a>
+          </li>
+
+        </ul>
+      </div>
     </div>
-  </div>
-  {% endif %}
+  </nav>
 
-  <!-- 主体内容 -->
-  <div class="{% if page.url == '/' %}container-home{% else %}container-narrow{% endif %} content-wrapper mt-5 px-4 py-5">
+  <!-- 全站统一内容外框 -->
+  <div class="container-unified content-wrapper">
     {{ content }}
   </div>
 
+  <!-- Footer（可保持你自己的） -->
   {% include footer.html %}
 
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
 
 </body>
 </html>
