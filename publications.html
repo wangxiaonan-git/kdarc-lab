@@ -1,81 +1,77 @@
 ---
 layout: default
-title: Publications
 ---
 
 <style>
-/* =============================
-   KDARC — ULTRA MINIMAL PUBLICATIONS
-   No blue line, only soft premium design
-   ============================= */
+
+/* ============ KDARC Premium Minimal ============ */
 
 .pub-year-title {
   font-size: 26px;
   font-weight: 700;
   margin: 40px 0 24px;
-  color: #222;
   font-family: "Inter", sans-serif;
+  color: #222;
 }
 
 .pub-card {
   background: white;
   border-radius: 14px;
-  padding: 26px 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: all 0.25s ease;
-  margin-bottom: 26px;
-
-  /* 移除任何左线 */
-  border-left: none !important;
+  padding: 28px 32px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.06);
+  transition: all 0.28s ease;
 }
 
 .pub-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
 }
 
 .pub-title {
   font-size: 19px;
   font-weight: 600;
-  margin-bottom: 8px;
-  line-height: 1.45;
-  color: #1b1b1b;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #1a1a1a;
 }
 
 .pub-authors {
   font-size: 15px;
   color: #444;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .pub-venue {
   font-size: 15px;
   color: #555;
   font-style: italic;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
-/* ============ TAGS ============ */
-.pub-tags {
-  margin-top: 8px;
-}
+/* ============ MULTI-COLOR TAGS ============ */
+
+.pub-tags { margin-top: 10px; }
 
 .pub-tag {
   display: inline-block;
   padding: 6px 14px;
   font-size: 13px;
   font-weight: 500;
-  background: #6D6AFE1A; /* 柔和灰紫轻底色 */
-  color: #4a47c7; /* 高端灰紫文字 */
-  border-radius: 14px;
+  border-radius: 8px;
   margin-right: 8px;
-  margin-bottom: 6px;
-  transition: all 0.25s ease;
+  margin-bottom: 8px;
+  color: white;
 }
 
-.pub-tag:hover {
-  background: #6D6AFE33;
-}
+/* 多色标签体系 — 专业实验室配色 */
+.tag-yellow { background: #F4C542; }     /* NLP / Language */
+.tag-bluegray { background: #6E7D8C; }   /* Education / Evaluation */
+.tag-green { background: #4CAF50; }      /* Multimodal */
+.tag-purple { background: #8A6FF0; }     /* Privacy / Safety */
+.tag-blue { background: #3A7AFE; }       /* Benchmark / Dataset */
+.tag-orange { background: #FF8A3D; }     /* Bias / Fairness */
+
 </style>
 
 <h1>Publications</h1>
@@ -92,7 +88,7 @@ title: Publications
   </div>
 
   <div class="pub-authors">
-    <strong>Xiaonan Wang</strong>, Bo Shao, and Hansaem Kim
+    Xiaonan Wang, Bo Shao, and Hansaem Kim
   </div>
 
   <div class="pub-venue">
@@ -100,13 +96,16 @@ title: Publications
     Suzhou, China.
   </div>
 
-  <!-- ====== Keywords (替代链接) ====== -->
+  <!-- 多色 Keyword Tags（全称） -->
   <div class="pub-tags">
-    <span class="pub-tag">Geolocation</span>
-    <span class="pub-tag">Multimodal Models</span>
-    <span class="pub-tag">Privacy & Exposure</span>
-    <span class="pub-tag">Benchmark</span>
-    <span class="pub-tag">Bias Analysis</span>
+
+    <span class="pub-tag tag-green">Multimodal Geolocation</span>
+    <span class="pub-tag tag-purple">Privacy and Exposure Risk</span>
+    <span class="pub-tag tag-orange">Bias Analysis</span>
+    <span class="pub-tag tag-blue">Benchmark Construction</span>
+    <span class="pub-tag tag-yellow">Language Understanding</span>
+
   </div>
 
 </div>
+
