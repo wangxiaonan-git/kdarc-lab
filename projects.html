@@ -3,5 +3,501 @@ layout: default
 title: Projects
 ---
 
-<h1>Projects</h1>
-<p>List of research projects goes here.</p>
+<style>
+/* Layout */
+.projects-container {
+  max-width: 1050px;
+  margin: 40px auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 12px;
+}
+
+/* Title */
+.project-year-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 20px 0 12px;
+  border-left: 5px solid #2f80ed;
+  padding-left: 12px;
+}
+
+/* Accordion */
+.accordion {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.accordion-header {
+  background: #f7f9fc;
+  padding: 16px 22px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 1px solid #e5e8ec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header:hover {
+  background: #eef3fa;
+}
+
+.accordion-content {
+  display: none;
+  background: white;
+  padding: 20px 26px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Project card */
+.project-item {
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.project-meta {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+</style>
+
+<script>
+function toggleAccordion(id) {
+  var content = document.getElementById(id);
+  content.style.display = (content.style.display === "block") ? "none" : "block";
+}
+</script>
+
+<div class="projects-container">
+
+  <!-- ======================= 2025 ======================= -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('y2025')">
+      2025 Projects <span>▼</span>
+    </div>
+    <div class="accordion-content" id="y2025">
+
+      <div class="project-item">
+        <div class="project-title">Scalable Multimodal Foundation Model Data for Industrial AI Transformation (1/3)</div>
+        <div class="project-meta">
+          Duration: 2025.08–2025.12<br>
+          Funding Agency: National Information Society Agency (NIA)<br>
+          Role: PI<br>
+          Budget: ₩200,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">2025 Korean Learner Corpus Construction</div>
+        <div class="project-meta">
+          Duration: 2025.06–2025.12<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: Co-PI<br>
+          Budget: ₩186,240,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Korean Instruction-based Feedback Corpus Analysis (2025)</div>
+        <div class="project-meta">
+          Duration: 2025.05–2025.12<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: PI<br>
+          Budget: ₩100,564,200
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">NR-DATA-2 Project</div>
+        <div class="project-meta">
+          Duration: 2025.05–2025.12<br>
+          Funding Agency: Government Agency (Korea)<br>
+          Role: PI<br>
+          Budget: ₩330,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Multimodal AI-based PII Detection and De-identification Technology Development (1/3)</div>
+        <div class="project-meta">
+          Duration: 2025.04–2025.12<br>
+          Funding Agency: Korea Internet & Security Agency (KISA)<br>
+          Role: PI<br>
+          Budget: ₩72,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">De-identification Technology for PII in Crime-related Information (1/4)</div>
+        <div class="project-meta">
+          Duration: 2025.04–2025.12<br>
+          Funding Agency: Institute for Information & Communications Technology Planning & Evaluation (IITP)<br>
+          Role: PI<br>
+          Budget: ₩160,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Archive & Historical Study of Early 20th-century Korean Textbooks (2/3)</div>
+        <div class="project-meta">
+          Duration: 2025.03–2026.02<br>
+          Funding Agency: National Research Foundation of Korea (NRF)<br>
+          Role: PI<br>
+          Budget: ₩330,096,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Woongjin ThinkBig Advisory (Round 2)</div>
+        <div class="project-meta">
+          Duration: 2025.02–2025.12<br>
+          Funding Agency: Private Sector (Korea)<br>
+          Role: PI<br>
+          Budget: ₩12,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">AI Speech Evaluation Dataset Construction & Operation (2024–2025)</div>
+        <div class="project-meta">
+          Duration: 2025.01–2025.12<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: PI<br>
+          Budget: ₩173,475,000
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= 2024 ======================= -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('y2024')">
+      2024 Projects <span>▼</span>
+    </div>
+    <div class="accordion-content" id="y2024">
+
+      <div class="project-item">
+        <div class="project-title">Localization Strategy for Overseas Safety Benchmarks</div>
+        <div class="project-meta">
+          Duration: 2024.12<br>
+          Funding Agency: Telecommunications Technology Association (TTA) <br>
+          Role: PI<br>
+          Budget: ₩97,020,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Art Korea Lab – Online Technical Term Dictionary</div>
+        <div class="project-meta">
+          Duration: 2024.10–2024.12<br>
+          Funding Agency: Korea Arts Management Service (KAMS)<br>
+          Role: Co-PI<br>
+          Budget: ₩22,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Korean Language Resource Ecosystem Research (2024 Humanities & Social Sciences)</div>
+        <div class="project-meta">
+          Duration: 2024.10–2027.03<br>
+          Funding Agency: Yonsei University<br>
+          Role: PI<br>
+          Budget: ₩8,887,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Korean LLM Benchmark Development (HK+) </div>
+        <div class="project-meta">
+          Duration: 2024.10–2025.09<br>
+          Funding Agency: Yonsei University<br>
+          Role: PI<br>
+          Budget: ₩28,566,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Archive of Early Korean Textbooks (1/3)</div>
+        <div class="project-meta">
+          Duration: 2024.09–2025.02<br>
+          Funding Agency: National Research Foundation of Korea (NRF) <br>
+          Role: PI<br>
+          Budget: ₩165,048,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Practical Approaches for Evaluating Generative AI Reliability</div>
+        <div class="project-meta">
+          Duration: 2024.06–2024.12<br>
+          Funding Agency: Telecommunications Technology Association (TTA)<br>
+          Role: PI<br>
+          Budget: ₩19,300,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Woongjin ThinkBig Advisory</div>
+        <div class="project-meta">
+          Duration: 2024.06–2024.12<br>
+          Funding Agency: Private Sector (Korea)<br>
+          Role: PI<br>
+          Budget: ₩9,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">2024 Korean Learner Corpus Construction</div>
+        <div class="project-meta">
+          Duration: 2024.05–2024.12<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: Co-PI<br>
+          Budget: ₩78,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">NR-DATA Project</div>
+        <div class="project-meta">
+          Duration: 2024.04–2024.12<br>
+          Funding Agency: Government Agency (Korea)<br>
+          Role: PI<br>
+          Budget: ₩330,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Woongjin ThinkBig – Korean AI Engine Development</div>
+        <div class="project-meta">
+          Duration: 2024.03–2024.11<br>
+          Funding Agency: Private Sector (Korea)<br>
+          Role: PI<br>
+          Budget: ₩50,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">AI Speech Evaluation Dataset Construction & Operation (2024–2025)</div>
+        <div class="project-meta">
+          Duration: 2024.01–2024.12<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: PI<br>
+          Budget: ₩173,475,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">AI-based PII Detection & De-identification (3rd Stage)</div>
+        <div class="project-meta">
+          Duration: 2024.01–2024.12<br>
+          Funding Agency: Korea Internet & Security Agency (KISA)<br>
+          Role: PI<br>
+          Budget: ₩80,460,000
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= 2023 ======================= -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('y2023')">
+      2023 Projects <span>▼</span>
+    </div>
+    <div class="accordion-content" id="y2023">
+
+      <div class="project-item">
+        <div class="project-title">NCSOFT – Writing Evaluation Guideline & Dataset</div>
+        <div class="project-meta">
+          Duration: 2023.12–2024.07<br>
+          Funding Agency: Private Sector (Korea)<br>
+          Role: PI<br>
+          Budget: ₩44,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">AI Response Quality Evaluation Dataset Construction</div>
+        <div class="project-meta">
+          Duration: 2023.10–2024.03<br>
+          Funding Agency: National Information Society Agency (NIA)<br>
+          Role: PI<br>
+          Budget: ₩140,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Korean LLM Benchmark Development (HK+)</div>
+        <div class="project-meta">
+          Duration: 2023.10–2024.09<br>
+          Funding Agency: Yonsei University<br>
+          Role: PI<br>
+          Budget: ₩28,910,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Art Korea Lab – Online Technical Term Dictionary</div>
+        <div class="project-meta">
+          Duration: 2023.07–2023.10<br>
+          Funding Agency: Korea Arts Management Service (KAMS)<br>
+          Role: Co-PI<br>
+          Budget: ₩22,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">NCSOFT – High-quality Dialogue Dataset Development</div>
+        <div class="project-meta">
+          Duration: 2023.07–2023.12<br>
+          Funding Agency: Private Sector (Korea)<br>
+          Role: PI<br>
+          Budget: ₩33,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">2023 Korean Learner Corpus Construction</div>
+        <div class="project-meta">
+          Duration: 2023.07–2024.05<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: PI<br>
+          Budget: ₩97,284,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Korean Language Proficiency Diagnostics Research</div>
+        <div class="project-meta">
+          Duration: 2023.05–2023.12<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: PI<br>
+          Budget: ₩47,320,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Basic Korean Vocabulary Selection & Grading</div>
+        <div class="project-meta">
+          Duration: 2023.05–2023.12<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: PI<br>
+          Budget: ₩122,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Dialogue Summarization Corpus Research</div>
+        <div class="project-meta">
+          Duration: 2023.05–2023.11<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: PI<br>
+          Budget: ₩23,400,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">AI Korean Proficiency Evaluation System (2023)</div>
+        <div class="project-meta">
+          Duration: 2023.03–2023.12<br>
+          Funding Agency: National Institute of Korean Language (NIKL)<br>
+          Role: PI<br>
+          Budget: ₩89,180,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Prompt Dataset for Large Language Models</div>
+        <div class="project-meta">
+          Duration: 2023.03–2023.05<br>
+          Funding Agency: Private Sector (Korea)<br>
+          Role: PI<br>
+          Budget: ₩27,500,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Newspaper-based Vocabulary Resource Construction</div>
+        <div class="project-meta">
+          Duration: 2023.03–2023.12<br>
+          Funding Agency: Government Agency (Korea)<br>
+          Role: PI<br>
+          Budget: ₩150,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Multidimensional Korean Corpus Construction</div>
+        <div class="project-meta">
+          Duration: 2023.03–2023.12<br>
+          Funding Agency: Government Agency (Korea)<br>
+          Role: PI<br>
+          Budget: ₩200,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Financial AI Model Advisory</div>
+        <div class="project-meta">
+          Duration: 2023.03–2024.02<br>
+          Funding Agency: Private Sector (Korea)<br>
+          Role: PI<br>
+          Budget: ₩10,000,000
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">AI-based PII Detection & De-identification (2nd Stage)</div>
+        <div class="project-meta">
+          Duration: 2023.01–2023.12<br>
+          Funding Agency: Korea Internet & Security Agency (KISA)<br>
+          Role: PI<br>
+          Budget: ₩80,400,000
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= 2022 ======================= -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('y2022')">
+      2022 Projects <span>▼</span>
+    </div>
+    <div class="accordion-content" id="y2022">
+
+      <div class="project-item">
+        <div class="project-title">Korean Language SW Usability Testing & Pronunciation Evaluation</div>
+        <div class="project-meta">
+          Duration: 2022.10–2023.05<br>
+          Funding Agency: Sejong Institute Foundation (IreTech)<br>
+          Role: PI<br>
+          Budget: ₩40,000,000
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
