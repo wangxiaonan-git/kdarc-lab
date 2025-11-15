@@ -5,142 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title | default: "Korean Data Resource Center" }}</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
-<style>
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f5f6f8;
-  }
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f6f8;
+    }
 
-  /* ====================== NAVBAR ====================== */
-  .navbar {
-    padding: 14px 0;
-    background: white !important;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
+    /* ---------------- NAVBAR ---------------- */
+    .navbar {
+      padding: 14px 0;
+      background: white !important;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
 
-  .navbar-brand {
-    font-weight: 600;
-    font-size: 20px;
-  }
+    .navbar-brand {
+      font-weight: 600;
+      font-size: 20px;
+      white-space: nowrap;
+    }
 
-  .nav-link {
-    font-weight: 500;
-    font-size: 16px;
-    padding: 10px 18px !important;
-    color: #333 !important;
-    position: relative;
-    transition: all 0.25s ease;
-  }
+    .nav-link {
+      font-weight: 500;
+      font-size: 16px;
+      padding: 10px 18px !important;
+      color: #333 !important;
+      transition: all .25s ease;
+      position: relative;
+    }
 
-  .nav-link:hover {
-    color: #0d6efd !important;
-    text-shadow: 0 0 8px rgba(13,110,253,0.35);
-    transform: translateY(-1px);
-  }
+    .nav-link:hover {
+      color: #0d6efd !important;
+      text-shadow: 0 0 8px rgba(13,110,253,0.35);
+      transform: translateY(-1px);
+    }
 
-  .nav-item.active .nav-link {
-    color: #0d6efd !important;
-    font-weight: 600;
-  }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 22%;
+      width: 56%;
+      height: 2px;
+      background: #157aff;
+      transform: scaleX(0);
+      transition: transform .25s ease;
+    }
 
-  /* underline hover */
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    bottom: 4px;
-    left: 22%;
-    width: 56%;
-    height: 2px;
-    border-radius: 2px;
-    background: #157aff;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform .25s ease;
-  }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
 
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    transform: scaleX(1);
-  }
+    /* ---------------- HERO BANNER ---------------- */
+    .hero-banner {
+      width: 100%;
+      height: 420px;
+      background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
+      background-size: cover;
+      background-position: center 20%;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
 
-  /* ====================== HERO ====================== */
-  .hero-banner {
-    width: 100%;
-    height: 420px;
-    background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
-    background-size: cover;
-    background-position: center 20%;  /* 保持原来的 framing 不动 */
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 40px;
-  }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.30);
+      z-index: 1;
+    }
 
-  .hero-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.30);
-    z-index: 1;
-  }
+    /* ========== 关键：文本视觉正中心居中 ========== */
+    .hero-center {
+      position: absolute;
+      top: 50%;                   /* 垂直居中 */
+      left: 50%;                  /* 水平居中 */
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      text-align: center;
+      color: white;
+      max-width: 900px;
+      padding: 0 20px;
+    }
 
-  /* >>>>> 关键：文字垂直居中，背景不变 */
-  .hero-center {
-    position: absolute;
-    top: 50%;        /* 往下移动页面高度的 50% */
-    left: 50%;       /* 水平居中 */
-    transform: translate(-50%, -50%); /* 完整居中 */
-    z-index: 3;
-    text-align: center;
-    color: white;
-    max-width: 900px;
-    padding: 0 20px;
+    /* 主标题：绝不换行 */
+    .hero-center h1 {
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      white-space: nowrap;   /* <=== 主标题一行 */
+    }
 
-    animation: fadeIn 1s ease-out forwards;
-    opacity: 0;
-  }
+    /* 副标题：正常换行 */
+    .hero-center p {
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 1.45;
+      white-space: normal !important;  /* <=== 恢复换行 */
+    }
 
-  .hero-center h1 {
-    font-size: 52px;
-    font-weight: 600;
-    margin-bottom: 14px;
-  }
-
-  .hero-center p {
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 1.45;
-    opacity: 0.92;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, -40%); }
-    to { opacity: 1; transform: translate(-50%, -50%); }
-  }
-
-  /* ====================== CONTENT ====================== */
-  .content-wrapper {
-    max-width: 1400px;
-    margin: 40px auto 60px;
-    background: white;
-    padding: 60px;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  }
-</style>
-
+    /* ---------------- CONTENT AREA ---------------- */
+    .content-wrapper {
+      max-width: 1400px;
+      margin: 40px auto 60px;
+      background: white;
+      padding: 60px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="/kdarc-lab/">Yonsei Korean Data Resource Center</a>
@@ -151,47 +135,48 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+
           <li class="nav-item {% if page.url == '/' %}active{% endif %}">
             <a class="nav-link" href="/kdarc-lab/">Home</a>
           </li>
+
           <li class="nav-item {% if page.url contains 'members' %}active{% endif %}">
             <a class="nav-link" href="/kdarc-lab/members.html">Members</a>
           </li>
+
           <li class="nav-item {% if page.url contains 'projects' %}active{% endif %}">
             <a class="nav-link" href="/kdarc-lab/projects.html">Projects</a>
           </li>
+
           <li class="nav-item {% if page.url contains 'publications' %}active{% endif %}">
             <a class="nav-link" href="/kdarc-lab/publications.html">Publications</a>
           </li>
+
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO ONLY ON HOME -->
   {% if page.url == "/" %}
   <div class="hero-banner">
     <div class="hero-overlay"></div>
 
     <div class="hero-center">
       <h1>Korean Data Resource Center</h1>
-      <p>Advancing intelligence data and evaluation science for reliable, multilingual, and culturally aware AI.</p>
+      <p>
+        Advancing intelligence data and evaluation science<br>
+        for reliable, multilingual, and culturally aware AI.
+      </p>
     </div>
   </div>
   {% endif %}
 
-  <!-- CONTENT -->
   <div class="content-wrapper">
     {{ content }}
   </div>
 
   {% include footer.html %}
 
-  <!-- JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
-
 
