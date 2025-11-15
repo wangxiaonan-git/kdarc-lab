@@ -4,11 +4,14 @@ title: Members
 ---
 
 <style>
+/* ===================== GLOBAL STYLE ===================== */
+
 .team-section {
   max-width: 1100px;
   margin: 40px auto;
   padding: 0 10px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  animation: fadeInUp 0.5s ease-out;
 }
 
 .team-title {
@@ -25,6 +28,8 @@ title: Members
   gap: 26px;
 }
 
+/* ===================== MEMBER CARDS ===================== */
+
 .member-card {
   background: white;
   border-radius: 18px;
@@ -32,14 +37,20 @@ title: Members
   display: flex;
   gap: 20px;
   align-items: center;
+  position: relative;
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  transition: all 0.2s ease;
+  border: 1px solid rgba(47,128,237,0.12);
+  transition: all 0.25s ease;
+  backdrop-filter: blur(2px);
 }
 
 .member-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border: 1px solid rgba(47,128,237,0.35);
 }
+
+/* ===================== PHOTO WITH HALO ===================== */
 
 .member-photo {
   width: 105px;
@@ -47,7 +58,11 @@ title: Members
   border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1/1;
+  position: relative;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 18px rgba(47,128,237,0.35);
 }
+
+/* ===================== TEXT ===================== */
 
 .member-info { flex: 1; }
 
@@ -60,25 +75,52 @@ title: Members
 .member-role {
   font-size: 15px;
   color: #666;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .member-email {
   font-size: 14px;
   color: #444;
+  margin-bottom: 12px;
+}
+
+/* ===================== INTEREST TAGS (PILL STYLE) ===================== */
+
+.interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   margin-bottom: 8px;
 }
 
-.member-interests {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.45;
-  margin-bottom: 6px;
+.interest-tag {
+  background: #f1f4f9;
+  color: #2f3b52;
+  padding: 3px 10px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(0,0,0,0.05);
 }
+
+/* ===================== WEBSITE LINK ===================== */
 
 .member-website {
   font-size: 14px;
   color: #2f80ed;
+}
+
+/* ===================== ANIMATION ===================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
 
@@ -116,8 +158,12 @@ title: Members
         <div class="member-name">Heejae Kim</div>
         <div class="member-role">PhD Candidate (16 semesters)</div>
         <div class="member-email">📮 kimmejay@yonsei.ac.kr</div>
-        <div class="member-interests">
-          Research Interests: Corpora, LLMs, Automatic Scoring, NLP Evaluation
+
+        <div class="interest-list">
+          <span class="interest-tag">Corpora</span>
+          <span class="interest-tag">LLMs</span>
+          <span class="interest-tag">Automatic Scoring</span>
+          <span class="interest-tag">NLP Evaluation</span>
         </div>
       </div>
     </div>
@@ -129,22 +175,27 @@ title: Members
         <div class="member-name">Seoyoon Park</div>
         <div class="member-role">PhD Candidate (9 semesters)</div>
         <div class="member-email">📮 syp1229@gmail.com</div>
-        <div class="member-interests">
-          Research Interests: LLM Benchmarks, Human–AI Interaction, Pluralistic AI Alignment
+
+        <div class="interest-list">
+          <span class="interest-tag">LLM Benchmarks</span>
+          <span class="interest-tag">Human–AI Interaction</span>
+          <span class="interest-tag">AI Alignment</span>
         </div>
+
         <a class="member-website" href="https://www.linkedin.com/in/seoyoon-park-b2505513a" target="_blank">LinkedIn</a>
       </div>
     </div>
 
-    <!-- Gyuri -->
+    <!-- Gyuri Choi -->
     <div class="member-card">
       <img class="member-photo" src="/kdarc-lab/assets/images/member/Choi Gyuri.png">
       <div class="member-info">
         <div class="member-name">Gyuri Choi</div>
         <div class="member-role">PhD Candidate (7 semesters)</div>
         <div class="member-email">📮 gyuri1345@yonsei.ac.kr</div>
-        <div class="member-interests">
-          Research Interests: Language Model Evaluation
+
+        <div class="interest-list">
+          <span class="interest-tag">Language Model Evaluation</span>
         </div>
       </div>
     </div>
@@ -156,9 +207,15 @@ title: Members
         <div class="member-name">Xiaonan Wang</div>
         <div class="member-role">PhD Student (3 semesters)</div>
         <div class="member-email">📮 nan@yonsei.ac.kr</div>
-        <div class="member-interests">
-          Research Interests: Multilingual NLP, Evaluation Science, Geolocation, LLM Safety, Cultural AI
+
+        <div class="interest-list">
+          <span class="interest-tag">Multilingual NLP</span>
+          <span class="interest-tag">Evaluation Science</span>
+          <span class="interest-tag">Geolocation</span>
+          <span class="interest-tag">LLM Safety</span>
+          <span class="interest-tag">Cultural AI</span>
         </div>
+
         <a class="member-website" href="https://wangxiaonan-git.github.io/" target="_blank">Website</a>
       </div>
     </div>
@@ -170,8 +227,11 @@ title: Members
         <div class="member-name">Chae An Kang</div>
         <div class="member-role">PhD Student (1 semester)</div>
         <div class="member-email">📮 chaean12@yonsei.ac.kr</div>
-        <div class="member-interests">
-          Research Interests: AI Ethics, Safety Evaluation, Language Model Assessment
+
+        <div class="interest-list">
+          <span class="interest-tag">AI Ethics</span>
+          <span class="interest-tag">Safety Evaluation</span>
+          <span class="interest-tag">LM Assessment</span>
         </div>
       </div>
     </div>
@@ -183,9 +243,13 @@ title: Members
         <div class="member-name">Subin An</div>
         <div class="member-role">Master Student (4 semesters)</div>
         <div class="member-email">📮 aaasb9946@yonsei.ac.kr</div>
-        <div class="member-interests">
-          Research Interests: Language Resource Construction, LM Evaluation, Model Robustness
+
+        <div class="interest-list">
+          <span class="interest-tag">Language Resources</span>
+          <span class="interest-tag">LM Evaluation</span>
+          <span class="interest-tag">Model Robustness</span>
         </div>
+
         <a class="member-website"
            href="https://scholar.google.co.kr/citations?user=WZHrMfsAAAAJ&hl=ko"
            target="_blank">Google Scholar</a>
@@ -194,5 +258,6 @@ title: Members
 
   </div>
 </div>
+
 
 
