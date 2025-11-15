@@ -5,14 +5,15 @@ title: Publications
 
 <style>
 /* =============================
-   PREMIUM PUBLICATIONS PAGE
+   KDARC — ULTRA MINIMAL PUBLICATIONS
+   No blue line, only soft premium design
    ============================= */
 
 .pub-year-title {
   font-size: 26px;
   font-weight: 700;
-  margin: 40px 0 20px;
-  color: #111;
+  margin: 40px 0 24px;
+  color: #222;
   font-family: "Inter", sans-serif;
 }
 
@@ -20,15 +21,17 @@ title: Publications
   background: white;
   border-radius: 14px;
   padding: 26px 30px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: all 0.25s ease;
-  border-left: 5px solid #147DFA; /* Yonsei Blue */
   margin-bottom: 26px;
+
+  /* 移除任何左线 */
+  border-left: none !important;
 }
 
 .pub-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
 }
 
 .pub-title {
@@ -36,6 +39,7 @@ title: Publications
   font-weight: 600;
   margin-bottom: 8px;
   line-height: 1.45;
+  color: #1b1b1b;
 }
 
 .pub-authors {
@@ -48,36 +52,41 @@ title: Publications
   font-size: 15px;
   color: #555;
   font-style: italic;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.pub-badges a {
+/* ============ TAGS ============ */
+.pub-tags {
+  margin-top: 8px;
+}
+
+.pub-tag {
   display: inline-block;
-  padding: 5px 12px;
+  padding: 6px 14px;
   font-size: 13px;
   font-weight: 500;
-  color: white;
-  background: #147DFA;
-  border-radius: 20px;
+  background: #6D6AFE1A; /* 柔和灰紫轻底色 */
+  color: #4a47c7; /* 高端灰紫文字 */
+  border-radius: 14px;
   margin-right: 8px;
-  text-decoration: none;
-  transition: background 0.25s ease;
+  margin-bottom: 6px;
+  transition: all 0.25s ease;
 }
 
-.pub-badges a:hover {
-  background: #0b60c9;
+.pub-tag:hover {
+  background: #6D6AFE33;
 }
 </style>
 
-<!-- ============================= -->
-<!--         PUBLICATIONS          -->
-<!-- ============================= -->
+<h1>Publications</h1>
 
-<h1 class="mb-4">Publications</h1>
-
+<!-- =======================
+         2025
+======================= -->
 <div class="pub-year-title">2025</div>
 
 <div class="pub-card">
+
   <div class="pub-title">
     AI Knows Where You Are: Exposure, Bias, and Inference in Multimodal Geolocation with KoreaGEO
   </div>
@@ -87,13 +96,17 @@ title: Publications
   </div>
 
   <div class="pub-venue">
-    In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP),
-    pages 9897–9914, Suzhou, China. Association for Computational Linguistics.
+    Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP),
+    Suzhou, China.
   </div>
 
-  <div class="pub-badges">
-    <a href="https://aclanthology.org/2025.emnlp-main.501/" target="_blank">ACL Anthology</a>
-    <a href="#" target="_blank">PDF</a>
-    <a href="#" target="_blank">BibTeX</a>
+  <!-- ====== Keywords (替代链接) ====== -->
+  <div class="pub-tags">
+    <span class="pub-tag">Geolocation</span>
+    <span class="pub-tag">Multimodal Models</span>
+    <span class="pub-tag">Privacy & Exposure</span>
+    <span class="pub-tag">Benchmark</span>
+    <span class="pub-tag">Bias Analysis</span>
   </div>
+
 </div>
