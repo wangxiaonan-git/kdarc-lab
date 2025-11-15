@@ -1,44 +1,31 @@
----
-layout: default
-title: Publications
----
-
 <style>
 
-/* ============ Remove the main H1 ============ */
+/* Remove the main H1 */
 h1 {
   display: none !important;
 }
 
-/* ============ General Layout ============ */
-
+/* Layout */
 .pub-year-title {
   font-size: 23px;
   font-weight: 700;
   margin: 32px 0 20px;
-  font-family: "Inter", sans-serif;
   color: #222;
+  font-family: Inter, sans-serif;
 }
 
 .pub-card {
   background: white;
   border-radius: 14px;
   padding: 26px 30px;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: all 0.28s ease;
-}
-
-.pub-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.10);
 }
 
 .pub-title {
   font-size: 19px;
   font-weight: 600;
   margin-bottom: 8px;
-  line-height: 1.5;
   color: #1a1a1a;
 }
 
@@ -56,31 +43,27 @@ h1 {
 }
 
 
-/* ============ NEXT-GEN TAG DESIGN ============ */
-/* 极轻的圆角 pill，低饱和度、柔和阴影、精致字体 */
-
-.pub-tags { margin-top: 10px; }
+/* ===========================================
+   NEW ultra-flat, tiny, low-saturation tags
+=========================================== */
+.pub-tags { margin-top: 6px; }
 
 .pub-tag {
   display: inline-block;
-  padding: 4px 12px;
-  font-size: 12.5px;
+  padding: 2px 10px;            /* ← 再次大幅缩小 */
+  font-size: 11.5px;            /* ← 小尺寸 */
   font-weight: 500;
-  border-radius: 10px;
+  border-radius: 6px;           /* ← 更扁平小圆角 */
   margin-right: 6px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   color: #222;
-  background: #f7f7f7;
-  border: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  background: #f2f2f2;          /* base gray */
 }
 
-/* 高级浅色研究机构风格（模仿 FAIR、DeepMind、Stanford HAI） */
-.tag-green { background: #E5F3EA; color: #1F6D3A; }         /* Multimodal */
-.tag-purple { background: #EFE8FF; color: #5A3EC8; }       /* Privacy */
-.tag-orange { background: #FFF0E1; color: #B95E1A; }       /* Bias */
-.tag-blue { background: #E7EEFF; color: #2F52D9; }         /* Benchmark */
-.tag-yellow { background: #FFF6D9; color: #8C6A00; }       /* Language */
+/* ultra-low-saturation palette */
+.tag-green  { background: #e9f2ec; color: #2d5a3a; }
+.tag-purple { background: #f0edf8; color: #4d3b87; }
+.tag-orange { background: #f7efe7; color: #8a4d20; }
 
 </style>
 
@@ -105,13 +88,9 @@ h1 {
   </div>
 
   <div class="pub-tags">
-
     <span class="pub-tag tag-green">Multimodal Geolocation</span>
     <span class="pub-tag tag-purple">Privacy and Exposure Risk</span>
     <span class="pub-tag tag-orange">Bias Analysis</span>
-    <span class="pub-tag tag-blue">Benchmark Construction</span>
-    <span class="pub-tag tag-yellow">Language Understanding</span>
-
   </div>
 
 </div>
