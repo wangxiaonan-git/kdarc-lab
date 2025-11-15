@@ -8,10 +8,17 @@
 
 <style>
 
-/* ======================================================
-   GLOBAL BLUE-LINE KILLER（全站蓝线去除）
-   — 仅靠这段，不需动 global.css
-======================================================= */
+.team-title {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+.team-title::before,
+.team-title::after {
+  display: none !important;
+  border: none !important;
+  background: none !important;
+}
 
 /* 删除所有标题下划线（不管来自哪个页面） */
 h1::after, h2::after, h3::after,
