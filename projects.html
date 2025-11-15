@@ -4,73 +4,42 @@ title: Projects
 ---
 
 <style>
-/* =================== Layout =================== */
-.projects-wrapper {
-  max-width: 1150px;
+/* ========================= GLOBAL LAYOUT ========================= */
+.projects-container {
+  max-width: 1050px;
   margin: 40px auto;
-  display: flex;
-  gap: 35px;
-  padding: 0 15px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 12px;
 }
 
-/* =================== Left Year Nav =================== */
-.year-nav {
-  width: 160px;
-  position: sticky;
-  top: 110px;
-  height: fit-content;
-}
-
-.year-nav a {
-  display: block;
-  padding: 10px 14px;
-  margin-bottom: 6px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  color: #2f80ed;
-  transition: all 0.2s ease;
-}
-
-.year-nav a:hover {
-  background: #e8f1ff;
-}
-
-.year-nav a.active {
-  background: #2f80ed;
-  color: white;
-}
-
-/* =================== Accordion =================== */
-.project-section { flex: 1; }
-
+/* ========================= YEAR ACCORDION ========================= */
 .accordion {
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
 .accordion-header {
   background: #f7f9fc;
   padding: 18px 24px;
-  font-size: 21px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 650;
   cursor: pointer;
+  border-bottom: 1px solid #e5e8ec;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e5e8ec;
 }
 
-.accordion-header:hover { background: #eef3fa; }
+.accordion-header:hover {
+  background: #eef3fa;
+}
 
 .accordion-content {
   display: none;
   background: white;
-  padding: 25px 28px;
+  padding: 24px 26px;
   animation: fadeIn 0.3s ease;
 }
 
@@ -79,201 +48,172 @@ title: Projects
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* =================== Project Cards =================== */
+/* ========================= PROJECT CARDS ========================= */
 .project-item {
-  padding: 20px 0;
+  margin-bottom: 20px;
+  padding: 18px 0;
   border-bottom: 1px solid #eee;
-  transition: all 0.25s ease;
-  border-radius: 10px;
 }
 
-.project-item:hover {
-  background: #fafcff;
-  box-shadow: 0 0 12px rgba(79, 157, 255, 0.25);
-  transform: translateY(-2px);
+.project-item:last-child {
+  border-bottom: none;
 }
 
 .project-title {
   font-size: 18px;
   font-weight: 650;
-  margin-bottom: 8px;
-  color: #111;
+  margin-bottom: 6px;
 }
 
+/* ========================= META ========================= */
 .project-meta {
   font-size: 14px;
   color: #444;
   line-height: 1.55;
 }
 
-/* Funding Role Tag */
-.role-tag {
+/* ========================= CATEGORY TAGS ========================= */
+.tag {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 3px 9px;
   font-size: 12px;
-  font-weight: 700;
-  border-radius: 6px;
-  margin-left: 6px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-right: 8px;
 }
 
-.role-lead { background: #2f80ed; color: white; }
-.role-co { background: #ff6fb1; color: white; }
+.tag-gov { background: #eaf4ff; color: #0b63c5; }
+.tag-academic { background: #f2e8ff; color: #7b2cc7; }
+.tag-private { background: #fff3d9; color: #ca7a00; }
 
 </style>
 
 <script>
 function toggleAccordion(id) {
-  var el = document.getElementById(id);
-  el.style.display = (el.style.display === "block") ? "none" : "block";
+  var content = document.getElementById(id);
+  content.style.display = (content.style.display === "block") ? "none" : "block";
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-  const metas = document.querySelectorAll(".project-budget");
-  metas.forEach(el => {
-    let num = parseInt(el.dataset.amount);
-    if (!isNaN(num)) {
-      if (num >= 1000000) {
-        el.innerText = "₩" + (num/1000000).toFixed(1).replace(/\.0$/, "") + "M";
-      } else {
-        el.innerText = "₩" + num.toLocaleString();
-      }
-    }
-  });
-});
 </script>
 
-<div class="projects-wrapper">
+<div class="projects-container">
 
-  <!-- Left Year Navigation -->
-  <div class="year-nav">
-    <a href="#y2025">2025</a>
-    <a href="#y2024">2024</a>
-    <a href="#y2023"">2023</a>
-    <a href="#y2022">2022</a>
-  </div>
+<!-- ========================================================= -->
+<!-- ====================== 2025 PROJECTS ===================== -->
+<!-- ========================================================= -->
 
-  <!-- ======================= MAIN CONTENT ======================= -->
-  <div class="project-section">
-
-
-
-<!-- ============================================================ -->
-<!-- =========================== 2025 ============================ -->
-<!-- ============================================================ -->
-
-<div class="accordion" id="y2025">
-  <div class="accordion-header" onclick="toggleAccordion('c2025')">
+<div class="accordion">
+  <div class="accordion-header" onclick="toggleAccordion('y2025')">
     2025 Projects <span>▼</span>
   </div>
+  <div class="accordion-content" id="y2025">
 
-  <div class="accordion-content" id="c2025">
-
-    <!-- 2025 item 1 -->
+    <!-- 1 -->
     <div class="project-item">
       <div class="project-title">
         Scalable Multimodal Foundation Model Data for Industrial AI Transformation (1/3)
-        <span class="role-tag role-lead">Lead Institution</span>
       </div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2025.08–2025.12<br>
-        Funding Agency: National Information Society Agency (NIA)<br>
-        Budget: <span class="project-budget" data-amount="200000000"></span>
+        💰 Budget: ₩200M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Funding Agency: National Information Society Agency (NIA) <br>
+        Duration: 2025.08–2025.12
       </div>
     </div>
 
+    <!-- 2 -->
     <div class="project-item">
-      <div class="project-title">
-        2025 Korean Learner Corpus Construction
-        <span class="role-tag role-co">Co-performing Institution</span>
-      </div>
+      <div class="project-title">2025 Korean Learner Corpus Construction</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2025.06–2025.12<br>
-        Funding Agency: National Institute of Korean Language (NIKL)<br>
-        Budget: <span class="project-budget" data-amount="186240000"></span>
+        💰 Budget: ₩186.24M <br>
+        🔬 Funding Role: Co-performing Institution <br>
+        🏛️ Agency: National Institute of Korean Language (NIKL) <br>
+        Duration: 2025.06–2025.12
       </div>
     </div>
 
+    <!-- 3 -->
     <div class="project-item">
-      <div class="project-title">
-        Korean Instruction-based Feedback Corpus Analysis (2025)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Korean Instruction-based Feedback Corpus Analysis (2025)</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2025.05–2025.12<br>
-        Funding Agency: NIKL<br>
-        Budget: <span class="project-budget" data-amount="100564200"></span>
+        💰 Budget: ₩100.56M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Institute of Korean Language (NIKL) <br>
+        Duration: 2025.05–2025.12
       </div>
     </div>
 
+    <!-- 4 -->
     <div class="project-item">
-      <div class="project-title">
-        NR-DATA-2 Project
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">NR-DATA-2 Project</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2025.05–2025.12<br>
-        Funding Agency: Government Agency (Korea)<br>
-        Budget: <span class="project-budget" data-amount="330000000"></span>
+        💰 Budget: ₩330M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Government Agency (Korea) <br>
+        Duration: 2025.05–2025.12
       </div>
     </div>
 
+    <!-- 5 -->
     <div class="project-item">
-      <div class="project-title">
-        Multimodal AI-based PII Detection & De-identification Technology Development (1/3)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Multimodal AI-based PII Detection & De-identification (1/3)</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2025.04–2025.12<br>
-        Funding Agency: Korea Internet & Security Agency (KISA)<br>
-        Budget: <span class="project-budget" data-amount="72000000"></span>
+        💰 Budget: ₩72M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Korea Internet & Security Agency (KISA) <br>
+        Duration: 2025.04–2025.12
       </div>
     </div>
 
+    <!-- 6 -->
     <div class="project-item">
-      <div class="project-title">
-        PII De-identification in Crime-related Information (1/4)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">PII De-identification in Crime-related Data (1/4)</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2025.04–2025.12<br>
-        Funding Agency: Institute for Information & Communications Technology Planning & Evaluation (IITP)<br>
-        Budget: <span class="project-budget" data-amount="160000000"></span>
+        💰 Budget: ₩160M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Institute for Information & Communications Technology Planning & Evaluation (IITP) <br>
+        Duration: 2025.04–2025.12
       </div>
     </div>
 
+    <!-- 7 -->
     <div class="project-item">
-      <div class="project-title">
-        Archive & Historical Study of Early 20th-century Korean Textbooks (2/3)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Archive & Study of Early 20th-century Korean Textbooks (2/3)</div>
+      <div class="tag tag-academic">🎓 Academic</div>
       <div class="project-meta">
-        Duration: 2025.03–2026.02<br>
-        Funding Agency: National Research Foundation of Korea (NRF)<br>
-        Budget: <span class="project-budget" data-amount="330096000"></span>
+        💰 Budget: ₩330.096M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Research Foundation of Korea (NRF) <br>
+        Duration: 2025.03–2026.02
       </div>
     </div>
 
+    <!-- 8 -->
     <div class="project-item">
-      <div class="project-title">
-        Woongjin ThinkBig Advisory (Round 2)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Woongjin ThinkBig Advisory (Round 2)</div>
+      <div class="tag tag-private">🏢 Private</div>
       <div class="project-meta">
-        Duration: 2025.02–2025.12<br>
-        Funding Agency: Private Sector<br>
-        Budget: <span class="project-budget" data-amount="12000000"></span>
+        💰 Budget: ₩12M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Woongjin ThinkBig <br>
+        Duration: 2025.02–2025.12
       </div>
     </div>
 
+    <!-- 9 -->
     <div class="project-item">
-      <div class="project-title">
-        AI Speech Evaluation Dataset (2024–2025)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">AI Speech Evaluation Dataset Construction & Operation (2024–2025)</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2025.01–2025.12<br>
-        Funding Agency: NIKL<br>
-        Budget: <span class="project-budget" data-amount="173475000"></span>
+        💰 Budget: ₩173.475M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Institute of Korean Language (NIKL) <br>
+        Duration: 2025.01–2025.12
       </div>
     </div>
 
@@ -282,158 +222,157 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-<!-- ============================================================ -->
-<!-- =========================== 2024 ============================ -->
-<!-- ============================================================ -->
+<!-- ========================================================= -->
+<!-- ====================== 2024 PROJECTS ===================== -->
+<!-- ========================================================= -->
 
-<div class="accordion" id="y2024">
-  <div class="accordion-header" onclick="toggleAccordion('c2024')">
+<div class="accordion">
+  <div class="accordion-header" onclick="toggleAccordion('y2024')">
     2024 Projects <span>▼</span>
   </div>
+  <div class="accordion-content" id="y2024">
 
-  <div class="accordion-content" id="c2024">
-
+    <!-- 1 -->
     <div class="project-item">
-      <div class="project-title">
-        Localization Strategy for Overseas Safety Benchmarks
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Localization Strategy for Overseas Safety Benchmarks</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2024.12<br>
-        Funding Agency: Telecommunications Technology Association (TTA)<br>
-        Budget: <span class="project-budget" data-amount="97020000"></span>
+        💰 Budget: ₩97.02M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Telecommunications Technology Association (TTA) <br>
+        Duration: 2024.12
       </div>
     </div>
 
+    <!-- 2 -->
     <div class="project-item">
-      <div class="project-title">
-        Art Korea Lab – Online Technical Term Dictionary
-        <span class="role-tag role-co">Co-performing Institution</span>
-      </div>
+      <div class="project-title">Art Korea Lab – Online Technical Term Dictionary</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2024.10–2024.12<br>
-        Funding Agency: Korea Arts Management Service (KAMS)<br>
-        Budget: <span class="project-budget" data-amount="22000000"></span>
+        💰 Budget: ₩22M <br>
+        🔬 Funding Role: Co-performing Institution <br>
+        🏛️ Agency: Korea Arts Management Service (KAMS) <br>
+        Duration: 2024.10–2024.12
       </div>
     </div>
 
+    <!-- 3 -->
     <div class="project-item">
-      <div class="project-title">
-        Korean Language Resource Ecosystem Research (Humanities & Social Sciences)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Korean Language Resource Ecosystem Research</div>
+      <div class="tag tag-academic">🎓 Academic</div>
       <div class="project-meta">
-        Duration: 2024.10–2027.03<br>
-        Funding Agency: Yonsei University<br>
-        Budget: <span class="project-budget" data-amount="8887000"></span>
+        💰 Budget: ₩8.887M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Yonsei University <br>
+        Duration: 2024.10–2027.03
       </div>
     </div>
 
+    <!-- 4 -->
     <div class="project-item">
-      <div class="project-title">
-        Korean LLM Benchmark Development (HK+)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Korean LLM Benchmark Development (HK+)</div>
+      <div class="tag tag-academic">🎓 Academic</div>
       <div class="project-meta">
-        Duration: 2024.10–2025.09<br>
-        Funding Agency: Yonsei University<br>
-        Budget: <span class="project-budget" data-amount="28566000"></span>
+        💰 Budget: ₩28.566M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Yonsei University <br>
+        Duration: 2024.10–2025.09
       </div>
     </div>
 
+    <!-- 5 -->
     <div class="project-item">
-      <div class="project-title">
-        Archive of Early Korean Textbooks (1/3)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Archive of Early Korean Textbooks (1/3)</div>
+      <div class="tag tag-academic">🎓 Academic</div>
       <div class="project-meta">
-        Duration: 2024.09–2025.02<br>
-        Funding Agency: National Research Foundation of Korea (NRF)<br>
-        Budget: <span class="project-budget" data-amount="165048000"></span>
+        💰 Budget: ₩165.048M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Research Foundation of Korea (NRF) <br>
+        Duration: 2024.09–2025.02
       </div>
     </div>
 
+    <!-- 6 -->
     <div class="project-item">
-      <div class="project-title">
-        Practical Approaches for Evaluating Generative AI Reliability
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Practical Approaches for Evaluating Generative AI Reliability</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2024.06–2024.12<br>
-        Funding Agency: TTA<br>
-        Budget: <span class="project-budget" data-amount="19300000"></span>
+        💰 Budget: ₩19.3M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Telecommunications Technology Association (TTA) <br>
+        Duration: 2024.06–2024.12
       </div>
     </div>
 
+    <!-- 7 -->
     <div class="project-item">
-      <div class="project-title">
-        Woongjin ThinkBig Advisory
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Woongjin ThinkBig Advisory</div>
+      <div class="tag tag-private">🏢 Private</div>
       <div class="project-meta">
-        Duration: 2024.06–2024.12<br>
-        Funding Agency: Private Sector<br>
-        Budget: <span class="project-budget" data-amount="9000000"></span>
+        💰 Budget: ₩9M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Woongjin ThinkBig <br>
+        Duration: 2024.06–2024.12
       </div>
     </div>
 
+    <!-- 8 -->
     <div class="project-item">
-      <div class="project-title">
-        2024 Korean Learner Corpus Construction
-        <span class="role-tag role-co">Co-performing Institution</span>
-      </div>
+      <div class="project-title">2024 Korean Learner Corpus Construction</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2024.05–2024.12<br>
-        Funding Agency: NIKL<br>
-        Budget: <span class="project-budget" data-amount="78000000"></span>
+        💰 Budget: ₩78M <br>
+        🔬 Funding Role: Co-performing Institution <br>
+        🏛️ Agency: National Institute of Korean Language (NIKL) <br>
+        Duration: 2024.05–2024.12
       </div>
     </div>
 
+    <!-- 9 -->
     <div class="project-item">
-      <div class="project-title">
-        NR-DATA Project
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">NR-DATA Project</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2024.04–2024.12<br>
-        Funding Agency: Government Agency (Korea)<br>
-        Budget: <span class="project-budget" data-amount="330000000"></span>
+        💰 Budget: ₩330M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Government Agency (Korea) <br>
+        Duration: 2024.04–2024.12
       </div>
     </div>
 
+    <!-- 10 -->
     <div class="project-item">
-      <div class="project-title">
-        Woongjin ThinkBig – Korean AI Engine Development
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Woongjin ThinkBig – Korean AI Engine Development</div>
+      <div class="tag tag-private">🏢 Private</div>
       <div class="project-meta">
-        Duration: 2024.03–2024.11<br>
-        Funding Agency: Private Sector<br>
-        Budget: <span class="project-budget" data-amount="50000000"></span>
+        💰 Budget: ₩50M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Woongjin ThinkBig <br>
+        Duration: 2024.03–2024.11
       </div>
     </div>
 
+    <!-- 11 -->
     <div class="project-item">
-      <div class="project-title">
-        AI Speech Evaluation Dataset (2024–2025)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">AI Speech Evaluation Dataset Construction & Operation</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2024.01–2024.12<br>
-        Funding Agency: NIKL<br>
-        Budget: <span class="project-budget" data-amount="173475000"></span>
+        💰 Budget: ₩173.475M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Institute of Korean Language (NIKL) <br>
+        Duration: 2024.01–2024.12
       </div>
     </div>
 
+    <!-- 12 -->
     <div class="project-item">
-      <div class="project-title">
-        AI-based PII Detection & De-identification (3rd Stage)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">AI-based PII Detection & De-identification (3rd Stage)</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2024.01–2024.12<br>
-        Funding Agency: KISA<br>
-        Budget: <span class="project-budget" data-amount="80460000"></span>
+        💰 Budget: ₩80.46M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Korea Internet & Security Agency (KISA) <br>
+        Duration: 2024.01–2024.12
       </div>
     </div>
 
@@ -442,194 +381,194 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-<!-- ============================================================ -->
-<!-- =========================== 2023 ============================ -->
-<!-- ============================================================ -->
 
-<div class="accordion" id="y2023">
-  <div class="accordion-header" onclick="toggleAccordion('c2023')">
+<!-- ========================================================= -->
+<!-- ====================== 2023 PROJECTS ===================== -->
+<!-- ========================================================= -->
+
+<div class="accordion">
+  <div class="accordion-header" onclick="toggleAccordion('y2023')">
     2023 Projects <span>▼</span>
   </div>
+  <div class="accordion-content" id="y2023">
 
-  <div class="accordion-content" id="c2023">
-
+    <!-- 1 -->
     <div class="project-item">
-      <div class="project-title">
-        NCSOFT – Writing Evaluation Guideline & Dataset
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">NCSOFT – Writing Evaluation Guideline & Dataset</div>
+      <div class="tag tag-private">🏢 Private</div>
       <div class="project-meta">
-        Duration: 2023.12–2024.07<br>
-        Funding Agency: NCSOFT<br>
-        Budget: <span class="project-budget" data-amount="44000000"></span>
+        💰 Budget: ₩44M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: NCSOFT <br>
+        Duration: 2023.12–2024.07
       </div>
     </div>
 
+    <!-- 2 -->
     <div class="project-item">
-      <div class="project-title">
-        AI Response Quality Evaluation Dataset (NIA)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">AI Response Quality Evaluation Dataset Construction</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.10–2024.03<br>
-        Funding Agency: National Information Society Agency (NIA)<br>
-        Budget: <span class="project-budget" data-amount="140000000"></span>
+        💰 Budget: ₩140M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Information Society Agency (NIA) <br>
+        Duration: 2023.10–2024.03
       </div>
     </div>
 
+    <!-- 3 -->
     <div class="project-item">
-      <div class="project-title">
-        Korean LLM Benchmark Development (HK+)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Korean LLM Benchmark Development (HK+)</div>
+      <div class="tag tag-academic">🎓 Academic</div>
       <div class="project-meta">
-        Duration: 2023.10–2024.09<br>
-        Funding Agency: Yonsei University<br>
-        Budget: <span class="project-budget" data-amount="28910000"></span>
+        💰 Budget: ₩28.91M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Yonsei University <br>
+        Duration: 2023.10–2024.09
       </div>
     </div>
 
+    <!-- 4 -->
     <div class="project-item">
-      <div class="project-title">
-        Art Korea Lab Online Technical Dictionary
-        <span class="role-tag role-co">Co-performing Institution</span>
-      </div>
+      <div class="project-title">Art Korea Lab – Online Technical Term Dictionary</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.07–2023.10<br>
-        Funding Agency: KAMS<br>
-        Budget: <span class="project-budget" data-amount="22000000"></span>
+        💰 Budget: ₩22M <br>
+        🔬 Funding Role: Co-performing Institution <br>
+        🏛️ Agency: Korea Arts Management Service (KAMS) <br>
+        Duration: 2023.07–2023.10
       </div>
     </div>
 
+    <!-- 5 -->
     <div class="project-item">
-      <div class="project-title">
-        NCSOFT – High-quality Dialogue Dataset
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">NCSOFT – High-quality Dialogue Dataset Development</div>
+      <div class="tag tag-private">🏢 Private</div>
       <div class="project-meta">
-        Duration: 2023.07–2023.12<br>
-        Funding Agency: NCSOFT<br>
-        Budget: <span class="project-budget" data-amount="33000000"></span>
+        💰 Budget: ₩33M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: NCSOFT <br>
+        Duration: 2023.07–2023.12
       </div>
     </div>
 
+    <!-- 6 -->
     <div class="project-item">
-      <div class="project-title">
-        2023 Korean Learner Corpus Construction
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">2023 Korean Learner Corpus Construction</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.07–2024.05<br>
-        Funding Agency: National Institute of Korean Language (NIKL)<br>
-        Budget: <span class="project-budget" data-amount="97284000"></span>
+        💰 Budget: ₩97.284M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Institute of Korean Language (NIKL) <br>
+        Duration: 2023.07–2024.05
       </div>
     </div>
 
+    <!-- 7 -->
     <div class="project-item">
-      <div class="project-title">
-        Korean Language Proficiency Diagnostics Research
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Korean Language Proficiency Diagnostics Research</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.05–2023.12<br>
-        Funding Agency: NIKL<br>
-        Budget: <span class="project-budget" data-amount="47320000"></span>
+        💰 Budget: ₩47.32M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Institute of Korean Language (NIKL) <br>
+        Duration: 2023.05–2023.12
       </div>
     </div>
 
+    <!-- 8 -->
     <div class="project-item">
-      <div class="project-title">
-        Basic Korean Vocabulary Selection & Grading
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Basic Korean Vocabulary Selection & Grading</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.05–2023.12<br>
-        Funding Agency: NIKL<br>
-        Budget: <span class="project-budget" data-amount="122000000"></span>
+        💰 Budget: ₩122M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Institute of Korean Language (NIKL) <br>
+        Duration: 2023.05–2023.12
       </div>
     </div>
 
+    <!-- 9 -->
     <div class="project-item">
-      <div class="project-title">
-        Dialogue Summarization Corpus Research
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Dialogue Summarization Corpus Research</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.05–2023.11<br>
-        Funding Agency: NIKL<br>
-        Budget: <span class="project-budget" data-amount="23400000"></span>
+        💰 Budget: ₩23.4M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: NIKL <br>
+        Duration: 2023.05–2023.11
       </div>
     </div>
 
+    <!-- 10 -->
     <div class="project-item">
-      <div class="project-title">
-        AI-based Korean Proficiency Evaluation System
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">AI Korean Proficiency Evaluation System (2023)</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.03–2023.12<br>
-        Funding Agency: NIKL<br>
-        Budget: <span class="project-budget" data-amount="89180000"></span>
+        💰 Budget: ₩89.18M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: National Institute of Korean Language (NIKL) <br>
+        Duration: 2023.03–2023.12
       </div>
     </div>
 
+    <!-- 11 -->
     <div class="project-item">
-      <div class="project-title">
-        Prompt Dataset for Large Language Models
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Prompt Dataset for LLMs</div>
+      <div class="tag tag-private">🏢 Private</div>
       <div class="project-meta">
-        Duration: 2023.03–2023.05<br>
-        Funding Agency: Private Sector<br>
-        Budget: <span class="project-budget" data-amount="27500000"></span>
+        💰 Budget: ₩27.5M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Private Sector (Korea) <br>
+        Duration: 2023.03–2023.05
       </div>
     </div>
 
+    <!-- 12 -->
     <div class="project-item">
-      <div class="project-title">
-        Newspaper-based Vocabulary Resource Construction
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Newspaper-based Vocabulary Resource Construction</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.03–2023.12<br>
-        Funding Agency: Government Agency<br>
-        Budget: <span class="project-budget" data-amount="150000000"></span>
+        💰 Budget: ₩150M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Government Agency (Korea) <br>
+        Duration: 2023.03–2023.12
       </div>
     </div>
 
+    <!-- 13 -->
     <div class="project-item">
-      <div class="project-title">
-        Multidimensional Korean Corpus Construction
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Multidimensional Korean Corpus Construction</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.03–2023.12<br>
-        Funding Agency: Government Agency<br>
-        Budget: <span class="project-budget" data-amount="200000000"></span>
+        💰 Budget: ₩200M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Government Agency (Korea) <br>
+        Duration: 2023.03–2023.12
       </div>
     </div>
 
+    <!-- 14 -->
     <div class="project-item">
-      <div class="project-title">
-        Financial AI Model Advisory
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Financial AI Model Advisory</div>
+      <div class="tag tag-private">🏢 Private</div>
       <div class="project-meta">
-        Duration: 2023.03–2024.02<br>
-        Funding Agency: Private Sector<br>
-        Budget: <span class="project-budget" data-amount="10000000"></span>
+        💰 Budget: ₩10M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Private Sector (Korea) <br>
+        Duration: 2023.03–2024.02
       </div>
     </div>
 
+    <!-- 15 -->
     <div class="project-item">
-      <div class="project-title">
-        AI-based PII Detection & De-identification (2nd Stage)
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">AI-based PII Detection & De-identification (2nd Stage)</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2023.01–2023.12<br>
-        Funding Agency: Korea Internet & Security Agency (KISA)<br>
-        Budget: <span class="project-budget" data-amount="80400000"></span>
+        💰 Budget: ₩80.4M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: KISA <br>
+        Duration: 2023.01–2023.12
       </div>
     </div>
 
@@ -638,26 +577,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-<!-- ============================================================ -->
-<!-- =========================== 2022 ============================ -->
-<!-- ============================================================ -->
 
-<div class="accordion" id="y2022">
-  <div class="accordion-header" onclick="toggleAccordion('c2022')">
+<!-- ========================================================= -->
+<!-- ====================== 2022 PROJECTS ===================== -->
+<!-- ========================================================= -->
+
+<div class="accordion">
+  <div class="accordion-header" onclick="toggleAccordion('y2022')">
     2022 Projects <span>▼</span>
   </div>
-
-  <div class="accordion-content" id="c2022">
+  <div class="accordion-content" id="y2022">
 
     <div class="project-item">
-      <div class="project-title">
-        Korean Language SW Usability Testing & Pronunciation Evaluation
-        <span class="role-tag role-lead">Lead Institution</span>
-      </div>
+      <div class="project-title">Korean Language SW Usability Testing & Pronunciation Evaluation</div>
+      <div class="tag tag-gov">🏛️ Government</div>
       <div class="project-meta">
-        Duration: 2022.10–2023.05<br>
-        Funding Agency: Sejong Institute Foundation (IreTech)<br>
-        Budget: <span class="project-budget" data-amount="40000000"></span>
+        💰 Budget: ₩40M <br>
+        🔬 Funding Role: Lead Institution <br>
+        🏛️ Agency: Sejong Institute Foundation (IreTech) <br>
+        Duration: 2022.10–2023.05
       </div>
     </div>
 
@@ -665,5 +603,4 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 
-</div>
 </div>
