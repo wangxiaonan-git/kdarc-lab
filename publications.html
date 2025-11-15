@@ -1,15 +1,21 @@
 ---
 layout: default
+title: Publications
 ---
 
 <style>
 
-/* ============ KDARC Premium Minimal ============ */
+/* ============ Remove the main H1 ============ */
+h1 {
+  display: none !important;
+}
+
+/* ============ General Layout ============ */
 
 .pub-year-title {
-  font-size: 26px;
+  font-size: 23px;
   font-weight: 700;
-  margin: 40px 0 24px;
+  margin: 32px 0 20px;
   font-family: "Inter", sans-serif;
   color: #222;
 }
@@ -17,21 +23,21 @@ layout: default
 .pub-card {
   background: white;
   border-radius: 14px;
-  padding: 28px 32px;
+  padding: 26px 30px;
   margin-bottom: 30px;
-  box-shadow: 0 5px 14px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: all 0.28s ease;
 }
 
 .pub-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.10);
 }
 
 .pub-title {
   font-size: 19px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   line-height: 1.5;
   color: #1a1a1a;
 }
@@ -39,42 +45,45 @@ layout: default
 .pub-authors {
   font-size: 15px;
   color: #444;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .pub-venue {
   font-size: 15px;
   color: #555;
   font-style: italic;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-/* ============ MULTI-COLOR TAGS ============ */
+
+/* ============ NEXT-GEN TAG DESIGN ============ */
+/* 极轻的圆角 pill，低饱和度、柔和阴影、精致字体 */
 
 .pub-tags { margin-top: 10px; }
 
 .pub-tag {
   display: inline-block;
-  padding: 6px 14px;
-  font-size: 13px;
+  padding: 4px 12px;
+  font-size: 12.5px;
   font-weight: 500;
-  border-radius: 8px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  color: white;
+  border-radius: 10px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  color: #222;
+  background: #f7f7f7;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
 }
 
-/* 多色标签体系 — 专业实验室配色 */
-.tag-yellow { background: #F4C542; }     /* NLP / Language */
-.tag-bluegray { background: #6E7D8C; }   /* Education / Evaluation */
-.tag-green { background: #4CAF50; }      /* Multimodal */
-.tag-purple { background: #8A6FF0; }     /* Privacy / Safety */
-.tag-blue { background: #3A7AFE; }       /* Benchmark / Dataset */
-.tag-orange { background: #FF8A3D; }     /* Bias / Fairness */
+/* 高级浅色研究机构风格（模仿 FAIR、DeepMind、Stanford HAI） */
+.tag-green { background: #E5F3EA; color: #1F6D3A; }         /* Multimodal */
+.tag-purple { background: #EFE8FF; color: #5A3EC8; }       /* Privacy */
+.tag-orange { background: #FFF0E1; color: #B95E1A; }       /* Bias */
+.tag-blue { background: #E7EEFF; color: #2F52D9; }         /* Benchmark */
+.tag-yellow { background: #FFF6D9; color: #8C6A00; }       /* Language */
 
 </style>
 
-<h1>Publications</h1>
 
 <!-- =======================
          2025
@@ -92,11 +101,9 @@ layout: default
   </div>
 
   <div class="pub-venue">
-    Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP),
-    Suzhou, China.
+    Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP), Suzhou, China.
   </div>
 
-  <!-- 多色 Keyword Tags（全称） -->
   <div class="pub-tags">
 
     <span class="pub-tag tag-green">Multimodal Geolocation</span>
@@ -108,4 +115,5 @@ layout: default
   </div>
 
 </div>
+
 
