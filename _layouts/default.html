@@ -14,61 +14,64 @@
   <link rel="stylesheet" href="/kdarc-lab/assets/css/global.css" />
 
   <style>
+    /* 全站正文字体 */
     body {
       font-family: 'Raleway', sans-serif;
       background-color: #f8f9fa;
     }
 
-    /* ===== 新背景图 Banner ===== */
-.hero-banner {
-  width: 100%;
-  height: 430px;
-  background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
-  background-size: cover;
-  background-position: center 25%;
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    /* ===== 顶部 Banner 背景图 ===== */
+    .hero-banner {
+      width: 100%;
+      height: 430px;
+      background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
+      background-size: cover;
+      background-position: center 22%; /* 调整到更好看的上半部分 */
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-<style>
-  .hero-center h1,
-  .hero-center p {
-    font-family: "Helvetica", "Arial", sans-serif !important;
-  }
-
-
-    /* 遮罩层，使文字更清楚 */
+    /* ===== 黑色透明遮罩（增强对比） ===== */
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(0, 0, 0, 0.42); /* 更高级的透明度 */
     }
 
+    /* ===== 标题 & 副标题容器 ===== */
     .hero-center {
       position: relative;
       z-index: 2;
       text-align: center;
       color: white;
+      padding: 0 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .hero-center h1 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', sans-serif !important;
       font-size: 48px;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .hero-center p {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
       font-size: 22px;
+      font-weight: 400;
+      line-height: 1.45;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    /* Container 宽度 */
+    /* Container */
     .container-home {
       max-width: 1450px;
       margin: 0 auto;
@@ -98,12 +101,17 @@
     <div class="hero-overlay"></div>
     <div class="hero-center">
       <h1>Korean Data Resource Center</h1>
-      <p>We develop intelligence data resources and create evaluation science that uncovers the capabilities, biases, and limits of modern AI systems.</p>
+
+      <!-- ⭐ 新的更高级副标题 tagline ⭐ -->
+      <p>
+        Advancing intelligence data and evaluation science for reliable, multilingual, and culturally aware AI.
+      </p>
+
     </div>
   </div>
   {% endif %}
 
-  <!-- ========== 主体内容 ========== -->
+  <!-- Main Content -->
   <div class="{% if page.url == '/' %}container-home{% else %}container-narrow{% endif %} content-wrapper mt-5 px-4 py-5">
     {{ content }}
   </div>
@@ -116,3 +124,4 @@
 
 </body>
 </html>
+
