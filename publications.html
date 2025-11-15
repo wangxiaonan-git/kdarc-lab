@@ -4,105 +4,83 @@ title: Publications
 ---
 
 <style>
-/* ---------------------------------------------------
-   PAGE TITLE — hidden only on this page
---------------------------------------------------- */
-.page-title {
-  display: none !important;
-}
+/* Hide global page title */
+.page-title { display: none !important; }
 
-/* ---------------------------------------------------
-   YEAR TITLE
---------------------------------------------------- */
+/* Year */
 .pub-year-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 40px 0 30px;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 32px 0 22px;
+  color: #111;
   font-family: "Inter", sans-serif;
 }
 
-/* ---------------------------------------------------
-   PAPER CARD
---------------------------------------------------- */
+/* ===== Paper Card ===== */
 .pub-card {
-  background: #ffffff;
-  padding: 32px 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  margin-bottom: 38px;
+  background: #fff;
+  padding: 26px 34px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
   transition: all .25s ease;
   border: 1px solid rgba(0,0,0,0.04);
 }
 
-/* Hover animation: 微浮动 + 微光 */
 .pub-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* ---------------------------------------------------
-   TITLE / AUTHORS / VENUE
---------------------------------------------------- */
+/* ===== Title / Authors / Venue ===== */
 .pub-title {
-  font-size: 24px;
+  font-size: 20px;     /* smaller */
   font-weight: 600;
+  line-height: 1.32;   /* tighter */
+  margin-bottom: 10px;
   color: #111;
-  line-height: 1.35;
-  margin-bottom: 12px;
   font-family: "Inter", sans-serif;
 }
 
 .pub-authors {
-  font-size: 17px;
+  font-size: 15px;     /* smaller */
+  color: #444;
   font-weight: 400;
-  color: #555;
-  margin-bottom: 8px;
+  margin-bottom: 6px;  /* tighter */
   font-family: "Inter", sans-serif;
 }
 
 .pub-venue {
-  font-size: 17px;
+  font-size: 15px;     /* smaller */
   font-style: italic;
-  color: #666;
-  margin-bottom: 22px;
+  color: #555;
+  margin-bottom: 18px; /* tighter spacing */
   font-family: "Inter", sans-serif;
 }
 
-/* ---------------------------------------------------
-   TAG PILLS — Super minimal, low saturation
---------------------------------------------------- */
+/* ===== Tags ===== */
 .pub-tag {
   display: inline-block;
-  padding: 3px 10px;
-  margin-right: 8px;
-  margin-bottom: 6px;
-
-  font-size: 12px;
+  padding: 2px 8px;      /* smaller */
+  margin-right: 6px;
+  margin-bottom: 5px;
+  font-size: 11px;       /* smaller */
+  border-radius: 5px;    /* smaller */
   font-weight: 500;
-  border-radius: 6px;
-
-  background: #f2f2f2;
-  color: #444;
   transition: all .22s ease;
 }
 
-/* Light color variants */
-.tag-green  { background: #e9f1ea; color: #2e5637; }
-.tag-purple { background: #f0ecf6; color: #4d3b76; }
-.tag-orange { background: #f6eee6; color: #7d4e21; }
+.tag-green  { background:#e8f0ea; color:#2f5337; }
+.tag-purple { background:#f1eef6; color:#4e3b74; }
+.tag-orange { background:#f6efe6; color:#7d4f21; }
 
-/* Hover animation: subtle glow */
 .pub-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 7px rgba(0,0,0,0.06);
 }
 </style>
 
-
-<!--  ===== CONTENT STARTS ===== -->
-
-<h1 class="page-title">Publications</h1>
+<!-- ================= CONTENT ================= -->
 
 <div class="pub-year-title">2025</div>
 
@@ -127,4 +105,3 @@ title: Publications
   </div>
 
 </div>
-
