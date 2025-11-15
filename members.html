@@ -1,24 +1,129 @@
-<link rel="stylesheet" href="assets/global.css">
 ---
 layout: default
 title: Members
 ---
 
-<h1>Lab Members</h1>
-<!-- 分割线 -->
-<hr class="divider" />
+<style>
+/* 页面整体布局 */
+.member-section {
+  margin-bottom: 60px;
+}
 
-<!-- PI 信息 -->
-<hr style="border: none; height: 2px; background: rgba(0, 0, 0, 0.1); margin: 30px 0;" />
+.member-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  border-left: 5px solid #1e73be;
+  padding-left: 12px;
+}
 
-<div style="display: flex; align-items: center; justify-content: space-between;">
-  <div>
-    <p style="font-weight: bold; font-size: 20px;">Dr. Hansaem Kim</p>
-    <p>Professor</p>
-    <p><a href="mailto:khss@yonsei.ac.kr">khss@yonsei.ac.kr</a></p>
+/* 单个成员卡片 */
+.member-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.member-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px;
+  border: 3px solid #eee;
+}
+
+.member-info h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.member-role {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.member-email {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.member-research {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.member-website a {
+  font-size: 15px;
+  color: #1e73be;
+  text-decoration: none;
+}
+.member-website a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<div class="container-narrow">
+
+  <!-- ===================== PI ===================== -->
+  <div class="member-section">
+    <div class="member-title">Principal Investigator</div>
+
+    <div class="member-card">
+      <img src="/kdarc-lab/assets/images/photo/hansaem.jpg" class="member-photo">
+      <div class="member-info">
+        <h3>Dr. Hansaem Kim</h3>
+        <div class="member-role">Professor</div>
+        <div class="member-email">📩 khss@yonsei.ac.kr</div>
+        <div class="member-research">
+          Research Interests: Korean NLP, Language Resources, LLM Safety, Multimodal Reasoning
+        </div>
+        <div class="member-website">
+          <a href="https://scholar.google.com/">Website</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <img src="{{ '/assets/images/PI.jpg' | relative_url }}" alt="PI Photo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;" />
+
+  <!-- ===================== Research Assistants ===================== -->
+  <div class="member-section">
+    <div class="member-title">Research Assistants</div>
+
+    <!-- 你自己 -->
+    <div class="member-card">
+      <img src="/kdarc-lab/assets/images/photo/xiaonan.jpg" class="member-photo">
+      <div class="member-info">
+        <h3>Xiaonan Wang</h3>
+        <div class="member-role">PhD Student</div>
+        <div class="member-email">📩 xiaonan@yonsei.ac.kr</div>
+        <div class="member-research">
+          Research Interests: Multilingual NLP, Evaluation, Geolocation, LLM Safety, Cultural AI
+        </div>
+        <div class="member-website">
+          <a href="#">Website</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 例子：再加一个 RA -->
+    <div class="member-card">
+      <img src="/kdarc-lab/assets/images/photo/student1.jpg" class="member-photo">
+      <div class="member-info">
+        <h3>Gyuri Choi</h3>
+        <div class="member-role">Research Assistant</div>
+        <div class="member-email">📩 gyuri@yonsei.ac.kr</div>
+        <div class="member-research">
+          Research Interests: Korean Linguistics, PII Detection, Dialogue Systems
+        </div>
+        <div class="member-website">
+          <a href="#">Website</a>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </div>
-
