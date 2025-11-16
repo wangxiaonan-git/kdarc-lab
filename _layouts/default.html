@@ -24,11 +24,7 @@
       border-bottom: 1px solid rgba(0,0,0,0.05);
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-
-    .navbar-brand {
-      font-weight: 600;
-      font-size: 20px;
-    }
+    .navbar-brand { font-weight: 600; font-size: 20px; }
 
     .nav-link {
       font-weight: 500;
@@ -38,12 +34,10 @@
       transition: all 0.25s ease;
       position: relative;
     }
-
     .nav-link:hover {
       color: #0d6efd !important;
       text-shadow: 0 0 8px rgba(13,110,253,0.35);
     }
-
     .nav-item.active .nav-link {
       color: #0d6efd !important;
       font-weight: 600;
@@ -72,11 +66,10 @@
 
     .hero-center {
       position: absolute;
-      top: 58%;
+      top: 58%; /* 向下移动 */
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 3;
-
       text-align: center;
       color: white;
       max-width: 900px;
@@ -94,7 +87,6 @@
       font-size: 22px;
       font-weight: 300;
       line-height: 1.45;
-      white-space: normal;
     }
 
     /* ====================== CONTENT WRAPPER ====================== */
@@ -107,65 +99,69 @@
       box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
     }
 
-    /* ====================== FUNDING & PARTNERS ====================== */
+    /* ============================================================
+       FUNDING & PARTNERS SECTION — 白色模块 + 统一 Logo 尺寸
+    ============================================================ */
+
     .partners-wrapper {
-      max-width: 1400px;
-      margin: 0 auto 50px;
-      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 60px 0 20px;
     }
 
     .partners-card {
+      width: 90%;
+      max-width: 1400px;
       background: white;
-      padding: 45px 55px;
-      border-radius: 14px;
-      box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
+      border-radius: 12px;
+      padding: 45px 50px 40px;
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.06);
       text-align: center;
-      animation: fadeInUp 0.5s ease-out;
     }
 
     .partners-title {
-      font-size: 24px;
-      font-weight: 600;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 36px;
       color: #222;
-      margin-bottom: 35px;
     }
 
+    /* ===== LOGO GRID ===== */
+
     .partners-logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px 38px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 36px;
+      justify-items: center;
+      align-items: center;
     }
 
     .partner-logo-box {
-      width: 150px;
-      height: 70px;
+      width: 180px;
+      height: 80px;
+      background: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 12px;
-      background: white;
+      padding: 6px 10px;
     }
 
     .partner-logo-box img {
-      max-height: 100%;
       max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
+      filter: grayscale(15%);
       opacity: 0.92;
-      filter: grayscale(20%);
       transition: all 0.25s ease;
     }
 
     .partner-logo-box img:hover {
-      opacity: 1;
       filter: grayscale(0%);
-      transform: translateY(-3px);
+      opacity: 1;
+      transform: scale(1.06);
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 
@@ -199,11 +195,10 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO ONLY ON HOME -->
   {% if page.url == "/" %}
     <div class="hero-banner">
       <div class="hero-overlay"></div>
-
       <div class="hero-center">
         <h1>Korean Data Resource Center</h1>
         <p>
@@ -219,7 +214,7 @@
     {{ content }}
   </div>
 
-  <!-- FUNDING & PARTNERS -->
+  <!-- ====================== PARTNERS ====================== -->
   {% if page.url == "/" %}
   <div class="partners-wrapper">
     <div class="partners-card">
@@ -234,6 +229,7 @@
         <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
         <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
         <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KAMS.svg"></div>
+
         <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC AI.png"></div>
         <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
         <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
