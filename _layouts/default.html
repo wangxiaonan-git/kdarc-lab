@@ -1,263 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Korean Data Resource Center</title>
+---
+layout: default
+title: KDARC Lab
+---
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f5f6f8;
-    }
+/* 外层模块 */
+.partners-section {
+  padding: 60px 20px 100px;
+  max-width: 1500px;
+  margin: 60px auto;
+  text-align: center;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
 
-    /* ====================== NAVBAR ====================== */
-    .navbar {
-      padding: 12px 0;
-      background: white !important;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    .navbar-brand { font-weight: 600; font-size: 20px; }
-    .nav-link {
-      font-weight: 500;
-      font-size: 16px;
-      padding: 10px 18px !important;
-      color: #333 !important;
-      transition: all 0.25s ease;
-    }
+/* 标题 */
+.partners-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
 
-    /* ====================== HERO ====================== */
-    .hero-banner {
-      width: 100%;
-      height: 420px;
-      background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
-      background-size: cover;
-      background-position: center 20%;
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 40px;
-    }
+/* LOGO 容器 */
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 55px 90px; /* 行间距 55；列间距 90 */
+}
 
-    .hero-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.30);
-      z-index: 1;
-    }
+/* LOGO 单元 */
+.partner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
 
-    .hero-center {
-      position: absolute;
-      top: 58%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
-      text-align: center;
-      color: white;
-      max-width: 900px;
-    }
+/* LOGO 图片 */
+.partner-item img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
 
-    .hero-center h1 {
-      font-size: 48px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      white-space: nowrap;
-    }
+/* hover 动画 */
+.partner-item:hover img {
+  transform: scale(1.07);
+}
 
-    .hero-center p {
-      font-size: 22px;
-      font-weight: 300;
-      line-height: 1.45;
-      white-space: normal;
-    }
+/* 特别调整尺寸 */
+.logo-large { height: 115px !important; }   /* KISA / 国立国语院 / Tscientific */
+.logo-small { height: 70px !important; }    /* NCAI 略小 */
 
-    /* ====================== WRAPPER ====================== */
-    .content-wrapper {
-      max-width: 1400px;
-      margin: 40px auto;
-      background: white;
-      padding: 60px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
-    }
+/* 淡入上浮动画 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
 
-    /* ====================== PARTNERS SECTION ====================== */
+<div class="home">
 
-    .partners-section {
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 45px 40px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+  <!-- 这里放你的主页标题、描述 -->
+  <h1>Welcome to KDARC Lab</h1>
+  <p>Knowledge·Data·AI·Resource Center at Yonsei University</p>
 
-    .partners-title {
-      font-size: 30px;
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: #333;
-    }
 
-    .partners-logos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 35px 28px;
-      justify-items: center;
-    }
+  <!-- ------------ 资助与合作机构模块（仅主页显示）------------ -->
+  <section class="partners-section">
+    <h2 class="partners-title">Funding and Partners</h2>
 
-    .partner-logo-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.6s ease forwards;
-      animation-delay: var(--delay);
-    }
+    <div class="partners-grid">
+      <!-- 第一行 -->
+      <div class="partner-item"><img src="/assets/images/partne/KISA.png" class="logo-large"></div>
+      <div class="partner-item"><img src="/assets/images/partne/NIA.jpeg"></div>
+      <div class="partner-item"><img src="/assets/images/partne/NIKL.jpeg" class="logo-large"></div>
+      <div class="partner-item"><img src="/assets/images/partne/IITP.jpg"></div>
+      <div class="partner-item"><img src="/assets/images/partne/TTA.jpeg"></div>
 
-    .partner-logo-box img {
-      max-height: 75px;
-      width: auto;
-      object-fit: contain;
-      transition: transform 0.25s ease;
-    }
+      <!-- 第二行 -->
+      <div class="partner-item"><img src="/assets/images/partne/NRF.png"></div>
+      <div class="partner-item"><img src="/assets/images/partne/KAMS.svg"></div>
+      <div class="partner-item"><img src="/assets/images/partne/NC AI.png" class="logo-small"></div>
+      <div class="partner-item"><img src="/assets/images/partne/flitto.png"></div>
+      <div class="partner-item"><img src="/assets/images/partne/SIF.jpeg"></div>
 
-    .partner-logo-box img:hover {
-      transform: scale(1.1);
-    }
-
-    /* 放大类 */
-    .partner-logo-box.big img { transform: scale(1.25); }
-    .partner-logo-box.big2 img { transform: scale(1.45); }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-  </style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="/kdarc-lab/">Yonsei Korean Data Resource Center</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a class="nav-link" href="/kdarc-lab/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/members.html">Members</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/publications.html">Publications</a></li>
-      </ul>
+      <!-- 第三行 -->
+      <div class="partner-item"><img src="/assets/images/partne/hana.png"></div>
+      <div class="partner-item"><img src="/assets/images/partne/T scientific.png" class="logo-large"></div>
+      <div class="partner-item"><img src="/assets/images/partne/teddysum.png"></div>
+      <div class="partner-item"><img src="/assets/images/partne/tutorus.png"></div>
     </div>
-  </div>
-</nav>
+  </section>
 
-<!-- HERO -->
-<div class="hero-banner">
-  <div class="hero-overlay"></div>
-  <div class="hero-center">
-    <h1>Korean Data Resource Center</h1>
-    <p>
-      Advancing intelligence data and evaluation science<br>
-      for reliable, multilingual, and culturally aware AI.
-    </p>
-  </div>
 </div>
-
-<!-- MAIN CONTENT -->
-<div class="content-wrapper">
-  {{ content }}
-</div>
-
-<!-- ===================== Funding & Partners ===================== -->
-<div class="partners-section">
-
-  <h2 class="partners-title">Funding and Partners</h2>
-
-  <div class="partners-logos">
-
-    <!-- Row 1 -->
-    <div class="partner-logo-box big2" style="--delay:0.1s;">
-      <img src="/kdarc-lab/assets/images/partne/KISA.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.15s;">
-      <img src="/kdarc-lab/assets/images/partne/NIA.jpeg">
-    </div>
-
-    <div class="partner-logo-box big2" style="--delay:0.2s;">
-      <img src="/kdarc-lab/assets/images/partne/NIKL.jpeg">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.25s;">
-      <img src="/kdarc-lab/assets/images/partne/IITP.jpg">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.3s;">
-      <img src="/kdarc-lab/assets/images/partne/TTA.jpeg">
-    </div>
-
-    <div class="partner-logo-box big" style="--delay:0.35s;">
-      <img src="/kdarc-lab/assets/images/partne/NRF.png">
-    </div>
-
-    <!-- Row 2 -->
-    <div class="partner-logo-box" style="--delay:0.4s;">
-      <img src="/kdarc-lab/assets/images/partne/KAMS.svg">
-    </div>
-
-    <div class="partner-logo-box big" style="--delay:0.45s;">
-      <img src="/kdarc-lab/assets/images/partne/NC AI.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.5s;">
-      <img src="/kdarc-lab/assets/images/partne/flitto.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.55s;">
-      <img src="/kdarc-lab/assets/images/partne/thinkbig.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.6s;">
-      <img src="/kdarc-lab/assets/images/partne/hana.png">
-    </div>
-
-    <div class="partner-logo-box big2" style="--delay:0.65s;">
-      <img src="/kdarc-lab/assets/images/partne/T scientific.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.7s;">
-      <img src="/kdarc-lab/assets/images/partne/teddysum.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.75s;">
-      <img src="/kdarc-lab/assets/images/partne/tutorus.png">
-    </div>
-
-  </div>
-</div>
-
-{% include footer.html %}
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
 
