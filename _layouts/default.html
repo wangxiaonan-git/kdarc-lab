@@ -133,7 +133,6 @@
 
     .partner-logo-box img:hover { transform: scale(1.1); }
 
-    /* 放大类 */
     .partner-logo-box.big img { transform: scale(1.25); }
     .partner-logo-box.big2 img { transform: scale(1.5); }
 
@@ -174,28 +173,10 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero-banner">
-  <div class="hero-overlay"></div>
-  <div class="hero-center">
-    <h1>Korean Data Resource Center</h1>
-    <p>
-      Advancing intelligence data and evaluation science<br>
-      for reliable, multilingual, and culturally aware AI.
-    </p>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="content-wrapper">
-  {{ content }}
-</div>
-
-<!-- ONLY show on Home page -->
+<!-- HERO ——✔只在首页 -->
 {% if page.url == "/" %}
 <div class="hero-banner">
   <div class="hero-overlay"></div>
-
   <div class="hero-center">
     <h1>Korean Data Resource Center</h1>
     <p>
@@ -206,80 +187,21 @@
 </div>
 {% endif %}
 
+<!-- MAIN CONTENT -->
+<div class="content-wrapper">
+  {{ content }}
+</div>
 
-<style>
-/* ======== 统一 LOGO 视觉大小 ======== */
-.partners-section {
-  max-width: 1400px;
-  margin: 40px auto;
-  padding: 50px 40px;
-  background: white;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-.partners-title {
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #333;
-}
-
-/* 最关键：统一容器大小 */
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px 25px;
-  justify-items: center;
-}
-
-/* LOGO外层框 — 固定尺寸 */
-.partner-logo-box {
-  width: 200px;
-  height: 110px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 10px;
-  padding: 10px;
-
-  opacity: 0;
-  animation: fadeUp 0.7s ease forwards;
-  animation-delay: var(--delay);
-}
-
-/* 统一缩放规则 */
-.partner-logo-box img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transition: 0.25s ease;
-}
-
-.partner-logo-box img:hover {
-  transform: scale(1.1);
-}
-
-/* 淡入动画 */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-
+<!-- FUNDING ——✔也只在首页 -->
+{% if page.url == "/" %}
 <div class="partners-section">
   <h2 class="partners-title">Funding and Partners</h2>
 
-  <div class="partners-grid">
+  <div class="partners-logos">
 
-<div class="partner-logo-box biggest" style="--delay:0.1s;">
-  <img src="/kdarc-lab/assets/images/partne/KISA.png">
-</div>
-
+    <div class="partner-logo-box biggest" style="--delay:0.1s;">
+      <img src="/kdarc-lab/assets/images/partne/KISA.png">
+    </div>
 
     <div class="partner-logo-box" style="--delay:0.12s">
       <img src="/kdarc-lab/assets/images/partne/NIA.jpeg">
@@ -321,10 +243,9 @@
       <img src="/kdarc-lab/assets/images/partne/hana.png">
     </div>
 
-<div class="partner-logo-box biggest" style="--delay:0.32s;">
-  <img src="/kdarc-lab/assets/images/partne/T scientific.png">
-</div>
-
+    <div class="partner-logo-box biggest" style="--delay:0.32s;">
+      <img src="/kdarc-lab/assets/images/partne/T scientific.png">
+    </div>
 
     <div class="partner-logo-box" style="--delay:0.34s">
       <img src="/kdarc-lab/assets/images/partne/teddysum.png">
@@ -334,13 +255,12 @@
       <img src="/kdarc-lab/assets/images/partne/tutorus.png">
     </div>
 
-        <div class="partner-logo-box" style="--delay:0.36s">
+    <div class="partner-logo-box" style="--delay:0.38s">
       <img src="/kdarc-lab/assets/images/partne/SIF.jpeg">
     </div>
 
   </div>
 </div>
-
 {% endif %}
 
 {% include footer.html %}
