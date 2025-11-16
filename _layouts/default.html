@@ -23,7 +23,20 @@
       border-bottom: 1px solid rgba(0,0,0,0.05);
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-    .navbar-brand { font-weight: 600; font-size: 20px; }
+
+    .navbar-brand {
+      font-weight: 600;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar-brand img {
+      height: 26px;
+      width: auto;
+    }
+
     .nav-link {
       font-weight: 500;
       font-size: 16px;
@@ -41,6 +54,10 @@
       background-position: center 20%;
       position: relative;
       overflow: hidden;
+
+      /* ⭐ 关键：让背景从页面最顶开始 */
+      margin-top: -80px;
+
       margin-bottom: 40px;
     }
 
@@ -85,9 +102,7 @@
       box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
     }
 
-
     /* ====================== PARTNERS ====================== */
-
     .partners-section {
       max-width: 1400px;
       margin: 40px auto;
@@ -140,9 +155,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Bigger logos */
-    .big-logo img       { transform: scale(1.35); }
-    .bigger-logo img    { transform: scale(1.5); }
+    .bigger-logo img { transform: scale(1.35); }
   </style>
 </head>
 
@@ -151,7 +164,13 @@
 <!-- NAV -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="/kdarc-lab/">Yonsei University</a>
+
+    <!-- ⭐ 加 Yonsei logo -->
+    <a class="navbar-brand" href="/kdarc-lab/">
+      <img src="/kdarc-lab/assets/images/social/yonsei.png" alt="Yonsei Logo">
+      Yonsei University
+    </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -164,6 +183,7 @@
         <li class="nav-item"><a class="nav-link" href="/kdarc-lab/publications.html">Publications</a></li>
       </ul>
     </div>
+
   </div>
 </nav>
 
@@ -228,4 +248,3 @@
 
 </body>
 </html>
-
