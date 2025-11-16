@@ -31,7 +31,7 @@
     }
 
     .yonsei-logo img {
-      height: 42px;        /* LOGO大小 */
+      height: 42px;
       width: auto;
       margin-right: 10px;
     }
@@ -42,7 +42,7 @@
       color: white !important;
       display: flex;
       align-items: center;
-      cursor: default; /* 不再是链接 */
+      cursor: default;
     }
 
     .nav-link {
@@ -103,13 +103,12 @@
     /* ====================== SUBPAGE TOP SMALL BANNER ====================== */
     .subpage-banner {
       width: 100%;
-      height: 160px; /* 小背景带高度 */
+      height: 160px;
       background-image: url('/kdarc-lab/assets/images/background/background2.jpg');
       background-size: cover;
-      background-position: center 90%; /* 从底部截取 */
+      background-position: center 90%;
       background-repeat: no-repeat;
       position: relative;
-      z-index: -1;
       margin-top: 0;
     }
 
@@ -171,7 +170,6 @@
 
     .partner-logo-box img:hover { transform: scale(1.1); }
 
-    /* 放大 LOGO 1.5x */
     .big-partner img {
       transform: scale(1.5);
     }
@@ -189,7 +187,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
 
-    <!-- 左上角 logo 和学校名：已去掉链接，变成纯展示 -->
     <div class="navbar-brand">
       <span class="yonsei-logo">
         <img src="/kdarc-lab/assets/images/badges/yonsei.png" alt="Yonsei Logo">
@@ -213,13 +210,13 @@
   </div>
 </nav>
 
-<!-- SUBPAGE SMALL BANNER (not on home) -->
-{% unless page.url == "/" %}
+<!-- SUBPAGE BANNER (for all except Home) -->
+{% if page.url != "/" and page.url != "/kdarc-lab/" %}
 <div class="subpage-banner"></div>
-{% endunless %}
+{% endif %}
 
 <!-- HOME HERO -->
-{% if page.url == "/" %}
+{% if page.url == "/" or page.url == "/kdarc-lab/" %}
 <div class="hero-banner">
   <div class="hero-overlay"></div>
   <div class="hero-center">
@@ -237,8 +234,7 @@
   {{ content }}
 </div>
 
-<!-- FUNDINGS (Home only) -->
-{% if page.url == "/" %}
+{% if page.url == "/" or page.url == "/kdarc-lab/" %}
 <div class="partners-section">
   <h2 class="partners-title">Funding and Partners</h2>
   <div class="partners-grid">
