@@ -141,7 +141,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 34px;
-  justify-content: center;   /* 让不满一行时整体居中 */
+  justify-content: center;      /* 整个 grid 在容器中居中 */
+  justify-items: center;        /* ⭐ 单个卡片居中（让第二行两个卡片自动居中） */
 }
 
 
