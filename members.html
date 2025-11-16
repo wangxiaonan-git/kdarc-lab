@@ -10,16 +10,36 @@ title: Members
   max-width: 1100px;
   margin: 40px auto;
   padding: 0 10px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   animation: fadeInUp 0.5s ease-out;
 }
 
+/* ======== SECTION TITLE WITH ORANGE-RED GRADIENT BAR ======== */
 .team-title {
   font-size: 26px;
   font-weight: 700;
-  margin: 35px 0 20px;
-  border-left: 5px solid #2f80ed;
-  padding-left: 12px;
+  margin: 35px 0 24px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.team-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 6px;
+  height: 22px;
+  border-radius: 3px;
+
+  /* 动态渐变橙红线 */
+  background: linear-gradient(180deg, #ff9a3c, #ff4e50, #ff3a2f);
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.55); }
 }
 
 .team-grid {
@@ -39,18 +59,16 @@ title: Members
   align-items: center;
   position: relative;
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  border: 1px solid rgba(47,128,237,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
   transition: all 0.25s ease;
-  backdrop-filter: blur(2px);
 }
 
 .member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  border: 1px solid rgba(47,128,237,0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
-/* ===================== PHOTO WITH HALO ===================== */
+/* ===================== PHOTO ===================== */
 
 .member-photo {
   width: 105px;
@@ -58,8 +76,7 @@ title: Members
   border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1/1;
-  position: relative;
-  box-shadow: 0 0 0 3px #ffffff, 0 0 18px rgba(47,128,237,0.35);
+  box-shadow: 0 0 0 3px #fff, 0 0 20px rgba(47,128,237,0.28);
 }
 
 /* ===================== TEXT ===================== */
@@ -69,32 +86,34 @@ title: Members
 .member-name {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .member-role {
   font-size: 15px;
-  color: #666;
+  color: #555;
   margin-bottom: 8px;
 }
+
+/* ===================== EMAIL ===================== */
 
 .member-email {
   font-size: 14px;
   color: #444;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-/* ===================== INTEREST TAGS (PILL STYLE) ===================== */
+/* ===================== TAGS ===================== */
 
 .interest-list {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .interest-tag {
-  background: #f1f4f9;
+  background: #f3f5f7;
   color: #2f3b52;
   padding: 3px 10px;
   border-radius: 14px;
@@ -103,26 +122,33 @@ title: Members
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* ===================== WEBSITE LINK ===================== */
+/* ===================== SOCIAL ICONS ===================== */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
 
-.member-website {
-  font-size: 14px;
-  color: #2f80ed;
+.social-icons img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.88;
+  transition: 0.2s;
+}
+
+.social-icons img:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 /* ===================== ANIMATION ===================== */
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
+
 
 
 <!-- ====================== PI ====================== -->
@@ -136,12 +162,16 @@ title: Members
       <div class="member-info">
         <div class="member-name">Dr. Hansaem Kim</div>
         <div class="member-role">Professor</div>
-        <div class="member-email">📮 khss@yonsei.ac.kr</div>
-        <a class="member-website" href="#" target="_blank">Website</a>
+        <div class="member-email">khss@yonsei.ac.kr</div>
+
+        <div class="social-icons">
+          <a href="#" target="_blank"><img src="/kdarc-lab/assets/images/badges/web.png"></a>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 <!-- ====================== RESEARCH ASSISTANTS ====================== -->
@@ -156,14 +186,18 @@ title: Members
       <img class="member-photo" src="/kdarc-lab/assets/images/member/Kim Heejae.png">
       <div class="member-info">
         <div class="member-name">Heejae Kim</div>
-        <div class="member-role">PhD Candidate (16 semesters)</div>
-        <div class="member-email">📮 kimmejay@yonsei.ac.kr</div>
+        <div class="member-role">PhD Candidate</div>
+        <div class="member-email">kimmejay@yonsei.ac.kr</div>
 
         <div class="interest-list">
           <span class="interest-tag">Corpora</span>
           <span class="interest-tag">LLMs</span>
           <span class="interest-tag">Automatic Scoring</span>
           <span class="interest-tag">NLP Evaluation</span>
+        </div>
+
+        <div class="social-icons">
+          <a href="#" target="_blank"><img src="/kdarc-lab/assets/images/badges/web.png"></a>
         </div>
       </div>
     </div>
@@ -173,8 +207,8 @@ title: Members
       <img class="member-photo" src="/kdarc-lab/assets/images/member/Seoyoon Park.png">
       <div class="member-info">
         <div class="member-name">Seoyoon Park</div>
-        <div class="member-role">PhD Candidate (9 semesters)</div>
-        <div class="member-email">📮 syp1229@gmail.com</div>
+        <div class="member-role">PhD Candidate</div>
+        <div class="member-email">syp1229@gmail.com</div>
 
         <div class="interest-list">
           <span class="interest-tag">LLM Benchmarks</span>
@@ -182,7 +216,11 @@ title: Members
           <span class="interest-tag">AI Alignment</span>
         </div>
 
-        <a class="member-website" href="https://www.linkedin.com/in/seoyoon-park-b2505513a" target="_blank">LinkedIn</a>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/seoyoon-park-b2505513a" target="_blank">
+            <img src="/kdarc-lab/assets/images/badges/linkedin.png">
+          </a>
+        </div>
       </div>
     </div>
 
@@ -191,11 +229,15 @@ title: Members
       <img class="member-photo" src="/kdarc-lab/assets/images/member/Choi Gyuri.png">
       <div class="member-info">
         <div class="member-name">Gyuri Choi</div>
-        <div class="member-role">PhD Candidate (7 semesters)</div>
-        <div class="member-email">📮 gyuri1345@yonsei.ac.kr</div>
+        <div class="member-role">PhD Candidate</div>
+        <div class="member-email">gyuri1345@yonsei.ac.kr</div>
 
         <div class="interest-list">
           <span class="interest-tag">Language Model Evaluation</span>
+        </div>
+
+        <div class="social-icons">
+          <a href="#" target="_blank"><img src="/kdarc-lab/assets/images/badges/web.png"></a>
         </div>
       </div>
     </div>
@@ -205,8 +247,8 @@ title: Members
       <img class="member-photo" src="/kdarc-lab/assets/images/member/xiaonanwang.png">
       <div class="member-info">
         <div class="member-name">Xiaonan Wang</div>
-        <div class="member-role">PhD Student (3 semesters)</div>
-        <div class="member-email">📮 nan@yonsei.ac.kr</div>
+        <div class="member-role">PhD Student</div>
+        <div class="member-email">nan@yonsei.ac.kr</div>
 
         <div class="interest-list">
           <span class="interest-tag">Multilingual NLP</span>
@@ -216,7 +258,17 @@ title: Members
           <span class="interest-tag">Cultural AI</span>
         </div>
 
-        <a class="member-website" href="https://wangxiaonan-git.github.io/" target="_blank">Website</a>
+        <div class="social-icons">
+          <a href="https://wangxiaonan-git.github.io/" target="_blank">
+            <img src="/kdarc-lab/assets/images/badges/web.png">
+          </a>
+          <a href="https://scholar.google.com/citations?hl=zh-CN&user=fs_91jMAAAAJ" target="_blank">
+            <img src="/kdarc-lab/assets/images/badges/Google_Scholar.png">
+          </a>
+          <a href="https://www.linkedin.com/in/wangxiaonan" target="_blank">
+            <img src="/kdarc-lab/assets/images/badges/linkedin.png">
+          </a>
+        </div>
       </div>
     </div>
 
@@ -225,13 +277,17 @@ title: Members
       <img class="member-photo" src="/kdarc-lab/assets/images/member/Kang Chae An.png">
       <div class="member-info">
         <div class="member-name">Chae An Kang</div>
-        <div class="member-role">PhD Student (1 semester)</div>
-        <div class="member-email">📮 chaean12@yonsei.ac.kr</div>
+        <div class="member-role">PhD Student</div>
+        <div class="member-email">chaean12@yonsei.ac.kr</div>
 
         <div class="interest-list">
           <span class="interest-tag">AI Ethics</span>
           <span class="interest-tag">Safety Evaluation</span>
           <span class="interest-tag">LM Assessment</span>
+        </div>
+
+        <div class="social-icons">
+          <a href="#" target="_blank"><img src="/kdarc-lab/assets/images/badges/web.png"></a>
         </div>
       </div>
     </div>
@@ -241,8 +297,8 @@ title: Members
       <img class="member-photo" src="/kdarc-lab/assets/images/member/Subin An.png">
       <div class="member-info">
         <div class="member-name">Subin An</div>
-        <div class="member-role">Master Student (4 semesters)</div>
-        <div class="member-email">📮 aaasb9946@yonsei.ac.kr</div>
+        <div class="member-role">Master Student</div>
+        <div class="member-email">aaasb9946@yonsei.ac.kr</div>
 
         <div class="interest-list">
           <span class="interest-tag">Language Resources</span>
@@ -250,14 +306,13 @@ title: Members
           <span class="interest-tag">Model Robustness</span>
         </div>
 
-        <a class="member-website"
-           href="https://scholar.google.co.kr/citations?user=WZHrMfsAAAAJ&hl=ko"
-           target="_blank">Google Scholar</a>
+        <div class="social-icons">
+          <a href="https://scholar.google.co.kr/citations?user=WZHrMfsAAAAJ&hl=ko" target="_blank">
+            <img src="/kdarc-lab/assets/images/badges/Google_Scholar.png">
+          </a>
+        </div>
       </div>
     </div>
 
   </div>
 </div>
-
-
-
