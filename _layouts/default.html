@@ -30,23 +30,10 @@
       box-shadow: none;
     }
 
-    /* Logo circle */
-    .yonsei-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.9);
-      margin-right: 10px;
-    }
-
     .yonsei-logo img {
-      width: 85%;
-      height: 85%;
-      object-fit: contain;
+      height: 42px;        /* ⭐ 更大 & 自然展示 */
+      width: auto;
+      margin-right: 10px;
     }
 
     .navbar-brand {
@@ -57,7 +44,6 @@
       align-items: center;
     }
 
-    /* Nav links */
     .nav-link {
       font-weight: 300 !important;
       font-size: 18px;
@@ -77,7 +63,7 @@
       height: 420px;
       background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: top center;        /* ⭐ 你特别要求：从图像最顶部开始展示 */
       position: relative;
       margin-top: 0;
     }
@@ -171,6 +157,11 @@
 
     .partner-logo-box img:hover { transform: scale(1.1); }
 
+    /* ⭐ 特大 logo 放大 1.5x */
+    .big-partner img {
+      transform: scale(1.5);
+    }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -205,6 +196,7 @@
   </div>
 </nav>
 
+
 <!-- HERO -->
 {% if page.url == "/" %}
 <div class="hero-banner">
@@ -219,37 +211,50 @@
 </div>
 {% endif %}
 
+
 <!-- MAIN CONTENT -->
 <div class="content-wrapper">
   {{ content }}
 </div>
 
-<!-- FUNDINGS (Home only) -->
+
+<!-- FUNDINGS -->
 {% if page.url == "/" %}
 <div class="partners-section">
   <h2 class="partners-title">Funding and Partners</h2>
 
   <div class="partners-grid">
 
-    <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
+    <!-- ⭐ 放大版 -->
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
+
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
+
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KAMS.svg"></div>
+
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC%20AI.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
+
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/hana.png"></div>
-    <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
+
+    <!-- ⭐ 放大版 -->
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
+
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
+
+    <!-- ⭐ 放大版 -->
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
 
   </div>
 </div>
 {% endif %}
+
 
 {% include footer.html %}
 
