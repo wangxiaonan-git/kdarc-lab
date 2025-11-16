@@ -139,10 +139,11 @@
 
 .ra-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 360px);  /* 固定卡片宽度 */
-  gap: 34px;
-  justify-content: center;  /* ⭐ 整个 grid 居中 */
+  grid-gap: 34px;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));  /* 固定三列 */
+  justify-content: center;
 }
+
 
 
 
