@@ -32,7 +32,7 @@
       transition: all 0.25s ease;
     }
 
-    /* ====================== HERO ====================== */
+    /* ====================== HERO (Home Only) ====================== */
     .hero-banner {
       width: 100%;
       height: 420px;
@@ -67,14 +67,12 @@
       font-size: 48px;
       font-weight: 600;
       margin-bottom: 12px;
-      white-space: nowrap;
     }
 
     .hero-center p {
       font-size: 22px;
       font-weight: 300;
       line-height: 1.45;
-      white-space: normal;
     }
 
     /* ====================== WRAPPER ====================== */
@@ -87,12 +85,13 @@
       box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
     }
 
-    /* ====================== PARTNERS SECTION ====================== */
+
+    /* ====================== PARTNERS ====================== */
 
     .partners-section {
       max-width: 1400px;
       margin: 40px auto;
-      padding: 45px 40px;
+      padding: 50px 40px;
       background: white;
       border-radius: 14px;
       box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
@@ -100,55 +99,50 @@
     }
 
     .partners-title {
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 700;
       margin-bottom: 40px;
       color: #333;
     }
 
-    .partners-logos {
+    .partners-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 40px 30px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px 25px;
       justify-items: center;
     }
 
     .partner-logo-box {
+      width: 200px;
+      height: 110px;
+      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100px;
+      border-radius: 10px;
+      padding: 10px;
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.6s ease forwards;
+      animation: fadeUp 0.7s ease forwards;
       animation-delay: var(--delay);
     }
 
     .partner-logo-box img {
-      max-height: 75px;
-      width: auto;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
-      transition: transform 0.25s ease;
+      transition: 0.25s ease;
     }
 
     .partner-logo-box img:hover { transform: scale(1.1); }
 
-    .partner-logo-box.big img { transform: scale(1.25); }
-    .partner-logo-box.big2 img { transform: scale(1.5); }
-
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-.partner-logo-box.bigger img {
-  transform: scale(1.25);
-}
-
-.partner-logo-box.biggest img {
-  transform: scale(1.45);
-}
-
+    /* Bigger logos */
+    .big-logo img       { transform: scale(1.35); }
+    .bigger-logo img    { transform: scale(1.5); }
   </style>
 </head>
 
@@ -164,7 +158,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a class="nav-link" href="/kdarc-lab/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/kdarc-lab/members.html">Members</a></li>
         <li class="nav-item"><a class="nav-link" href="/kdarc-lab/projects.html">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="/kdarc-lab/publications.html">Publications</a></li>
@@ -173,7 +167,8 @@
   </div>
 </nav>
 
-<!-- HERO ——✔只在首页 -->
+
+<!-- ============= ONLY SHOW HERO ON HOME PAGE ================ -->
 {% if page.url == "/" %}
 <div class="hero-banner">
   <div class="hero-overlay"></div>
@@ -186,82 +181,45 @@
   </div>
 </div>
 {% endif %}
+<!-- ========================================================== -->
+
 
 <!-- MAIN CONTENT -->
 <div class="content-wrapper">
   {{ content }}
 </div>
 
-<!-- FUNDING ——✔也只在首页 -->
+
+<!-- ============= ONLY SHOW FUNDING ON HOME PAGE =============== -->
 {% if page.url == "/" %}
 <div class="partners-section">
   <h2 class="partners-title">Funding and Partners</h2>
 
-  <div class="partners-logos">
+  <div class="partners-grid">
 
-    <div class="partner-logo-box biggest" style="--delay:0.1s;">
-      <img src="/kdarc-lab/assets/images/partne/KISA.png">
-    </div>
+    <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
 
-    <div class="partner-logo-box" style="--delay:0.12s">
-      <img src="/kdarc-lab/assets/images/partne/NIA.jpeg">
-    </div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KAMS.svg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC%20AI.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/hana.png"></div>
 
-    <div class="partner-logo-box" style="--delay:0.14s">
-      <img src="/kdarc-lab/assets/images/partne/NIKL.jpeg">
-    </div>
+    <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
 
-    <div class="partner-logo-box" style="--delay:0.16s">
-      <img src="/kdarc-lab/assets/images/partne/IITP.jpg">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.18s">
-      <img src="/kdarc-lab/assets/images/partne/TTA.jpeg">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.20s">
-      <img src="/kdarc-lab/assets/images/partne/NRF.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.22s">
-      <img src="/kdarc-lab/assets/images/partne/KAMS.svg">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.24s">
-      <img src="/kdarc-lab/assets/images/partne/NC%20AI.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.26s">
-      <img src="/kdarc-lab/assets/images/partne/flitto.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.28s">
-      <img src="/kdarc-lab/assets/images/partne/thinkbig.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.30s">
-      <img src="/kdarc-lab/assets/images/partne/hana.png">
-    </div>
-
-    <div class="partner-logo-box biggest" style="--delay:0.32s;">
-      <img src="/kdarc-lab/assets/images/partne/T scientific.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.34s">
-      <img src="/kdarc-lab/assets/images/partne/teddysum.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.36s">
-      <img src="/kdarc-lab/assets/images/partne/tutorus.png">
-    </div>
-
-    <div class="partner-logo-box" style="--delay:0.38s">
-      <img src="/kdarc-lab/assets/images/partne/SIF.jpeg">
-    </div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
 
   </div>
 </div>
 {% endif %}
+<!-- ============================================================ -->
 
 {% include footer.html %}
 
