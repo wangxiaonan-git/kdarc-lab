@@ -21,8 +21,8 @@
     /* ====================== NAVBAR ====================== */
     .navbar {
       padding: 16px 0;
-      background: transparent !important;      /* 透明导航栏 */
-      position: absolute;                      /* 不跟随移动 */
+      background: transparent !important;
+      position: absolute;
       top: 0;
       width: 100%;
       z-index: 9999 !important;
@@ -32,14 +32,14 @@
 
     /* Logo circle */
     .yonsei-logo {
-      width: 40px;      /* ⭐ 更大一些 */
+      width: 40px;
       height: 40px;
       border-radius: 50%;
       overflow: hidden;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255,255,255,0.9);   /* 白底，适配深色背景图 */
+      background: rgba(255,255,255,0.9);
       margin-right: 10px;
     }
 
@@ -59,7 +59,7 @@
 
     /* Nav links */
     .nav-link {
-      font-weight: 300 !important;          /* 更细字体 */
+      font-weight: 300 !important;
       font-size: 18px;
       color: rgba(255,255,255,0.9) !important;
       padding: 8px 18px !important;
@@ -79,7 +79,7 @@
       background-size: cover;
       background-position: center;
       position: relative;
-      margin-top: 0;     /* 不被覆盖 */
+      margin-top: 0;
     }
 
     .hero-overlay {
@@ -123,7 +123,7 @@
       box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
     }
 
-    /* ====================== PARTNER GRID（原样保留） ====================== */
+    /* ====================== PARTNERS ====================== */
     .partners-section {
       max-width: 1400px;
       margin: 40px auto;
@@ -189,6 +189,7 @@
       </span>
       Yonsei University
     </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -222,6 +223,33 @@
 <div class="content-wrapper">
   {{ content }}
 </div>
+
+<!-- FUNDINGS (Home only) -->
+{% if page.url == "/" %}
+<div class="partners-section">
+  <h2 class="partners-title">Funding and Partners</h2>
+
+  <div class="partners-grid">
+
+    <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KAMS.svg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC%20AI.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/hana.png"></div>
+    <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
+
+  </div>
+</div>
+{% endif %}
 
 {% include footer.html %}
 
