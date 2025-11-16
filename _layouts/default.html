@@ -186,68 +186,128 @@
 <!-- ONLY show on Home page -->
 {% if page.url == "/" %}
 
-<!-- ===================== Funding & Partners ===================== -->
-<div class="partners-section">
+<style>
+/* ======== 统一 LOGO 视觉大小 ======== */
+.partners-section {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 50px 40px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  text-align: center;
+}
 
+.partners-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* 最关键：统一容器大小 */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px 25px;
+  justify-items: center;
+}
+
+/* LOGO外层框 — 固定尺寸 */
+.partner-logo-box {
+  width: 200px;
+  height: 110px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  padding: 10px;
+
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: var(--delay);
+}
+
+/* 统一缩放规则 */
+.partner-logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: 0.25s ease;
+}
+
+.partner-logo-box img:hover {
+  transform: scale(1.1);
+}
+
+/* 淡入动画 */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+
+<div class="partners-section">
   <h2 class="partners-title">Funding and Partners</h2>
 
-  <div class="partners-logos">
+  <div class="partners-grid">
 
-    <!-- Row 1 -->
-    <div class="partner-logo-box big2" style="--delay:0.1s;">
+    <div class="partner-logo-box" style="--delay:0.1s">
       <img src="/kdarc-lab/assets/images/partne/KISA.png">
     </div>
 
-    <div class="partner-logo-box" style="--delay:0.15s;">
+    <div class="partner-logo-box" style="--delay:0.12s">
       <img src="/kdarc-lab/assets/images/partne/NIA.jpeg">
     </div>
 
-    <div class="partner-logo-box big2" style="--delay:0.2s;">
+    <div class="partner-logo-box" style="--delay:0.14s">
       <img src="/kdarc-lab/assets/images/partne/NIKL.jpeg">
     </div>
 
-    <div class="partner-logo-box" style="--delay:0.25s;">
+    <div class="partner-logo-box" style="--delay:0.16s">
       <img src="/kdarc-lab/assets/images/partne/IITP.jpg">
     </div>
 
-    <div class="partner-logo-box" style="--delay:0.3s;">
+    <div class="partner-logo-box" style="--delay:0.18s">
       <img src="/kdarc-lab/assets/images/partne/TTA.jpeg">
     </div>
 
-    <div class="partner-logo-box big" style="--delay:0.35s;">
+    <div class="partner-logo-box" style="--delay:0.20s">
       <img src="/kdarc-lab/assets/images/partne/NRF.png">
     </div>
 
-    <!-- Row 2 -->
-    <div class="partner-logo-box" style="--delay:0.4s;">
+    <div class="partner-logo-box" style="--delay:0.22s">
       <img src="/kdarc-lab/assets/images/partne/KAMS.svg">
     </div>
 
-    <div class="partner-logo-box big" style="--delay:0.45s;">
+    <div class="partner-logo-box" style="--delay:0.24s">
       <img src="/kdarc-lab/assets/images/partne/NC%20AI.png">
     </div>
 
-    <div class="partner-logo-box" style="--delay:0.5s;">
+    <div class="partner-logo-box" style="--delay:0.26s">
       <img src="/kdarc-lab/assets/images/partne/flitto.png">
     </div>
 
-    <div class="partner-logo-box" style="--delay:0.55s;">
+    <div class="partner-logo-box" style="--delay:0.28s">
       <img src="/kdarc-lab/assets/images/partne/thinkbig.png">
     </div>
 
-    <div class="partner-logo-box" style="--delay:0.6s;">
+    <div class="partner-logo-box" style="--delay:0.30s">
       <img src="/kdarc-lab/assets/images/partne/hana.png">
     </div>
 
-    <div class="partner-logo-box big2" style="--delay:0.65s;">
+    <div class="partner-logo-box" style="--delay:0.32s">
       <img src="/kdarc-lab/assets/images/partne/T%20scientific.png">
     </div>
 
-    <div class="partner-logo-box" style="--delay:0.7s;">
+    <div class="partner-logo-box" style="--delay:0.34s">
       <img src="/kdarc-lab/assets/images/partne/teddysum.png">
     </div>
 
-    <div class="partner-logo-box" style="--delay:0.75s;">
+    <div class="partner-logo-box" style="--delay:0.36s">
       <img src="/kdarc-lab/assets/images/partne/tutorus.png">
     </div>
 
