@@ -100,7 +100,7 @@
       line-height: 1.45;
     }
 
-    /* ====================== SUBPAGE TOP SMALL BANNER ====================== */
+    /* ====================== SUBPAGE BANNER ====================== */
     .subpage-banner {
       width: 100%;
       height: 160px;
@@ -210,7 +210,7 @@
   </div>
 </nav>
 
-<!-- SUBPAGE BANNER (for all except Home) -->
+<!-- SUBPAGE BANNER -->
 {% if page.url != "/" and page.url != "/kdarc-lab/" %}
 <div class="subpage-banner"></div>
 {% endif %}
@@ -234,6 +234,69 @@
   {{ content }}
 </div>
 
+<!-- ====================== RESEARCH AREAS MODULE ====================== -->
+{% if page.url == "/" or page.url == "/kdarc-lab/" %}
+<div class="research-section" style="max-width:1400px; margin:40px auto; padding:50px 40px; background:white; border-radius:14px; box-shadow:0px 4px 14px rgba(0,0,0,0.08);">
+  
+  <h2 style="font-size:32px; font-weight:700; text-align:center; margin-bottom:40px; color:#333;">
+    Research Areas
+  </h2>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:40px;">
+
+    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
+      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">Multimodal AI Safety & Privacy</h3>
+      <p style="font-size:17px; color:#444; line-height:1.55;">
+        We lead the development of next-generation frameworks for multimodal privacy 
+        detection, high-risk content understanding, and safe generative AI. Our projects 
+        include large-scale PII datasets, de-identification systems, and the 
+        geolocation privacy benchmark <strong>KoreaGEO</strong>.
+      </p>
+    </div>
+
+    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
+      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">Benchmarking & Evaluation Science</h3>
+      <p style="font-size:17px; color:#444; line-height:1.55;">
+        We build rigorous evaluation systems for large language models, focusing on 
+        cultural reasoning, politeness, figurative language, safety robustness, and 
+        linguistic bias. Our Korean-centered benchmarks set new standards for 
+        trustworthy and culturally aware AI.
+      </p>
+    </div>
+
+    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
+      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">Korean NLP & Linguistic Resources</h3>
+      <p style="font-size:17px; color:#444; line-height:1.55;">
+        We construct large-scale linguistic resources, domain corpora, learner datasets, 
+        and historical archives that serve as foundational infrastructure for both 
+        modern AI and Korean linguistic research.
+      </p>
+    </div>
+
+    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
+      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">AI for Korean Language Education</h3>
+      <p style="font-size:17px; color:#444; line-height:1.55;">
+        Our research advances automated writing assessment, pronunciation evaluation, 
+        educational chatbots, and corpus-driven pedagogy to support learners of 
+        Korean worldwide.
+      </p>
+    </div>
+
+    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
+      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">Applied NLP & Cross-Cultural AI</h3>
+      <p style="font-size:17px; color:#444; line-height:1.55;">
+        We conduct applied research in political discourse analysis, 
+        cross-lingual alignment, social media intelligence, and cultural reasoning 
+        across East Asian languages—exploring how AI interprets society, culture, 
+        and communication.
+      </p>
+    </div>
+
+  </div>
+</div>
+{% endif %}
+
+<!-- ====================== FUNDINGS ====================== -->
 {% if page.url == "/" or page.url == "/kdarc-lab/" %}
 <div class="partners-section">
   <h2 class="partners-title">Funding and Partners</h2>
