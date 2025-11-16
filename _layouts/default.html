@@ -14,59 +14,61 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f5f6f8;
+      margin: 0;
+      padding: 0;
     }
 
     /* ====================== NAVBAR ====================== */
     .navbar {
-      padding: 12px 0;
-      background: rgba(255,255,255,0.80) !important;
-      backdrop-filter: blur(14px) saturate(180%);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      position: fixed;
+      padding: 16px 0;
+      background: transparent !important;      /* 透明导航栏 */
+      position: absolute;                      /* 不跟随移动 */
       top: 0;
       width: 100%;
       z-index: 9999 !important;
+      border: none;
+      box-shadow: none;
     }
 
-    .navbar-brand {
-      font-weight: 600;
-      font-size: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* ------------------ Yonsei Round Logo ------------------ */
+    /* Logo circle */
     .yonsei-logo {
-      width: 34px;
-      height: 34px;
+      width: 40px;      /* ⭐ 更大一些 */
+      height: 40px;
       border-radius: 50%;
       overflow: hidden;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: white;
-      border: 1px solid rgba(0,0,0,0.12);
+      background: rgba(255,255,255,0.9);   /* 白底，适配深色背景图 */
+      margin-right: 10px;
     }
 
     .yonsei-logo img {
-      width: 90%;
-      height: 90%;
+      width: 85%;
+      height: 85%;
       object-fit: contain;
     }
 
-    /* Navbar links */
+    .navbar-brand {
+      font-weight: 600;
+      font-size: 22px;
+      color: white !important;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Nav links */
     .nav-link {
-      font-weight: 500;
-      font-size: 16px;
-      padding: 10px 18px !important;
-      color: #333 !important;
+      font-weight: 300 !important;          /* 更细字体 */
+      font-size: 18px;
+      color: rgba(255,255,255,0.9) !important;
+      padding: 8px 18px !important;
       transition: all 0.25s ease;
     }
 
     .nav-link:hover {
-      color: #0058c9 !important;
-      text-shadow: 0 0 6px rgba(0,102,255,0.3);
+      color: #fff !important;
+      text-shadow: 0 0 6px rgba(255,255,255,0.6);
     }
 
     /* ====================== HERO ====================== */
@@ -75,15 +77,9 @@
       height: 420px;
       background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
       background-size: cover;
-      background-position: center 20%;
+      background-position: center;
       position: relative;
-      overflow: hidden;
-
-      /* ⭐关键：往上移，让它从网页最顶开始*/
-      margin-top: -82px;
-
-      margin-bottom: 40px;
-      z-index: 0;
+      margin-top: 0;     /* 不被覆盖 */
     }
 
     .hero-overlay {
@@ -117,7 +113,7 @@
       line-height: 1.45;
     }
 
-    /* ====================== WRAPPER ====================== */
+    /* ====================== MAIN CONTENT ====================== */
     .content-wrapper {
       max-width: 1400px;
       margin: 40px auto;
@@ -127,7 +123,7 @@
       box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
     }
 
-    /* ====================== PARTNERS ====================== */
+    /* ====================== PARTNER GRID（原样保留） ====================== */
     .partners-section {
       max-width: 1400px;
       margin: 40px auto;
@@ -179,8 +175,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    .bigger-logo img { transform: scale(1.35); }
   </style>
 </head>
 
@@ -189,17 +183,12 @@
 <!-- NAV -->
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
-
     <a class="navbar-brand" href="/kdarc-lab/">
-
-      <!-- ⭐左侧圆形 Yonsei icon -->
       <span class="yonsei-logo">
-        <img src="/kdarc-lab/assets/images/badges/yonsei.png" alt="Yonsei Logo">
+        <img src="/kdarc-lab/assets/images/yonsei.png" alt="Yonsei Logo">
       </span>
-
       Yonsei University
     </a>
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -212,12 +201,10 @@
         <li class="nav-item"><a class="nav-link" href="/kdarc-lab/publications.html">Publications</a></li>
       </ul>
     </div>
-
   </div>
 </nav>
 
-
-<!-- HERO only on home -->
+<!-- HERO -->
 {% if page.url == "/" %}
 <div class="hero-banner">
   <div class="hero-overlay"></div>
@@ -231,39 +218,10 @@
 </div>
 {% endif %}
 
-
 <!-- MAIN CONTENT -->
 <div class="content-wrapper">
   {{ content }}
 </div>
-
-
-<!-- FUNDING only on home -->
-{% if page.url == "/" %}
-<div class="partners-section">
-  <h2 class="partners-title">Funding and Partners</h2>
-
-  <div class="partners-grid">
-
-    <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KAMS.svg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC%20AI.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/hana.png"></div>
-    <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
-
-  </div>
-</div>
-{% endif %}
 
 {% include footer.html %}
 
