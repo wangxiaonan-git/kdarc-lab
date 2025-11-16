@@ -138,12 +138,12 @@
     }
 
 .ra-grid {
-  max-width: 1050px;   /* ⭐ 限制最大宽度，让第二行自然居中 */
-  margin: 0 auto;      /* ⭐ 让整个 grid 居中 */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 34px;
+  justify-content: center;   /* 让不满一行时整体居中 */
 }
+
 
 
 
