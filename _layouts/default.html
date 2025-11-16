@@ -138,11 +138,13 @@
     }
 
 .ra-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;   /* 关键：自动居中所有不满行的元素 */
+  max-width: 1050px;   /* ⭐ 限制最大宽度，让第二行自然居中 */
+  margin: 0 auto;      /* ⭐ 让整个 grid 居中 */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 34px;
 }
+
 
 
     /* 高端科技卡片 + 微动画 */
