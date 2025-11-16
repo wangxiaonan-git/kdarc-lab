@@ -100,7 +100,7 @@
       line-height: 1.45;
     }
 
-    /* ====================== SUBPAGE BANNER ====================== */
+    /* ====================== SUBPAGE TOP SMALL BANNER ====================== */
     .subpage-banner {
       width: 100%;
       height: 160px;
@@ -112,7 +112,7 @@
       margin-top: 0;
     }
 
-    /* ====================== MAIN CONTENT ====================== */
+    /* ====================== MAIN CONTENT (ONLY NON-HOME) ====================== */
     .content-wrapper {
       max-width: 1400px;
       margin: 40px auto;
@@ -122,63 +122,55 @@
       box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
     }
 
-    /* ====================== PARTNERS ====================== */
-    .partners-section {
+    /* ====================== RESEARCH AREAS (STYLE A – Modern Tech Lab) ====================== */
+    .research-wrapper {
       max-width: 1400px;
-      margin: 40px auto;
-      padding: 50px 40px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
-      text-align: center;
+      margin: 20px auto 60px auto;
+      padding: 10px 40px 70px;
     }
 
-    .partners-title {
-      font-size: 32px;
+    .ra-title {
+      font-size: 36px;
       font-weight: 700;
-      margin-bottom: 40px;
-      color: #333;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #222;
     }
 
-    .partners-grid {
+    .ra-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px 25px;
-      justify-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
     }
 
-    .partner-logo-box {
-      width: 200px;
-      height: 110px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      padding: 10px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards;
-      animation-delay: var(--delay);
+    .ra-card {
+      background: linear-gradient(145deg, #ffffff, #f1f3f7);
+      border-radius: 14px;
+      padding: 28px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
     }
 
-    .partner-logo-box img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      transition: 0.25s ease;
+    .ra-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.10);
     }
 
-    .partner-logo-box img:hover { transform: scale(1.1); }
-
-    .big-partner img {
-      transform: scale(1.5);
+    .ra-card h3 {
+      font-size: 22px;
+      font-weight: 650;
+      margin-bottom: 12px;
+      color: #111;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .ra-card p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.55;
     }
   </style>
+
 </head>
 
 <body>
@@ -229,94 +221,44 @@
 </div>
 {% endif %}
 
-<!-- MAIN CONTENT -->
+<!-- MAIN CONTENT (ONLY NON-HOME) -->
+{% if page.url != "/" and page.url != "/kdarc-lab/" %}
 <div class="content-wrapper">
   {{ content }}
 </div>
-
-<!-- ====================== RESEARCH AREAS MODULE ====================== -->
-{% if page.url == "/" or page.url == "/kdarc-lab/" %}
-<div class="research-section" style="max-width:1400px; margin:40px auto; padding:50px 40px; background:white; border-radius:14px; box-shadow:0px 4px 14px rgba(0,0,0,0.08);">
-  
-  <h2 style="font-size:32px; font-weight:700; text-align:center; margin-bottom:40px; color:#333;">
-    Research Areas
-  </h2>
-
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:40px;">
-
-    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
-      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">Multimodal AI Safety & Privacy</h3>
-      <p style="font-size:17px; color:#444; line-height:1.55;">
-        We lead the development of next-generation frameworks for multimodal privacy 
-        detection, high-risk content understanding, and safe generative AI. Our projects 
-        include large-scale PII datasets, de-identification systems, and the 
-        geolocation privacy benchmark <strong>KoreaGEO</strong>.
-      </p>
-    </div>
-
-    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
-      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">Benchmarking & Evaluation Science</h3>
-      <p style="font-size:17px; color:#444; line-height:1.55;">
-        We build rigorous evaluation systems for large language models, focusing on 
-        cultural reasoning, politeness, figurative language, safety robustness, and 
-        linguistic bias. Our Korean-centered benchmarks set new standards for 
-        trustworthy and culturally aware AI.
-      </p>
-    </div>
-
-    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
-      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">Korean NLP & Linguistic Resources</h3>
-      <p style="font-size:17px; color:#444; line-height:1.55;">
-        We construct large-scale linguistic resources, domain corpora, learner datasets, 
-        and historical archives that serve as foundational infrastructure for both 
-        modern AI and Korean linguistic research.
-      </p>
-    </div>
-
-    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
-      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">AI for Korean Language Education</h3>
-      <p style="font-size:17px; color:#444; line-height:1.55;">
-        Our research advances automated writing assessment, pronunciation evaluation, 
-        educational chatbots, and corpus-driven pedagogy to support learners of 
-        Korean worldwide.
-      </p>
-    </div>
-
-    <div style="padding:25px; background:#fafbfc; border-radius:12px; border:1px solid #e6e9ef; box-shadow:0 2px 10px rgba(0,0,0,0.03);">
-      <h3 style="font-size:24px; font-weight:600; margin-bottom:12px;">Applied NLP & Cross-Cultural AI</h3>
-      <p style="font-size:17px; color:#444; line-height:1.55;">
-        We conduct applied research in political discourse analysis, 
-        cross-lingual alignment, social media intelligence, and cultural reasoning 
-        across East Asian languages—exploring how AI interprets society, culture, 
-        and communication.
-      </p>
-    </div>
-
-  </div>
-</div>
 {% endif %}
 
-<!-- ====================== FUNDINGS ====================== -->
+<!-- ====================== RESEARCH AREAS SECTION ====================== -->
 {% if page.url == "/" or page.url == "/kdarc-lab/" %}
-<div class="partners-section">
-  <h2 class="partners-title">Funding and Partners</h2>
-  <div class="partners-grid">
+<div class="research-wrapper">
+  <h2 class="ra-title">Research Areas</h2>
 
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KAMS.svg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC%20AI.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/hana.png"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
+  <div class="ra-grid">
+
+    <div class="ra-card">
+      <h3>Multimodal AI Safety & Privacy</h3>
+      <p>Frameworks for multimodal privacy detection, high-risk content understanding, PII datasets, de-identification systems, and geolocation privacy analysis.</p>
+    </div>
+
+    <div class="ra-card">
+      <h3>Benchmarking & Evaluation Science</h3>
+      <p>Rigorous evaluation methods for LLMs focusing on cultural reasoning, politeness, figurative language, safety robustness, and linguistic bias.</p>
+    </div>
+
+    <div class="ra-card">
+      <h3>Korean NLP & Linguistic Resources</h3>
+      <p>Large-scale corpora, learner datasets, historical archives, and foundational resources for Korean linguistic and AI research.</p>
+    </div>
+
+    <div class="ra-card">
+      <h3>AI for Language Education</h3>
+      <p>Automated writing assessment, pronunciation evaluation, educational AI systems, and corpus-driven learning analytics.</p>
+    </div>
+
+    <div class="ra-card">
+      <h3>Cross-cultural & Applied NLP</h3>
+      <p>Cross-lingual alignment, East Asian language processing, cultural bias analysis, and applied NLP for real-world domains.</p>
+    </div>
 
   </div>
 </div>
@@ -329,5 +271,6 @@
 
 </body>
 </html>
+
 
 
