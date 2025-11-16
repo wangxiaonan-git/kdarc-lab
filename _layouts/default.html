@@ -112,7 +112,7 @@
       margin-top: 0;
     }
 
-    /* ====================== MAIN CONTENT (ONLY NON-HOME) ====================== */
+    /* ====================== MAIN CONTENT ====================== */
     .content-wrapper {
       max-width: 1400px;
       margin: 40px auto;
@@ -137,19 +137,24 @@
       color: #222;
     }
 
-.ra-grid {
-  display: grid;
-  grid-gap: 34px;
-  grid-template-columns: repeat(3, minmax(320px, 1fr));  /* 固定三列 */
-  justify-content: center;
-}
+    /* 第一行：3 张卡片等宽 */
+    .ra-row-1 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+      margin-bottom: 34px;
+    }
 
+    /* 第二行：2 张卡片居中 */
+    .ra-row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 34px;
+      justify-content: center;  /* ⭐ 整体居中 */
+      justify-items: center;    /* ⭐ 卡片居中 */
+    }
 
-
-
-
-
-    /* 高端科技卡片 + 微动画 */
+    /* 卡片样式保持不变 */
     .ra-card {
       background: linear-gradient(145deg, #ffffff, #f1f3f7);
       border-radius: 14px;
@@ -224,12 +229,12 @@
       transition: 0.3s ease;
     }
 
-.partner-logo-box img {
-  max-width: 70%;     /* ⭐ 自动缩小过宽的 logo */
-  max-height: 70%;    /* ⭐ 自动缩小过高的 logo */
-  object-fit: contain;
-  transition: 0.25s ease;
-}
+    .partner-logo-box img {
+      max-width: 70%;
+      max-height: 70%;
+      object-fit: contain;
+      transition: 0.25s ease;
+    }
 
     .partner-logo-box:hover {
       transform: scale(1.05);
@@ -299,8 +304,8 @@
 <div class="research-wrapper">
   <h2 class="ra-title">Research Areas</h2>
 
-  <div class="ra-grid">
-
+  <!-- 第一行：3 个 -->
+  <div class="ra-row-1">
     <div class="ra-card" style="--delay:0.1s">
       <h3>Multimodal AI Safety & Privacy</h3>
       <p>Frameworks for multimodal privacy detection, high-risk content analysis, geolocation privacy, PII datasets, and de-identification systems.</p>
@@ -315,7 +320,10 @@
       <h3>Korean NLP & Linguistic Resources</h3>
       <p>Large-scale corpora, learner datasets, and linguistic archives supporting Korean NLP research and foundational AI.</p>
     </div>
+  </div>
 
+  <!-- 第二行：2 个并居中 -->
+  <div class="ra-row-2">
     <div class="ra-card" style="--delay:0.4s">
       <h3>AI for Language Education</h3>
       <p>Automated writing assessment, pronunciation evaluation, and corpus-driven educational AI research.</p>
@@ -325,8 +333,8 @@
       <h3>Cross-cultural & Applied NLP</h3>
       <p>Language alignment, East Asian NLP, cultural bias studies, and applied models for real-world domains.</p>
     </div>
-
   </div>
+
 </div>
 {% endif %}
 
@@ -362,5 +370,6 @@
 
 </body>
 </html>
+
 
 
