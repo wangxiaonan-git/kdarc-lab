@@ -4,63 +4,51 @@ title: KDARC Lab
 ---
 
 <style>
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-/* 外层模块 */
+/* 整体样式 */
 .partners-section {
-  padding: 60px 20px 100px;
+  padding: 60px 20px 80px;
   max-width: 1500px;
-  margin: 60px auto;
-  text-align: center;
+  margin: 70px auto;
   background: white;
   border-radius: 18px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  text-align: center;
 }
 
-/* 标题 */
+/* Title */
 .partners-title {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 50px;
 }
 
-/* LOGO 容器 */
+/* Grid */
 .partners-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 55px 90px; /* 行间距 55；列间距 90 */
+  gap: 60px 100px;
 }
 
-/* LOGO 单元 */
-.partner-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
-}
-
-/* LOGO 图片 */
+/* Logo item */
 .partner-item img {
-  height: 80px;
+  height: 90px;
   width: auto;
   object-fit: contain;
-  transition: transform 0.25s ease;
+  transition: 0.25s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-/* hover 动画 */
-.partner-item:hover img {
-  transform: scale(1.07);
+/* hover */
+.partner-item img:hover {
+  transform: scale(1.09);
 }
 
-/* 特别调整尺寸 */
-.logo-large { height: 115px !important; }   /* KISA / 国立国语院 / Tscientific */
-.logo-small { height: 70px !important; }    /* NCAI 略小 */
+/* Bigger logos */
+.large-logo { height: 120px !important; }
+.small-logo { height: 70px !important; }
 
-/* 淡入上浮动画 */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -69,37 +57,45 @@ body {
 
 <div class="home">
 
-  <!-- 这里放你的主页标题、描述 -->
-  <h1>Welcome to KDARC Lab</h1>
-  <p>Knowledge·Data·AI·Resource Center at Yonsei University</p>
+<h1>Welcome to KDARC Lab</h1>
+<p>Knowledge·Data·AI·Resource Center at Yonsei University</p>
 
+<section class="partners-section">
+  <h2 class="partners-title">Funding and Partners</h2>
 
-  <!-- ------------ 资助与合作机构模块（仅主页显示）------------ -->
-  <section class="partners-section">
-    <h2 class="partners-title">Funding and Partners</h2>
+  <div class="partners-grid">
 
-    <div class="partners-grid">
-      <!-- 第一行 -->
-      <div class="partner-item"><img src="/assets/images/partne/KISA.png" class="logo-large"></div>
-      <div class="partner-item"><img src="/assets/images/partne/NIA.jpeg"></div>
-      <div class="partner-item"><img src="/assets/images/partne/NIKL.jpeg" class="logo-large"></div>
-      <div class="partner-item"><img src="/assets/images/partne/IITP.jpg"></div>
-      <div class="partner-item"><img src="/assets/images/partne/TTA.jpeg"></div>
+    <!-- Row 1 -->
+    <div class="partner-item"><img src="/assets/images/partne/KISA.png" class="large-logo"></div>
+    <div class="partner-item"><img src="/assets/images/partne/NIA.jpeg"></div>
+    <div class="partner-item"><img src="/assets/images/partne/NIKL.jpeg" class="large-logo"></div>
+    <div class="partner-item"><img src="/assets/images/partne/IITP.jpg"></div>
+    <div class="partner-item"><img src="/assets/images/partne/TTA.jpeg"></div>
 
-      <!-- 第二行 -->
-      <div class="partner-item"><img src="/assets/images/partne/NRF.png"></div>
-      <div class="partner-item"><img src="/assets/images/partne/KAMS.svg"></div>
-      <div class="partner-item"><img src="/assets/images/partne/NC AI.png" class="logo-small"></div>
-      <div class="partner-item"><img src="/assets/images/partne/flitto.png"></div>
-      <div class="partner-item"><img src="/assets/images/partne/SIF.jpeg"></div>
+    <!-- Row 2 -->
+    <div class="partner-item"><img src="/assets/images/partne/NRF.png"></div>
+    <div class="partner-item"><img src="/assets/images/partne/KAMS.svg"></div>
 
-      <!-- 第三行 -->
-      <div class="partner-item"><img src="/assets/images/partne/hana.png"></div>
-      <div class="partner-item"><img src="/assets/images/partne/T scientific.png" class="logo-large"></div>
-      <div class="partner-item"><img src="/assets/images/partne/teddysum.png"></div>
-      <div class="partner-item"><img src="/assets/images/partne/tutorus.png"></div>
+    <div class="partner-item">
+      <img src="/assets/images/partne/NC%20AI.png" class="small-logo">
     </div>
-  </section>
+
+    <div class="partner-item"><img src="/assets/images/partne/flitto.png"></div>
+    <div class="partner-item"><img src="/assets/images/partne/SIF.jpeg"></div>
+
+    <!-- Row 3 -->
+    <div class="partner-item"><img src="/assets/images/partne/hana.png"></div>
+
+    <div class="partner-item">
+      <img src="/assets/images/partne/T%20scientific.png" class="large-logo">
+    </div>
+
+    <div class="partner-item"><img src="/assets/images/partne/teddysum.png"></div>
+    <div class="partner-item"><img src="/assets/images/partne/tutorus.png"></div>
+
+  </div>
+</section>
 
 </div>
+
 
