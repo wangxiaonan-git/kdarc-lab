@@ -19,9 +19,13 @@
     /* ====================== NAVBAR ====================== */
     .navbar {
       padding: 12px 0;
-      background: white !important;
+      background: rgba(255,255,255,0.80) !important;
+      backdrop-filter: blur(14px) saturate(180%);
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
     }
 
     .navbar-brand {
@@ -32,11 +36,26 @@
       gap: 10px;
     }
 
-    .navbar-brand img {
-      height: 26px;
-      width: auto;
+    /* ------------------ Yonsei Round Logo ------------------ */
+    .yonsei-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.12);
     }
 
+    .yonsei-logo img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+    }
+
+    /* Navbar links */
     .nav-link {
       font-weight: 500;
       font-size: 16px;
@@ -45,7 +64,12 @@
       transition: all 0.25s ease;
     }
 
-    /* ====================== HERO (Home Only) ====================== */
+    .nav-link:hover {
+      color: #0058c9 !important;
+      text-shadow: 0 0 6px rgba(0,102,255,0.3);
+    }
+
+    /* ====================== HERO ====================== */
     .hero-banner {
       width: 100%;
       height: 420px;
@@ -55,10 +79,11 @@
       position: relative;
       overflow: hidden;
 
-      /* ⭐ 关键：让背景从页面最顶开始 */
-      margin-top: -80px;
+      /* ⭐关键：往上移，让它从网页最顶开始*/
+      margin-top: -82px;
 
       margin-bottom: 40px;
+      z-index: 0;
     }
 
     .hero-overlay {
@@ -162,12 +187,16 @@
 <body>
 
 <!-- NAV -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
 
-    <!-- ⭐ 加 Yonsei logo -->
     <a class="navbar-brand" href="/kdarc-lab/">
-      <img src="/kdarc-lab/assets/images/social/yonsei.png" alt="Yonsei Logo">
+
+      <!-- ⭐左侧圆形 Yonsei icon -->
+      <span class="yonsei-logo">
+        <img src="/kdarc-lab/assets/images/social/yonsei.png" alt="Yonsei Logo">
+      </span>
+
       Yonsei University
     </a>
 
@@ -188,7 +217,7 @@
 </nav>
 
 
-<!-- ============= ONLY SHOW HERO ON HOME PAGE ================ -->
+<!-- HERO only on home -->
 {% if page.url == "/" %}
 <div class="hero-banner">
   <div class="hero-overlay"></div>
@@ -201,7 +230,6 @@
   </div>
 </div>
 {% endif %}
-<!-- ========================================================== -->
 
 
 <!-- MAIN CONTENT -->
@@ -210,7 +238,7 @@
 </div>
 
 
-<!-- ============= ONLY SHOW FUNDING ON HOME PAGE =============== -->
+<!-- FUNDING only on home -->
 {% if page.url == "/" %}
 <div class="partners-section">
   <h2 class="partners-title">Funding and Partners</h2>
@@ -218,7 +246,6 @@
   <div class="partners-grid">
 
     <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
-
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
@@ -229,9 +256,7 @@
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/hana.png"></div>
-
     <div class="partner-logo-box bigger-logo"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
-
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
@@ -239,7 +264,6 @@
   </div>
 </div>
 {% endif %}
-<!-- ============================================================ -->
 
 {% include footer.html %}
 
