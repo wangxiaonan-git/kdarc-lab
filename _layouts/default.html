@@ -25,64 +25,51 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     .navbar-brand { font-weight: 600; font-size: 20px; }
-
     .nav-link {
       font-weight: 500;
       font-size: 16px;
       padding: 10px 18px !important;
       color: #333 !important;
-      transition: all 0.25s ease;
-      position: relative;
+      transition: 0.25s;
     }
-    .nav-link:hover {
-      color: #0d6efd !important;
-      text-shadow: 0 0 8px rgba(13,110,253,0.35);
-    }
+    .nav-link:hover { color: #0d6efd !important; }
     .nav-item.active .nav-link {
       color: #0d6efd !important;
       font-weight: 600;
     }
 
-    /* ====================== HERO BANNER ====================== */
+    /* ====================== HERO ====================== */
     .hero-banner {
       width: 100%;
       height: 420px;
       background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
       background-size: cover;
       background-position: center 20%;
-      background-repeat: no-repeat;
       position: relative;
       overflow: hidden;
       margin-bottom: 40px;
     }
-
     .hero-overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.30);
       z-index: 1;
     }
-
     .hero-center {
       position: absolute;
-      top: 58%; /* 向下移动 */
+      top: 58%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 3;
       text-align: center;
       color: white;
-      max-width: 900px;
-      padding: 0 20px;
+      z-index: 3;
     }
-
     .hero-center h1 {
       font-size: 48px;
       font-weight: 600;
       margin-bottom: 12px;
       white-space: nowrap;
     }
-
     .hero-center p {
       font-size: 22px;
       font-weight: 300;
@@ -99,79 +86,74 @@
       box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
     }
 
-    /* ============================================================
-       FUNDING & PARTNERS SECTION — 白色模块 + 统一 Logo 尺寸
-    ============================================================ */
-
-    .partners-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin: 60px 0 20px;
-    }
-
-    .partners-card {
-      width: 90%;
-      max-width: 1400px;
+    /* ====================== FUNDING & PARTNERS ====================== */
+    .partners-section {
+      margin-top: 50px;
+      padding: 60px 40px;
       background: white;
       border-radius: 12px;
-      padding: 45px 50px 40px;
-      box-shadow: 0px 6px 18px rgba(0,0,0,0.06);
-      text-align: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
     }
-
     .partners-title {
-      font-size: 30px;
-      font-weight: 700;
-      margin-bottom: 36px;
+      text-align: center;
+      font-size: 34px;
+      font-weight: 600;
+      margin-bottom: 45px;
       color: #222;
     }
 
-    /* ===== LOGO GRID ===== */
-
     .partners-logos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 36px;
-      justify-items: center;
-      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px 80px;
     }
 
     .partner-logo-box {
-      width: 180px;
-      height: 80px;
+      width: 230px;
+      height: 110px;
       background: white;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 6px 10px;
+      justify-content: center;
+      padding: 10px;
+
+      opacity: 0;
+      animation: fadeFloat 1.2s ease forwards;
+      animation-delay: var(--delay);
     }
 
     .partner-logo-box img {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 95%;
+      max-height: 95%;
       object-fit: contain;
-      filter: grayscale(15%);
+      transition: 0.25s;
+      filter: grayscale(10%);
       opacity: 0.92;
-      transition: all 0.25s ease;
     }
-
     .partner-logo-box img:hover {
       filter: grayscale(0%);
       opacity: 1;
-      transform: scale(1.06);
+      transform: scale(1.07);
     }
 
+    .partner-logo-box.big img {
+      transform: scale(1.25);
+    }
+
+    @keyframes fadeFloat {
+      0% { opacity: 0; transform: translateY(12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVI -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="/kdarc-lab/">Yonsei Korean Data Resource Center</a>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -195,52 +177,79 @@
     </div>
   </nav>
 
-  <!-- HERO ONLY ON HOME -->
-  {% if page.url == "/" %}
-    <div class="hero-banner">
-      <div class="hero-overlay"></div>
-      <div class="hero-center">
-        <h1>Korean Data Resource Center</h1>
-        <p>
-          Advancing intelligence data and evaluation science<br>
-          for reliable, multilingual, and culturally aware AI.
-        </p>
-      </div>
+  <!-- HERO -->
+  <div class="hero-banner">
+    <div class="hero-overlay"></div>
+    <div class="hero-center">
+      <h1>Korean Data Resource Center</h1>
+      <p>
+        Advancing intelligence data and evaluation science<br>
+        for reliable, multilingual, and culturally aware AI.
+      </p>
     </div>
-  {% endif %}
+  </div>
 
-  <!-- MAIN CONTENT -->
   <div class="content-wrapper">
     {{ content }}
   </div>
 
-  <!-- ====================== PARTNERS ====================== -->
-  {% if page.url == "/" %}
-  <div class="partners-wrapper">
-    <div class="partners-card">
-      <div class="partners-title">Funding and Partners</div>
+  <!-- ===================== Funding & Partners ===================== -->
+  <div class="partners-section">
 
-      <div class="partners-logos">
+    <h2 class="partners-title">Funding and Partners</h2>
 
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KAMS.svg"></div>
+    <div class="partners-logos">
 
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC AI.png"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/hana.png"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
-        <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
-
+      <div class="partner-logo-box" style="--delay:0.1s;">
+        <img src="/kdarc-lab/assets/images/partne/KISA.png">
       </div>
+
+      <div class="partner-logo-box" style="--delay:0.15s;">
+        <img src="/kdarc-lab/assets/images/partne/NIA.png">
+      </div>
+
+      <div class="partner-logo-box" style="--delay:0.2s;">
+        <img src="/kdarc-lab/assets/images/partne/NIKL.jpeg">
+      </div>
+
+      <div class="partner-logo-box" style="--delay:0.25s;">
+        <img src="/kdarc-lab/assets/images/partne/IITP.jpg">
+      </div>
+
+      <div class="partner-logo-box" style="--delay:0.3s;">
+        <img src="/kdarc-lab/assets/images/partne/TTA.jpeg">
+      </div>
+
+      <div class="partner-logo-box big" style="--delay:0.35s;">
+        <img src="/kdarc-lab/assets/images/partne/NRF.png">
+      </div>
+
+      <div class="partner-logo-box" style="--delay:0.4s;">
+        <img src="/kdarc-lab/assets/images/partne/KAMS.svg">
+      </div>
+
+      <div class="partner-logo-box" style="--delay:0.45s;">
+        <img src="/kdarc-lab/assets/images/partne/NC AI.png">
+      </div>
+
+      <div class="partner-logo-box" style="--delay:0.5s;">
+        <img src="/kdarc-lab/assets/images/partne/flitto.png">
+      </div>
+
+      <div class="partner-logo-box" style="--delay:0.55s;">
+        <img src="/kdarc-lab/assets/images/partne/thinkbig.png">
+      </div>
+
+      <div class="partner-logo-box" style="--delay:0.6s;">
+        <img src="/kdarc-lab/assets/images/partne/hana.png">
+      </div>
+
+      <div class="partner-logo-box" style="--delay:0.65s;">
+        <img src="/kdarc-lab/assets/images/partne/T scientific.png">
+      </div>
+
     </div>
   </div>
-  {% endif %}
 
   {% include footer.html %}
 
@@ -250,5 +259,4 @@
 
 </body>
 </html>
-
 
