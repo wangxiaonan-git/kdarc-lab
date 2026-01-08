@@ -1,112 +1,116 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Korean Data Resource Center</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Korean Data Resource Center</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f5f6f8;
-      margin: 0;
-      padding: 0;
-    }
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f6f8;
+      margin: 0;
+      padding: 0;
+    }
 
-    /* ====================== NAVBAR ====================== */
-    .navbar {
-      padding: 16px 0;
-      background: transparent !important;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 9999 !important;
-      border: none;
-      box-shadow: none;
-    }
+    /* ====================== NAVBAR ====================== */
+    .navbar {
+      padding: 16px 0;
+      background: transparent !important;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+      border: none;
+      box-shadow: none;
+    }
 
-    .yonsei-logo img {
-      height: 42px;
-      width: auto;
-      margin-right: 10px;
-    }
+    .yonsei-logo img {
+      height: 42px;
+      width: auto;
+      margin-right: 10px;
+    }
 
-    .navbar-brand {
-      font-weight: 450;
-      font-size: 22px;
-      color: white !important;
-      display: flex;
-      align-items: center;
-      cursor: default;
-    }
+    .navbar-brand {
+      font-weight: 450;
+      font-size: 22px;
+      color: white !important;
+      display: flex;
+      align-items: center;
+      cursor: default;
+    }
 
-    .nav-link {
-      font-weight: 300 !important;
-      font-size: 18px;
-      color: rgba(255,255,255,0.9) !important;
-      padding: 8px 18px !important;
-      transition: all 0.25s ease;
-    }
+    .nav-link {
+      font-weight: 300 !important;
+      font-size: 18px;
+      color: rgba(255,255,255,0.9) !important;
+      padding: 8px 18px !important;
+      transition: all 0.25s ease;
+    }
 
-    .nav-link:hover {
-      color: #fff !important;
-      text-shadow: 0 0 6px rgba(255,255,255,0.6);
-    }
+    .nav-link:hover {
+      color: #fff !important;
+      text-shadow: 0 0 6px rgba(255,255,255,0.6);
+    }
 
-    /* ====================== HOME HERO ====================== */
-    .hero-banner {
-      width: 100%;
-      height: 420px;
-      /* 修改：替换为深邃科技蓝渐变背景，无版权风险 */
-      background: linear-gradient(135deg, #000428 0%, #004e92 100%);
-      position: relative;
-      margin-top: 0;
-    }
+    /* ====================== HOME HERO ====================== */
+    .hero-banner {
+      width: 100%;
+      height: 420px;
+      background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
+      background-size: cover;
+      background-position: center 10%;
+      position: relative;
+      margin-top: 0;
+    }
 
-    .hero-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.30);
-      z-index: 1;
-    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.30);
+      z-index: 1;
+    }
 
-    .hero-center {
-      position: absolute;
-      top: 58%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
-      text-align: center;
-      color: white;
-      max-width: 900px;
-    }
+    .hero-center {
+      position: absolute;
+      top: 58%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      text-align: center;
+      color: white;
+      max-width: 900px;
+    }
 
-    .hero-center h1 {
-      font-size: 48px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
+    .hero-center h1 {
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
 
-    .hero-center p {
-      font-size: 22px;
-      font-weight: 300;
-      line-height: 1.45;
-    }
+    .hero-center p {
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 1.45;
+    }
 
-    /* ====================== SUBPAGE BANNER ====================== */
-    .subpage-banner {
-      width: 100%;
-      height: 160px;
-      /* 修改：替换为横向深青色渐变，保持一致的高端感 */
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      position: relative;
-      margin-top: 0;
-    }
-  </style>
+    /* ====================== SUBPAGE BANNER ====================== */
+    .subpage-banner {
+      width: 100%;
+      height: 160px;
+      background-image: url('/kdarc-lab/assets/images/background/background2.jpg');
+      background-size: cover;
+      background-position: center 95%;
+      background-repeat: no-repeat;
+      position: relative;
+      margin-top: 0;
+    }
 
     /* ====================== MAIN CONTENT ====================== */
     .content-wrapper {
