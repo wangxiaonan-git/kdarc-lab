@@ -15,24 +15,19 @@
       font-family: 'Inter', sans-serif;
       background-color: #f5f6f8;
       margin: 0;
-      padding-top: 80px; /* ⭐ 给 fixed navbar 让位 */
+      padding: 0;
     }
 
     /* ====================== NAVBAR ====================== */
     .navbar {
       padding: 16px 0;
-      background: transparent;
-      position: fixed;          /* ✅ 改为 fixed */
+      background: transparent !important;
+      position: absolute;
       top: 0;
       width: 100%;
-      z-index: 9999;
+      z-index: 9999 !important;
       border: none;
       box-shadow: none;
-    }
-
-    .navbar.scrolled {
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(6px);
     }
 
     .yonsei-logo img {
@@ -51,10 +46,10 @@
     }
 
     .nav-link {
-      font-weight: 300;
+      font-weight: 300 !important;
       font-size: 18px;
       color: rgba(255,255,255,0.9) !important;
-      padding: 8px 18px;
+      padding: 8px 18px !important;
       transition: all 0.25s ease;
     }
 
@@ -63,20 +58,29 @@
       text-shadow: 0 0 6px rgba(255,255,255,0.6);
     }
 
-    /* ====================== HERO ====================== */
-    .hero-banner {
-      width: 100%;
-      height: 420px;
-      background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
-      background-size: cover;
-      background-position: center 10%;
-      position: relative;
-    }
+    /* ====================== HOME HERO ====================== */
+  .hero-banner {
+  width: 100vw;
+  height: 420px;
+  background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
+  background-size: cover;
+  background-position: center 10%;
+  position: relative;
+
+  margin-top: -80px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
 
     .hero-overlay {
       position: absolute;
-      inset: 0;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0,0,0,0.30);
+      z-index: 1;
     }
 
     .hero-center {
@@ -84,6 +88,7 @@
       top: 58%;
       left: 50%;
       transform: translate(-50%, -50%);
+      z-index: 3;
       text-align: center;
       color: white;
       max-width: 900px;
@@ -108,12 +113,15 @@
       background-image: url('/kdarc-lab/assets/images/background/background2.jpg');
       background-size: cover;
       background-position: center 95%;
+      background-repeat: no-repeat;
+      position: relative;
+      margin-top: 0;
     }
 
     /* ====================== MAIN CONTENT ====================== */
     .content-wrapper {
-      max-width: 1200px;   /* ✅ 与 navbar 统一 */
-      margin: 60px auto;
+      max-width: 1400px;
+      margin: 40px auto;
       background: white;
       padding: 60px;
       border-radius: 12px;
@@ -122,8 +130,9 @@
 
     /* ====================== RESEARCH AREAS ====================== */
     .research-wrapper {
-      max-width: 1200px;
-      margin: 80px auto;
+      max-width: 1400px;
+      margin: 40px auto 70px auto;
+      padding: 0;
     }
 
     .ra-title {
@@ -145,8 +154,8 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 34px;
-      max-width: 800px;
-      margin: 0 auto;
+      justify-content: center;
+      justify-items: center;
     }
 
     .ra-card {
@@ -159,12 +168,19 @@
       transform: translateY(25px);
       animation: fadeUp 0.8s ease forwards;
       animation-delay: var(--delay, 0s);
+      transition: all 0.35s ease;
+    }
+
+    .ra-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.12);
     }
 
     .ra-card h3 {
       font-size: 22px;
       font-weight: 650;
       margin-bottom: 12px;
+      color: #111;
     }
 
     .ra-card p {
@@ -174,14 +190,15 @@
     }
 
     @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(25px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ====================== PARTNERS ====================== */
+    /* ====================== FUNDINGS ====================== */
     .partners-section {
-      max-width: 1200px;
-      margin: 80px auto;
-      padding: 50px;
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 50px 40px;
       background: white;
       border-radius: 14px;
       box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
@@ -192,51 +209,59 @@
       font-size: 32px;
       font-weight: 700;
       margin-bottom: 40px;
+      color: #333;
     }
 
+    /* ⭐ 绝对保证一行 5 个 */
     .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-      justify-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px 24px;
     }
 
     .partner-logo-box {
-      width: 180px;
-      height: 100px;
+      width: 200px;
+      height: 110px;
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 10px;
-      background: white;
-      border: 1px solid rgba(0,0,0,0.06);
+      padding: 10px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
     }
 
     .partner-logo-box img {
-      max-width: 75%;
-      max-height: 75%;
+      max-width: 85%;
+      max-height: 85%;
       object-fit: contain;
+    }
+
+    .partner-logo-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+    }
+
+    .big-partner img {
+      transform: none;
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <div class="navbar-brand">
       <span class="yonsei-logo">
-        <img src="/kdarc-lab/assets/images/badges/yonsei.png">
+        <img src="/kdarc-lab/assets/images/badges/yonsei.png" alt="Yonsei Logo">
       </span>
       Yonsei University
     </div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link" href="/kdarc-lab/">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/kdarc-lab/members.html">Members</a></li>
@@ -247,7 +272,7 @@
   </div>
 </nav>
 
-{% if page.url == "/" or page.url contains "index" %}
+{% if page.url == "/" or page.url == "/kdarc-lab/" %}
 <div class="hero-banner">
   <div class="hero-overlay"></div>
   <div class="hero-center">
@@ -255,49 +280,40 @@
     <p>Advancing intelligence data and evaluation science<br>for reliable, multilingual, and culturally aware AI.</p>
   </div>
 </div>
+{% endif %}
 
-<div class="research-wrapper">
-  <h2 class="ra-title">Research Areas</h2>
-
-  <div class="ra-row-1">
-    <div class="ra-card" style="--delay:0.1s"><h3>Multimodal AI Safety & Privacy</h3><p>Privacy detection, geolocation risk, PII benchmarks.</p></div>
-    <div class="ra-card" style="--delay:0.2s"><h3>Benchmarking & Evaluation Science</h3><p>LLM and VLM evaluation, culture and safety.</p></div>
-    <div class="ra-card" style="--delay:0.3s"><h3>Korean NLP Resources</h3><p>Corpora and linguistic datasets for Korean AI.</p></div>
-  </div>
-
-  <div class="ra-row-2">
-    <div class="ra-card" style="--delay:0.4s"><h3>AI for Education</h3><p>Automated assessment and learning analytics.</p></div>
-    <div class="ra-card" style="--delay:0.5s"><h3>Cross-cultural NLP</h3><p>Cultural bias and applied language AI.</p></div>
-  </div>
-</div>
-
+{% if page.url == "/" or page.url == "/kdarc-lab/" %}
 <div class="partners-section">
   <h2 class="partners-title">Funding and Partners</h2>
+
   <div class="partners-grid">
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
     <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/yonsei_AI.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC%20AI.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/LI.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/wv.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/kice.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/ICONS.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IIAtecg.jpg"></div>
+    </div>
   </div>
 </div>
-
-{% else %}
-<div class="subpage-banner"></div>
-<div class="content-wrapper">
-  {{ content }}
-</div>
 {% endif %}
-
 {% include footer.html %}
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-  window.addEventListener('scroll', () => {
-    document.querySelector('.navbar')
-      .classList.toggle('scrolled', window.scrollY > 40);
-  });
-</script>
 
 </body>
 </html>
