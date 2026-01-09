@@ -20,7 +20,6 @@
   background: none !important;
 }
 
-/* 删除所有标题下划线（不管来自哪个页面） */
 h1::after, h2::after, h3::after,
 .section-title::after, .page-title::after,
 .title::after, .header-line::after {
@@ -29,13 +28,11 @@ h1::after, h2::after, h3::after,
   border: none !important;
 }
 
-/* 删除页面里旧的 <hr> 蓝线 */
 hr {
   border: none !important;
   height: 0 !important;
 }
 
-/* 删除 “Members 页面里的蓝线卡片结构” */
 .member-section::before,
 .member-section::after,
 .members-header::after {
@@ -43,7 +40,6 @@ hr {
   border: none !important;
 }
 
-/* 阻断任何 background gradient 残留 */
 .gradient-line,
 .blue-bar,
 .yonsei-line {
@@ -163,6 +159,9 @@ hr {
 
         <li class="nav-item">
           <a class="nav-link {% if page.url contains 'publications' %}active{% endif %}" href="/kdarc-lab/publications.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.url contains 'publications' %}active{% endif %}" href="/kdarc-lab/publications.html">Announcements</a>
         </li>
 
       </ul>
