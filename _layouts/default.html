@@ -17,45 +17,36 @@
       margin: 0;
       padding: 0;
     }
+
     /* ====================== TECH GRADIENT BACKGROUND ====================== */
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    .hero-banner {
+      background-image: linear-gradient(
+        120deg,
+        #2b5876,
+        #4e4376,
+        #3a7bd5,
+        #00d2ff
+      );
+      background-size: 400% 400%;
+      animation: gradientFlow 18s ease infinite;
+    }
 
-/* HOME HERO 动态渐变 */
-.hero-banner {
-  background-image: linear-gradient(
-    120deg,
-    #0f2027,
-    #203a43,
-    #2c5364,
-    #1b3c59
-  );
-  background-size: 300% 300%;
-  animation: gradientFlow 14s ease infinite;
-}
-
-/* SUBPAGE BANNER 动态渐变（稍微克制一点） */
-.subpage-banner {
-  background-image: linear-gradient(
-    120deg,
-    #141e30,
-    #243b55,
-    #1e3c72
-  );
-  background-size: 250% 250%;
-  animation: gradientFlow 18s ease infinite;
-}
-
+    .subpage-banner {
+      background-image: linear-gradient(
+        120deg,
+        #3a7bd5,
+        #00d2ff,
+        #4facfe
+      );
+      background-size: 300% 300%;
+      animation: gradientFlow 22s ease infinite;
+    }
 
     /* ====================== NAVBAR ====================== */
     .navbar {
@@ -64,55 +55,37 @@
       position: absolute;
       top: 0;
       width: 100%;
-      z-index: 9999 !important;
-      border: none;
-      box-shadow: none;
+      z-index: 9999;
     }
 
     .yonsei-logo img {
       height: 42px;
-      width: auto;
       margin-right: 10px;
     }
 
     .navbar-brand {
-      font-weight: 450;
       font-size: 22px;
       color: white !important;
       display: flex;
       align-items: center;
-      cursor: default;
     }
 
     .nav-link {
-      font-weight: 300 !important;
       font-size: 18px;
       color: rgba(255,255,255,0.9) !important;
       padding: 8px 18px !important;
-      transition: all 0.25s ease;
     }
 
-    .nav-link:hover {
-      color: #fff !important;
-      text-shadow: 0 0 6px rgba(255,255,255,0.6);
-    }
-
-    /* ====================== HOME HERO ====================== */
+    /* ====================== HERO ====================== */
     .hero-banner {
-      width: 100%;
       height: 420px;
-      background-size: cover;
-      background-position: center 10%;
       position: relative;
-      margin-top: 0;
     }
 
     .hero-overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.30);
-      z-index: 1;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
     }
 
     .hero-center {
@@ -120,381 +93,131 @@
       top: 58%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 3;
-      text-align: center;
       color: white;
+      text-align: center;
       max-width: 900px;
     }
 
     .hero-center h1 {
       font-size: 48px;
       font-weight: 600;
-      margin-bottom: 12px;
     }
 
     .hero-center p {
       font-size: 22px;
-      font-weight: 300;
-      line-height: 1.45;
     }
 
-    /* ====================== SUBPAGE BANNER ====================== */
-    .subpage-banner {
-      width: 100%;
-      height: 160px;
-      background-size: cover;
-      background-position: center 95%;
-      background-repeat: no-repeat;
-      position: relative;
-      margin-top: 0;
-    }
-
-    /* ====================== MAIN CONTENT ====================== */
+    /* ====================== CONTENT ====================== */
     .content-wrapper {
-      max-width: 1400px;
-      margin: 40px auto;
+      max-width: 1200px;
+      margin: 60px auto;
       background: white;
       padding: 60px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 14px rgba(0,0,0,0.06);
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
-    /* ====================== RESEARCH AREAS ====================== */
-.research-wrapper {
-    max-width: 1400px;
-    margin: 40px auto 70px auto;
-    padding: 0 0;    /* ⭐ 把左右 padding 去掉 */
-}
-
-    .ra-title {
-      font-size: 36px;
+    /* ====================== ANNOUNCEMENTS ====================== */
+    .page-title {
+      font-size: 40px;
       font-weight: 700;
-      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+      font-size: 18px;
+      color: #666;
       margin-bottom: 50px;
-      color: #222;
     }
 
-    /* 第一行：3 张卡片等宽 */
-    .ra-row-1 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 34px;
-      margin-bottom: 34px;
-    }
-
-    /* 第二行：2 张卡片居中 */
-    .ra-row-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 34px;
-      justify-content: center;  /* ⭐ 整体居中 */
-      justify-items: center;    /* ⭐ 卡片居中 */
-    }
-
-    /* 卡片样式保持不变 */
-    .ra-card {
-      background: linear-gradient(145deg, #ffffff, #f1f3f7);
-      border-radius: 14px;
-      padding: 32px;
+    .announcement-featured {
+      position: relative;
+      background: linear-gradient(135deg, #e8f0f7, #f5f9fc);
+      border-radius: 16px;
+      padding: 36px;
+      margin-bottom: 70px;
       border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-      opacity: 0;
-      transform: translateY(25px);
-      animation: fadeUp 0.8s ease forwards;
-      animation-delay: var(--delay, 0s);
-      transition: all 0.35s ease;
     }
 
-    .ra-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 30px rgba(0,0,0,0.12);
+    .badge-featured {
+      position: absolute;
+      top: -14px;
+      left: 24px;
+      background: #1e3c72;
+      color: white;
+      padding: 6px 14px;
+      font-size: 14px;
+      border-radius: 20px;
     }
 
-    .ra-card h3 {
-      font-size: 22px;
-      font-weight: 650;
-      margin-bottom: 12px;
-      color: #111;
-    }
-
-    .ra-card p {
-      font-size: 16px;
-      color: #444;
-      line-height: 1.55;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ====================== FUNDINGS ====================== */
-    .partners-section {
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 50px 40px;
+    .announcement-card {
       background: white;
-      border-radius: 14px;
-      box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
-      text-align: center;
+      border-radius: 12px;
+      padding: 26px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(0,0,0,0.06);
     }
 
-    .partners-title {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 40px;
-      color: #333;
+    .announcement-card h3 {
+      font-size: 20px;
+      font-weight: 600;
     }
 
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px 25px;
-      justify-items: center;
+    .tag {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+      background: #f1f3f6;
+      padding: 4px 10px;
+      border-radius: 12px;
     }
 
-    .partner-logo-box {
-      width: 200px;
-      height: 110px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      padding: 10px;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.05);
-      transition: 0.3s ease;
+    a.announcement-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
-
-    .partner-logo-box img {
-      max-width: 70%;
-      max-height: 70%;
-      object-fit: contain;
-      transition: 0.25s ease;
-    }
-
-    .partner-logo-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-    }
-
-    .big-partner img { transform: scale(1.5); }
   </style>
-
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
     <div class="navbar-brand">
-      <span class="yonsei-logo">
-        <img src="/kdarc-lab/assets/images/badges/yonsei.png" alt="Yonsei Logo">
-      </span>
+      <img src="/kdarc-lab/assets/images/badges/yonsei.png" class="yonsei-logo">
       KDARC Lab @ Yonsei University
-    </div>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/members.html">Members</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/publications.html">Publications</a></li>
-      </ul>
     </div>
   </div>
 </nav>
 
-<!-- SUBPAGE BANNER -->
-{% if page.url != "/" and page.url != "/kdarc-lab/" %}
 <div class="subpage-banner"></div>
-{% endif %}
 
-<!-- HOME HERO -->
-{% if page.url == "/" or page.url == "/kdarc-lab/" %}
-<div class="hero-banner">
-  <div class="hero-overlay"></div>
-  <div class="hero-center">
-    <h1>Korean DAta Resource Center</h1>
-    <p>
-      Advancing intelligence data and evaluation science<br>
-      for reliable, multilingual, and culturally aware AI.
-    </p>
-  </div>
-</div>
-{% endif %}
-
-<!-- MAIN CONTENT (non-home) -->
-{% if page.url != "/" and page.url != "/kdarc-lab/" %}
 <div class="content-wrapper">
-  {{ content }}
-</div>
-{% endif %}
 
-<!-- ====================== RESEARCH AREAS (HOME ONLY) ====================== -->
-{% if page.url == "/" or page.url == "/kdarc-lab/" %}
-<div class="research-wrapper">
-  <h2 class="ra-title">Research Areas</h2>
+  <h1 class="page-title">Announcements</h1>
+  <p class="page-subtitle">Recruitment, project notices, and lab updates</p>
 
-  <!-- 第一行：3 个 -->
-  <div class="ra-row-1">
-    <div class="ra-card" style="--delay:0.1s">
-      <h3>Multimodal AI Safety & Privacy</h3>
-      <p>Frameworks for multimodal privacy detection, high-risk content analysis, geolocation privacy, PII datasets, and de-identification systems.</p>
+  <a href="/kdarc-lab/announcements/2026-ra-recruitment.html" class="announcement-link">
+    <div class="announcement-featured">
+      <span class="badge-featured">Featured</span>
+      <h2>Research Assistant Recruitment (Spring 2026)</h2>
+      <p>Temporary recruitment for data annotation and benchmarking tasks.</p>
+      <p><strong>Deadline:</strong> January 20, 2026</p>
     </div>
+  </a>
 
-    <div class="ra-card" style="--delay:0.2s">
-      <h3>Benchmarking & Evaluation Science</h3>
-      <p>Rigorous evaluation of LLMs, focusing on cultural reasoning, figurative language, politeness, safety robustness, and fairness.</p>
-    </div>
+  <h2>Past Announcements</h2>
 
-    <div class="ra-card" style="--delay:0.3s">
-      <h3>Korean NLP & Linguistic Resources</h3>
-      <p>Large-scale corpora, learner datasets, and linguistic archives supporting Korean NLP research and foundational AI.</p>
+  <a href="#" class="announcement-link">
+    <div class="announcement-card">
+      <h3>Winter Data Collection Support</h3>
+      <p>Short-term assistance for corpus verification tasks.</p>
+      <span class="tag">Recruitment</span>
     </div>
-  </div>
-
-  <!-- 第二行：2 个并居中 -->
-  <div class="ra-row-2">
-    <div class="ra-card" style="--delay:0.4s">
-      <h3>AI for Language Education</h3>
-      <p>Automated writing assessment, pronunciation evaluation, and corpus-driven educational AI research.</p>
-    </div>
-
-    <div class="ra-card" style="--delay:0.5s">
-      <h3>Cross-cultural & Applied NLP</h3>
-      <p>Language alignment, East Asian NLP, cultural bias studies, and applied models for real-world domains.</p>
-    </div>
-  </div>
+  </a>
 
 </div>
-{% endif %}
-
-<!-- ====================== FUNDINGS (HOME ONLY) ====================== -->
-{% if page.url == "/" or page.url == "/kdarc-lab/" %}
-<div class="partners-section">
-  <h2 class="partners-title">Funding and Partners</h2>
-
-  <div class="partners-grid">
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/yonsei_AI.jpg"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC%20AI.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/LI.jpg"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
-    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/wv.jpg"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/kice.png"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/ICONS.jpg"></div>
-    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/IIAtecg.jpg"></div>
-  </div>
-</div>
-{% endif %}
-
-  /* ====================== ANNOUNCEMENTS ====================== */
-
-.page-title {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.page-subtitle {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 50px;
-}
-
-/* ===== Featured ===== */
-.announcement-featured {
-  position: relative;
-  background: linear-gradient(135deg, #e8f0f7, #f5f9fc);
-  border-radius: 16px;
-  padding: 36px;
-  margin-bottom: 70px;
-  border: 1px solid rgba(0,0,0,0.08);
-}
-
-.badge-featured {
-  position: absolute;
-  top: -14px;
-  left: 24px;
-  background: #1e3c72;
-  color: white;
-  padding: 6px 14px;
-  font-size: 14px;
-  border-radius: 20px;
-}
-
-.announcement-featured h2 {
-  font-size: 28px;
-  font-weight: 650;
-  margin-bottom: 16px;
-}
-
-.announcement-featured ul {
-  margin: 20px 0;
-}
-
-.deadline {
-  font-weight: 600;
-  color: #1e3c72;
-}
-
-/* ===== Past ===== */
-.section-title {
-  font-size: 26px;
-  font-weight: 650;
-  margin-bottom: 30px;
-}
-
-.announcement-card {
-  background: white;
-  border-radius: 12px;
-  padding: 26px;
-  margin-bottom: 22px;
-  border: 1px solid rgba(0,0,0,0.06);
-  transition: 0.25s ease;
-}
-
-.announcement-card:hover {
-  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
-  transform: translateY(-3px);
-}
-
-.announcement-card h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.announcement-card p {
-  font-size: 15px;
-  color: #444;
-}
-
-.tag {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: 13px;
-  color: #555;
-  background: #f1f3f6;
-  padding: 4px 10px;
-  border-radius: 12px;
-}
 
 {% include footer.html %}
 
@@ -503,4 +226,5 @@
 
 </body>
 </html>
+
 
