@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Korean Data</title>
+  <title>Korean Data Resource Center</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -28,24 +28,29 @@
     .hero-banner {
       background-image: linear-gradient(
         120deg,
-        #2b5876,
-        #4e4376,
-        #3a7bd5,
-        #00d2ff
+        #4e54c8,
+        #6a82fb,
+        #00c6ff,
+        #7f7fd5
       );
       background-size: 400% 400%;
       animation: gradientFlow 18s ease infinite;
+      width: 100%;
+      height: 420px;
+      position: relative;
     }
 
     .subpage-banner {
       background-image: linear-gradient(
         120deg,
-        #3a7bd5,
-        #00d2ff,
-        #4facfe
+        #6a82fb,
+        #4e54c8,
+        #5f72bd
       );
       background-size: 300% 300%;
       animation: gradientFlow 22s ease infinite;
+      width: 100%;
+      height: 160px;
     }
 
     /* ====================== NAVBAR ====================== */
@@ -77,15 +82,10 @@
     }
 
     /* ====================== HERO ====================== */
-    .hero-banner {
-      height: 420px;
-      position: relative;
-    }
-
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.28);
     }
 
     .hero-center {
@@ -93,8 +93,8 @@
       top: 58%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
       text-align: center;
+      color: white;
       max-width: 900px;
     }
 
@@ -105,119 +105,176 @@
 
     .hero-center p {
       font-size: 22px;
+      font-weight: 300;
     }
 
     /* ====================== CONTENT ====================== */
     .content-wrapper {
-      max-width: 1200px;
-      margin: 60px auto;
+      max-width: 1400px;
+      margin: 40px auto;
       background: white;
       padding: 60px;
-      border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
     }
 
-    /* ====================== ANNOUNCEMENTS ====================== */
-    .page-title {
-      font-size: 40px;
+    /* ====================== RESEARCH AREAS ====================== */
+    .research-wrapper {
+      max-width: 1400px;
+      margin: 60px auto 80px auto;
+    }
+
+    .ra-title {
+      font-size: 36px;
       font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .page-subtitle {
-      font-size: 18px;
-      color: #666;
+      text-align: center;
       margin-bottom: 50px;
     }
 
-    .announcement-featured {
-      position: relative;
-      background: linear-gradient(135deg, #e8f0f7, #f5f9fc);
-      border-radius: 16px;
-      padding: 36px;
-      margin-bottom: 70px;
-      border: 1px solid rgba(0,0,0,0.08);
+    .ra-row-1 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+      margin-bottom: 34px;
     }
 
-    .badge-featured {
-      position: absolute;
-      top: -14px;
-      left: 24px;
-      background: #1e3c72;
-      color: white;
-      padding: 6px 14px;
-      font-size: 14px;
-      border-radius: 20px;
+    .ra-row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 34px;
+      justify-items: center;
     }
 
-    .announcement-card {
+    .ra-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    /* ====================== FUNDINGS ====================== */
+    .partners-section {
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 50px 40px;
       background: white;
-      border-radius: 12px;
-      padding: 26px;
-      margin-bottom: 22px;
-      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      text-align: center;
     }
 
-    .announcement-card h3 {
-      font-size: 20px;
-      font-weight: 600;
+    .partners-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 40px;
     }
 
-    .tag {
-      display: inline-block;
-      margin-top: 12px;
-      font-size: 13px;
-      background: #f1f3f6;
-      padding: 4px 10px;
-      border-radius: 12px;
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px 25px;
+      justify-items: center;
     }
 
-    a.announcement-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
+    .partner-logo-box {
+      width: 200px;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .partner-logo-box img {
+      max-width: 70%;
+      max-height: 70%;
+    }
+
+    .big-partner img {
+      transform: scale(1.5);
     }
   </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <div class="navbar-brand">
-      <img src="/kdarc-lab/assets/images/badges/yonsei.png" class="yonsei-logo">
+      <span class="yonsei-logo">
+        <img src="/kdarc-lab/assets/images/badges/yonsei.png">
+      </span>
       KDARC Lab @ Yonsei University
     </div>
   </div>
 </nav>
 
+{% if page.url != "/" and page.url != "/kdarc-lab/" %}
 <div class="subpage-banner"></div>
+{% endif %}
 
-<div class="content-wrapper">
-
-  <h1 class="page-title">Announcements</h1>
-  <p class="page-subtitle">Recruitment, project notices, and lab updates</p>
-
-  <a href="/kdarc-lab/announcements/2026-ra-recruitment.html" class="announcement-link">
-    <div class="announcement-featured">
-      <span class="badge-featured">Featured</span>
-      <h2>Research Assistant Recruitment (Spring 2026)</h2>
-      <p>Temporary recruitment for data annotation and benchmarking tasks.</p>
-      <p><strong>Deadline:</strong> January 20, 2026</p>
-    </div>
-  </a>
-
-  <h2>Past Announcements</h2>
-
-  <a href="#" class="announcement-link">
-    <div class="announcement-card">
-      <h3>Winter Data Collection Support</h3>
-      <p>Short-term assistance for corpus verification tasks.</p>
-      <span class="tag">Recruitment</span>
-    </div>
-  </a>
-
+{% if page.url == "/" or page.url == "/kdarc-lab/" %}
+<div class="hero-banner">
+  <div class="hero-overlay"></div>
+  <div class="hero-center">
+    <h1>Korean Data Resource Center</h1>
+    <p>
+      Advancing intelligence data and evaluation science<br>
+      for reliable, multilingual, and culturally aware AI.
+    </p>
+  </div>
 </div>
+{% endif %}
+
+{% if page.url != "/" and page.url != "/kdarc-lab/" %}
+<div class="content-wrapper">
+  {{ content }}
+</div>
+{% endif %}
+
+{% if page.url == "/" or page.url == "/kdarc-lab/" %}
+<div class="research-wrapper">
+  <h2 class="ra-title">Research Areas</h2>
+
+  <div class="ra-row-1">
+    <div class="ra-card">Multimodal AI Safety & Privacy</div>
+    <div class="ra-card">Benchmarking & Evaluation Science</div>
+    <div class="ra-card">Korean NLP & Linguistic Resources</div>
+  </div>
+
+  <div class="ra-row-2">
+    <div class="ra-card">AI for Language Education</div>
+    <div class="ra-card">Cross-cultural & Applied NLP</div>
+  </div>
+</div>
+{% endif %}
+
+{% if page.url == "/" or page.url == "/kdarc-lab/" %}
+<div class="partners-section">
+  <h2 class="partners-title">Funding and Partners</h2>
+
+  <div class="partners-grid">
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/KISA.png"></div>
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/NIA.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NIKL.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/IITP.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/TTA.jpeg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NRF.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/yonsei_AI.jpg"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/NC%20AI.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/flitto.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/thinkbig.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/LI.jpg"></div>
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/T scientific.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/teddysum.png"></div>
+    <div class="partner-logo-box"><img src="/kdarc-lab/assets/images/partne/tutorus.png"></div>
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/SIF.jpeg"></div>
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/wv.jpg"></div>
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/kice.png"></div>
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/ICONS.jpg"></div>
+    <div class="partner-logo-box big-partner"><img src="/kdarc-lab/assets/images/partne/IIAtecg.jpg"></div>
+  </div>
+</div>
+{% endif %}
 
 {% include footer.html %}
 
@@ -226,5 +283,4 @@
 
 </body>
 </html>
-
 
