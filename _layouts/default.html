@@ -174,7 +174,7 @@
       color: #222;
     }
 
-    /* 第一行：3 张卡片等宽 */
+
     .ra-row-1 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -182,16 +182,16 @@
       margin-bottom: 34px;
     }
 
-    /* 第二行：2 张卡片居中 */
+
     .ra-row-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 34px;
-      justify-content: center;  /* ⭐ 整体居中 */
-      justify-items: center;    /* ⭐ 卡片居中 */
+      justify-content: center; 
+      justify-items: center;  
     }
 
-    /* 卡片样式保持不变 */
+
     .ra-card {
       background: linear-gradient(145deg, #ffffff, #f1f3f7);
       border-radius: 14px;
@@ -286,29 +286,7 @@
 <body>
 
 <!-- NAV -->
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container">
-    <div class="navbar-brand">
-      <span class="yonsei-logo">
-        <img src="/kdarc-lab/assets/images/badges/yonsei.png" alt="Yonsei Logo">
-      </span>
-      KDARC Lab @ Yonsei University
-    </div>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/members.html">Members</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kdarc-lab/publications.html">Publications</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+{% include navbar.html %}
 
 <!-- SUBPAGE BANNER -->
 {% if page.url != "/" and page.url != "/kdarc-lab/" %}
