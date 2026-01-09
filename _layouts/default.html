@@ -17,6 +17,45 @@
       margin: 0;
       padding: 0;
     }
+    /* ====================== TECH GRADIENT BACKGROUND ====================== */
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* HOME HERO 动态渐变 */
+.hero-banner {
+  background-image: linear-gradient(
+    120deg,
+    #0f2027,
+    #203a43,
+    #2c5364,
+    #1b3c59
+  );
+  background-size: 300% 300%;
+  animation: gradientFlow 14s ease infinite;
+}
+
+/* SUBPAGE BANNER 动态渐变（稍微克制一点） */
+.subpage-banner {
+  background-image: linear-gradient(
+    120deg,
+    #141e30,
+    #243b55,
+    #1e3c72
+  );
+  background-size: 250% 250%;
+  animation: gradientFlow 18s ease infinite;
+}
+
 
     /* ====================== NAVBAR ====================== */
     .navbar {
@@ -62,7 +101,6 @@
     .hero-banner {
       width: 100%;
       height: 420px;
-      background-image: url('/kdarc-lab/assets/images/background/background1.jpg');
       background-size: cover;
       background-position: center 10%;
       position: relative;
@@ -104,7 +142,6 @@
     .subpage-banner {
       width: 100%;
       height: 160px;
-      background-image: url('/kdarc-lab/assets/images/background/background2.jpg');
       background-size: cover;
       background-position: center 95%;
       background-repeat: no-repeat;
