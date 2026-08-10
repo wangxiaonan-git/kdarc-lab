@@ -151,6 +151,43 @@ title: Announcements
     color: #d73a49;
     font-weight: bold;
   }
+
+  /* Multi-image gallery (added) */
+  .news-gallery {
+    width: 280px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    align-content: start;
+  }
+
+  .news-gallery .news-image {
+    width: 100%;
+    height: 110px;
+  }
+
+  .news-gallery .news-image.wide {
+    grid-column: 1 / -1;
+    height: 150px;
+  }
+
+  /* Member comment block (added) */
+  .member-quote {
+    background: #fff;
+    border-left: 3px solid #0366d6;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 10px 0 0 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .member-quote .member-name {
+    color: #0366d6;
+    font-weight: 700;
+  }
 </style>
 
 <div class="news-container">
@@ -167,6 +204,94 @@ title: Announcements
   </div>
 
   <hr style="border: 0; height: 1px; background: #eaecef; margin-bottom: 60px;">
+
+  <div class="news-card">
+    <div class="news-date">2026.07</div>
+    <div class="news-title">🌐 Paper Accepted at ACL 2026</div>
+    <div class="news-content">
+      <div class="news-text">
+        <p>박서윤 연구원의 논문이 ACL 2026에 채택되었습니다. 축하드립니다 🎉</p>
+        <span class="highlight-tag">Conference Paper</span>
+        <ul class="pub-list">
+          <li><strong>Read the Room, Read the Image:</strong> Understanding Indirect Speech Acts in Multimodal Visual Contexts</li>
+        </ul>
+      </div>
+      <div class="news-image">
+        <img src="/darc-lab/assets/images/news/ACL2026.jpeg" alt="ACL 2026">
+      </div>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">2026.07.01 ~ 07.03</div>
+    <div class="news-title">🇬🇧 ICKL 2026 in Sheffield</div>
+    <div class="news-content">
+      <div class="news-text">
+        <p>7월 영국 셰필드에서 열린 ICKL 2026에 다르크 연구실이 참가하여 총 3편의 논문을 발표했습니다.</p>
+        <span class="highlight-tag">Conference Papers</span>
+        <ul class="pub-list">
+          <li>A Study on the Development and Application of Multi-turn Datasets for Safety Evaluation of Large Language Models</li>
+          <li>Enhancing Large Language Models with a Retrieval-Augmented Framework for Morpheme-Level Understanding of Sino-Korean Words</li>
+          <li>Evaluating LLM Performance on Figurative Language in Korean Dialogue - Comparing LLMs to Human Intuition -</li>
+        </ul>
+      </div>
+      <div class="news-gallery">
+        <div class="news-image wide">
+          <img src="/darc-lab/assets/images/news/ickl2026.jpeg" alt="ICKL 2026 in Sheffield">
+        </div>
+        <div class="news-image">
+          <img src="/darc-lab/assets/images/news/ickl20261.jpeg" alt="ICKL 2026 Presentation">
+        </div>
+        <div class="news-image">
+          <img src="/darc-lab/assets/images/news/ickl20262.jpeg" alt="ICKL 2026 Presentation">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">2026.05</div>
+    <div class="news-title">🌐 Paper Accepted at LREC 2026</div>
+    <div class="news-content">
+      <div class="news-text">
+        <p>강조은 연구원의 논문이 LREC 2026에 채택되었습니다. 축하드립니다 🎉</p>
+        <span class="highlight-tag">Conference Paper</span>
+        <ul class="pub-list">
+          <li><strong>Towards Safer Calls for Everyone:</strong> Designing a Benchmark Dataset for Evaluating Voice Phishing Detection Models</li>
+        </ul>
+      </div>
+      <div class="news-gallery">
+        <div class="news-image wide">
+          <img src="/darc-lab/assets/images/news/lrec1.png" alt="LREC 2026">
+        </div>
+        <div class="news-image wide">
+          <img src="/darc-lab/assets/images/news/lrec2.jpeg" alt="LREC 2026">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">2026.05.01</div>
+    <div class="news-title">🌸 다르크 봄나들이 in 서울숲</div>
+    <div class="news-content">
+      <div class="news-text">
+        <p>연구실 식구들과 함께 서울숲으로 봄나들이를 다녀왔습니다!</p>
+        <span class="highlight-tag">Lab Life</span>
+        <div class="member-quote">
+          <span class="member-name">태현</span> — 연구실 식구들과 함께 햇빛을 쬐며 했던 서울숲 나들이, 생전 없었던 (?) &lt;소문의 낙원&gt; 챌린지 도전, 맛있는 점심과 교수님의 깜짝 선물 교환식까지! 정말정말 따뜻하고 행복한 시간이었습니다 🥰
+        </div>
+        <div class="member-quote">
+          <span class="member-name">세은</span> — 포켓몬 팝업 오픈런 인파를 지나 서울숲에서 릴스 챌린지까지! 계속 틀렸지만 덕분에 가장 많이 웃었던 시간이었습니다. 맛있는 식사와 디저트는 물론, 교수님의 따뜻한 깜짝 선물 덕분에 더욱 행복한 하루였습니다. 연구실 구성원들과 좋은 추억을 쌓고, 앞으로도 함께 힘내자는 마음을 다질 수 있었던 뜻깊은 봄나들이였습니다! 🌸
+        </div>
+      </div>
+      <!-- 사진을 추가하려면 아래 주석을 풀고 파일명을 넣으세요
+      <div class="news-image">
+        <img src="/darc-lab/assets/images/news/seoulforest2026.jpeg" alt="다르크 봄나들이 in 서울숲">
+      </div>
+      -->
+    </div>
+  </div>
 
   <div class="news-card">
     <div class="news-date">2026.04.17</div>
@@ -222,5 +347,3 @@ title: Announcements
   </div>
 
 </div>
-
-
