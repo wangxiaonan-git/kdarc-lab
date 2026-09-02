@@ -11,7 +11,7 @@ title: Announcements
     font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
-  /* Join Us Section Style */
+  /* Join Us Section */
   .join-us-card {
     background: linear-gradient(135deg, #0366d6 0%, #003d80 100%);
     color: white;
@@ -53,7 +53,7 @@ title: Announcements
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
 
-  /* Timeline Styles */
+  /* Timeline */
   .news-card {
     position: relative;
     padding-left: 30px;
@@ -101,6 +101,7 @@ title: Announcements
     min-width: 300px;
   }
 
+  /* Images */
   .news-image {
     width: 280px;
     height: 180px;
@@ -120,6 +121,7 @@ title: Announcements
     object-fit: cover;
   }
 
+  /* Tags */
   .highlight-tag {
     display: inline-block;
     padding: 2px 10px;
@@ -131,6 +133,7 @@ title: Announcements
     margin-bottom: 10px;
   }
 
+  /* Publication List */
   .pub-list {
     list-style: none;
     padding: 0;
@@ -173,24 +176,33 @@ title: Announcements
     height: 150px;
   }
 
-  /* Video */
-  .news-video {
-    width: 280px;
-    max-width: 100%;
-    border-radius: 6px;
+  /* Spring Outing Video */
+  .spring-content {
+    display: block;
+  }
+
+  .spring-content .news-text {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .spring-video {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
     overflow: hidden;
     background: #000;
-    align-self: flex-start;
   }
 
-  .news-video video {
+  .spring-video video {
     width: 100%;
-    height: auto;
+    max-height: 500px;
     display: block;
-    border-radius: 6px;
+    object-fit: contain;
+    background: #000;
   }
 
-  /* Member Comment Block */
+  /* Member Comment */
   .member-quote {
     background: #fff;
     border-left: 3px solid #0366d6;
@@ -209,14 +221,25 @@ title: Announcements
 
   /* Mobile */
   @media (max-width: 700px) {
+    .news-container {
+      padding: 0 15px;
+    }
+
+    .news-card {
+      padding-left: 20px;
+    }
+
     .news-image,
-    .news-gallery,
-    .news-video {
+    .news-gallery {
       width: 100%;
     }
 
     .news-text {
       min-width: 100%;
+    }
+
+    .spring-video {
+      width: 100%;
     }
   }
 </style>
@@ -230,7 +253,9 @@ title: Announcements
       We are always looking for passionate researchers and students.<br>
       우리 연구실은 열정적인 연구원과 학생들을 기다리고 있습니다.
     </div>
-    <a href="https://forms.gle/pbz3sVViLigopWZy7" target="_blank" class="apply-button">
+    <a href="https://forms.gle/pbz3sVViLigopWZy7"
+       target="_blank"
+       class="apply-button">
       Apply for Lab Membership
     </a>
   </div>
@@ -244,8 +269,8 @@ title: Announcements
     <div class="news-title">Paper Presented at ACL 2026</div>
 
     <div class="news-content">
-
       <div class="news-text">
+
         <p>
           2026년 7월 미국 샌디에이고에서 열린 ACL 2026에
           다르크 연구실이 참가하여 논문을 발표하였습니다.
@@ -259,12 +284,13 @@ title: Announcements
             Understanding Indirect Speech Acts in Multimodal Visual Contexts
           </li>
         </ul>
+
       </div>
 
       <div class="news-image">
-        <img src="/darc-lab/assets/images/news/ACL2026.jpeg" alt="ACL 2026">
+        <img src="/darc-lab/assets/images/news/ACL2026.jpeg"
+             alt="ACL 2026">
       </div>
-
     </div>
   </div>
 
@@ -275,8 +301,8 @@ title: Announcements
     <div class="news-title">Presentations at ICKL 2026</div>
 
     <div class="news-content">
-
       <div class="news-text">
+
         <p>
           2026년 7월 영국 셰필드에서 열린 ICKL 2026에
           다르크 연구실이 참가하여 3편의 논문을 발표하였습니다.
@@ -300,10 +326,10 @@ title: Announcements
             Comparing LLMs to Human Intuition
           </li>
         </ul>
+
       </div>
 
       <div class="news-gallery">
-
         <div class="news-image wide">
           <img src="/darc-lab/assets/images/news/ickl2026.jpeg"
                alt="ICKL 2026 in Sheffield">
@@ -318,8 +344,8 @@ title: Announcements
           <img src="/darc-lab/assets/images/news/ickl20262.jpeg"
                alt="ICKL 2026 Presentation">
         </div>
-
       </div>
+
     </div>
   </div>
 
@@ -330,8 +356,8 @@ title: Announcements
     <div class="news-title">Paper Presented at LREC 2026</div>
 
     <div class="news-content">
-
       <div class="news-text">
+
         <p>
           2026년 5월 스페인 팔마데마요르카에서 열린 LREC 2026에
           다르크 연구실이 참가하여 논문을 발표하였습니다.
@@ -345,19 +371,21 @@ title: Announcements
             Designing a Benchmark Dataset for Evaluating Voice Phishing Detection Models
           </li>
         </ul>
+
       </div>
 
       <div class="news-gallery">
-
         <div class="news-image wide">
-          <img src="/darc-lab/assets/images/news/lrec1.png" alt="LREC 2026">
+          <img src="/darc-lab/assets/images/news/lrec1.png"
+               alt="LREC 2026">
         </div>
 
         <div class="news-image wide">
-          <img src="/darc-lab/assets/images/news/lrec2.jpeg" alt="LREC 2026">
+          <img src="/darc-lab/assets/images/news/lrec2.jpeg"
+               alt="LREC 2026">
         </div>
-
       </div>
+
     </div>
   </div>
 
@@ -367,21 +395,22 @@ title: Announcements
     <div class="news-date">2026.05.01</div>
     <div class="news-title">다르크 봄나들이 in 서울숲</div>
 
-    <div class="news-content">
-
+    <div class="news-content spring-content">
       <div class="news-text">
+
         <p>
           연구실 식구들과 함께 서울숲으로 봄나들이를 다녀왔습니다!
         </p>
-      </div>
 
-      <div class="news-video">
-        <video controls playsinline preload="metadata">
-          <source src="/darc-lab/assets/images/member/spring.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+        <div class="spring-video">
+          <video controls playsinline preload="metadata">
+            <source src="/darc-lab/assets/images/member/spring.mp4"
+                    type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
+      </div>
     </div>
   </div>
 
@@ -392,8 +421,8 @@ title: Announcements
     <div class="news-title">Lab Grand Opening!</div>
 
     <div class="news-content">
-
       <div class="news-text">
+
         <p class="lab-open">
           Welcome to the official website of the DARC Lab!
         </p>
@@ -403,8 +432,8 @@ title: Announcements
           앞으로 연구실 소식, 참여 과제, 진행 중인 연구들을
           꾸준히 공유할 예정이니 많은 관심 부탁드립니다 😊
         </p>
-      </div>
 
+      </div>
     </div>
   </div>
 
@@ -415,8 +444,8 @@ title: Announcements
     <div class="news-title">Presentations at EMNLP 2025</div>
 
     <div class="news-content">
-
       <div class="news-text">
+
         <p>
           2025년 11월 중국 쑤저우에서 열린 EMNLP 2025에
           다르크 연구실이 참가하여 3편의 논문을 발표하였습니다.
@@ -425,7 +454,6 @@ title: Announcements
         <span class="highlight-tag">Conference</span>
 
         <ul class="pub-list">
-
           <li>
             <strong>FLUID QA:</strong>
             A Multilingual Benchmark for Figurative Language Usage in Dialogue
@@ -441,8 +469,8 @@ title: Announcements
             <strong>AI Knows Where You Are:</strong>
             Exposure, Bias, and Inference in Multimodal Geolocation with KoreaGEO
           </li>
-
         </ul>
+
       </div>
 
       <div class="news-image">
@@ -457,10 +485,11 @@ title: Announcements
   <!-- HCLT 2025 -->
   <div class="news-card">
     <div class="news-date">2025.10.01 ~ 10.02</div>
-    <div class="news-title">Presentations & Outstanding Paper Award at HCLT 2025</div>
+    <div class="news-title">
+      Presentations &amp; Outstanding Paper Award at HCLT 2025
+    </div>
 
     <div class="news-content">
-
       <div class="news-text">
 
         <p>
@@ -473,7 +502,6 @@ title: Announcements
         <span class="highlight-tag">Conference &amp; Award</span>
 
         <ul class="pub-list">
-
           <li>
             AI 안전성 정렬 데이터셋 설계 및 학습 전략 연구
           </li>
@@ -504,8 +532,8 @@ title: Announcements
           <li>
             보이스피싱 탐지 모델 평가를 위한 벤치마크 데이터셋 설계 연구
           </li>
-
         </ul>
+
       </div>
 
       <div class="news-image">
