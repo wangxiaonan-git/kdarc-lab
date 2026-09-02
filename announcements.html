@@ -129,7 +129,6 @@ title: Announcements
     font-size: 0.8rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text-transform: uppercase;
   }
 
   .pub-list {
@@ -145,14 +144,16 @@ title: Announcements
     color: #444;
   }
 
-  .pub-list li:last-child { border: none; }
+  .pub-list li:last-child {
+    border: none;
+  }
 
   .lab-open {
     color: #d73a49;
     font-weight: bold;
   }
 
-  /* Multi-image gallery (added) */
+  /* Multi-image Gallery */
   .news-gallery {
     width: 280px;
     max-width: 100%;
@@ -172,7 +173,24 @@ title: Announcements
     height: 150px;
   }
 
-  /* Member comment block (added) */
+  /* Video */
+  .news-video {
+    width: 280px;
+    max-width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+    align-self: flex-start;
+  }
+
+  .news-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+
+  /* Member Comment Block */
   .member-quote {
     background: #fff;
     border-left: 3px solid #0366d6;
@@ -188,10 +206,24 @@ title: Announcements
     color: #0366d6;
     font-weight: 700;
   }
+
+  /* Mobile */
+  @media (max-width: 700px) {
+    .news-image,
+    .news-gallery,
+    .news-video {
+      width: 100%;
+    }
+
+    .news-text {
+      min-width: 100%;
+    }
+  }
 </style>
 
 <div class="news-container">
 
+  <!-- Join Us -->
   <div class="join-us-card">
     <div class="join-us-title">Join DARC Lab!</div>
     <div class="join-us-text">
@@ -205,137 +237,282 @@ title: Announcements
 
   <hr style="border: 0; height: 1px; background: #eaecef; margin-bottom: 60px;">
 
+
+  <!-- ACL 2026 -->
   <div class="news-card">
     <div class="news-date">2026.07</div>
-    <div class="news-title">Paper Accepted at ACL 2026</div>
+    <div class="news-title">Paper Presented at ACL 2026</div>
+
     <div class="news-content">
+
       <div class="news-text">
-        <p>7월 ACL 2026에 다르크 연구실이 참가하여 논문을 발표했습니다.</p>
+        <p>
+          2026년 7월 미국 샌디에이고에서 열린 ACL 2026에
+          다르크 연구실이 참가하여 논문을 발표하였습니다.
+        </p>
+
         <span class="highlight-tag">Conference</span>
+
         <ul class="pub-list">
-          <li><strong>Read the Room, Read the Image:</strong> Understanding Indirect Speech Acts in Multimodal Visual Contexts</li>
+          <li>
+            <strong>Read the Room, Read the Image:</strong>
+            Understanding Indirect Speech Acts in Multimodal Visual Contexts
+          </li>
         </ul>
       </div>
+
       <div class="news-image">
         <img src="/darc-lab/assets/images/news/ACL2026.jpeg" alt="ACL 2026">
       </div>
+
     </div>
   </div>
 
+
+  <!-- ICKL 2026 -->
   <div class="news-card">
     <div class="news-date">2026.07.01 ~ 07.03</div>
-    <div class="news-title">ICKL 2026 in Sheffield</div>
+    <div class="news-title">Presentations at ICKL 2026</div>
+
     <div class="news-content">
+
       <div class="news-text">
-        <p>7월 영국 셰필드에서 열린 ICKL 2026에 다르크 연구실이 참가하여 3편의 논문을 발표했습니다.</p>
+        <p>
+          2026년 7월 영국 셰필드에서 열린 ICKL 2026에
+          다르크 연구실이 참가하여 3편의 논문을 발표하였습니다.
+        </p>
+
         <span class="highlight-tag">Conference</span>
+
         <ul class="pub-list">
-          <li>A Study on the Development and Application of Multi-turn Datasets for Safety Evaluation of Large Language Models</li>
-          <li>Enhancing Large Language Models with a Retrieval-Augmented Framework for Morpheme-Level Understanding of Sino-Korean Words</li>
-          <li>Evaluating LLM Performance on Figurative Language in Korean Dialogue - Comparing LLMs to Human Intuition -</li>
+          <li>
+            A Study on the Development and Application of Multi-turn Datasets
+            for Safety Evaluation of Large Language Models
+          </li>
+
+          <li>
+            Enhancing Large Language Models with a Retrieval-Augmented Framework
+            for Morpheme-Level Understanding of Sino-Korean Words
+          </li>
+
+          <li>
+            Evaluating LLM Performance on Figurative Language in Korean Dialogue:
+            Comparing LLMs to Human Intuition
+          </li>
         </ul>
       </div>
+
       <div class="news-gallery">
+
         <div class="news-image wide">
-          <img src="/darc-lab/assets/images/news/ickl2026.jpeg" alt="ICKL 2026 in Sheffield">
+          <img src="/darc-lab/assets/images/news/ickl2026.jpeg"
+               alt="ICKL 2026 in Sheffield">
         </div>
+
         <div class="news-image">
-          <img src="/darc-lab/assets/images/news/ickl20261.jpeg" alt="ICKL 2026 Presentation">
+          <img src="/darc-lab/assets/images/news/ickl20261.jpeg"
+               alt="ICKL 2026 Presentation">
         </div>
+
         <div class="news-image">
-          <img src="/darc-lab/assets/images/news/ickl20262.jpeg" alt="ICKL 2026 Presentation">
+          <img src="/darc-lab/assets/images/news/ickl20262.jpeg"
+               alt="ICKL 2026 Presentation">
         </div>
+
       </div>
     </div>
   </div>
 
+
+  <!-- LREC 2026 -->
   <div class="news-card">
     <div class="news-date">2026.05</div>
-    <div class="news-title">Paper Accepted at LREC 2026</div>
+    <div class="news-title">Paper Presented at LREC 2026</div>
+
     <div class="news-content">
+
       <div class="news-text">
-        <p>5월 LREC 2026에 다르크 연구실이 참가하여 논문을 발표했습니다.</p>
+        <p>
+          2026년 5월 스페인 팔마데마요르카에서 열린 LREC 2026에
+          다르크 연구실이 참가하여 논문을 발표하였습니다.
+        </p>
+
         <span class="highlight-tag">Conference</span>
+
         <ul class="pub-list">
-          <li><strong>Towards Safer Calls for Everyone:</strong> Designing a Benchmark Dataset for Evaluating Voice Phishing Detection Models</li>
+          <li>
+            <strong>Towards Safer Calls for Everyone:</strong>
+            Designing a Benchmark Dataset for Evaluating Voice Phishing Detection Models
+          </li>
         </ul>
       </div>
+
       <div class="news-gallery">
+
         <div class="news-image wide">
           <img src="/darc-lab/assets/images/news/lrec1.png" alt="LREC 2026">
         </div>
+
         <div class="news-image wide">
           <img src="/darc-lab/assets/images/news/lrec2.jpeg" alt="LREC 2026">
         </div>
+
       </div>
     </div>
   </div>
 
+
+  <!-- Spring Outing -->
   <div class="news-card">
     <div class="news-date">2026.05.01</div>
     <div class="news-title">다르크 봄나들이 in 서울숲</div>
+
     <div class="news-content">
+
       <div class="news-text">
-        <p>연구실 식구들과 함께 서울숲으로 봄나들이를 다녀왔습니다!</p>
-      <!-- 사진을 추가하려면 아래 주석을 풀고 파일명을 넣으세요
-      <div class="news-image">
-        <img src="/darc-lab/assets/images/news/seoulforest2026.jpeg" alt="다르크 봄나들이 in 서울숲">
+        <p>
+          연구실 식구들과 함께 서울숲으로 봄나들이를 다녀왔습니다!
+        </p>
       </div>
-      -->
+
+      <div class="news-video">
+        <video controls playsinline preload="metadata">
+          <source src="/darc-lab/assets/images/member/spring.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
+
     </div>
   </div>
 
+
+  <!-- Website Opening -->
   <div class="news-card">
     <div class="news-date">2026.04.17</div>
     <div class="news-title">Lab Grand Opening!</div>
+
     <div class="news-content">
+
       <div class="news-text">
-        <p class="lab-open">Welcome to the official website of the DARC Lab!</p>
-        <p>연구실 공식 홈페이지를 오픈했습니다! 앞으로 연구실 소식, 참여 과제, 진행 중인 연구들을 꾸준히 공유할 예정이니 많은 관심 부탁드립니다 😊</p>
+        <p class="lab-open">
+          Welcome to the official website of the DARC Lab!
+        </p>
+
+        <p>
+          연구실 공식 홈페이지를 오픈했습니다!
+          앞으로 연구실 소식, 참여 과제, 진행 중인 연구들을
+          꾸준히 공유할 예정이니 많은 관심 부탁드립니다 😊
+        </p>
       </div>
+
     </div>
   </div>
 
+
+  <!-- EMNLP 2025 -->
   <div class="news-card">
     <div class="news-date">2025.11.04 ~ 11.09</div>
     <div class="news-title">Presentations at EMNLP 2025</div>
+
     <div class="news-content">
+
       <div class="news-text">
-        <p>11월 중국 쑤저우에서 열린 EMNLP 2025에 다르크 연구실이 참가하여 3편의 논문을 발표했습니다.</p>
+        <p>
+          2025년 11월 중국 쑤저우에서 열린 EMNLP 2025에
+          다르크 연구실이 참가하여 3편의 논문을 발표하였습니다.
+        </p>
+
         <span class="highlight-tag">Conference</span>
+
         <ul class="pub-list">
-          <li><strong>FLUID QA:</strong> A Multilingual Benchmark for Figurative Language Usage in Dialogue across English, Chinese, and Korean</li>
-          <li><strong>Can LLMs Truly Plan?</strong> A Comprehensive Evaluation of Planning Capabilities</li>
-          <li><strong>AI Knows Where You Are:</strong> Exposure, Bias, and Inference in Multimodal Geolocation with KoreaGEO</li>
+
+          <li>
+            <strong>FLUID QA:</strong>
+            A Multilingual Benchmark for Figurative Language Usage in Dialogue
+            across English, Chinese, and Korean
+          </li>
+
+          <li>
+            <strong>Can LLMs Truly Plan?</strong>
+            A Comprehensive Evaluation of Planning Capabilities
+          </li>
+
+          <li>
+            <strong>AI Knows Where You Are:</strong>
+            Exposure, Bias, and Inference in Multimodal Geolocation with KoreaGEO
+          </li>
+
         </ul>
       </div>
+
       <div class="news-image">
-        <img src="/darc-lab/assets/images/news/EMNLP2025.png" alt="EMNLP 2025 Group Photo">
+        <img src="/darc-lab/assets/images/news/EMNLP2025.png"
+             alt="EMNLP 2025 Group Photo">
       </div>
+
     </div>
   </div>
 
+
+  <!-- HCLT 2025 -->
   <div class="news-card">
     <div class="news-date">2025.10.01 ~ 10.02</div>
-    <div class="news-title">Outstanding Paper Award at HCLT 2025</div>
+    <div class="news-title">Presentations & Outstanding Paper Award at HCLT 2025</div>
+
     <div class="news-content">
+
       <div class="news-text">
-        <p>10월 대전(DCC)에서 열린 HCLT 2025에 다르크 연구실이 참가하여 7편의 논문을 발표했습니다. 특히 '멀티모달 AI 안전성 데이터셋 번역 구축 방법론 연구'는 우수발표논문으로 선정되었습니다. 축하드립니다 🎉</p>
-        <span class="highlight-tag">Award & Presentation</span>
+
+        <p>
+          2025년 10월 대한민국 대전에서 열린 HCLT 2025에
+          다르크 연구실이 참가하여 7편의 논문을 발표하였습니다.
+          특히 「멀티모달 AI 안전성 데이터셋 번역 구축 방법론 연구」가
+          우수발표논문으로 선정되었습니다. 축하드립니다 🎉
+        </p>
+
+        <span class="highlight-tag">Conference &amp; Award</span>
+
         <ul class="pub-list">
-          <li>AI 안전성 정렬 데이터셋 설계 및 학습 전략 연구</li>
-          <li>[HCLT_우수발표논문] 멀티모달 AI 안전성 데이터셋 번역 구축 방법론 연구</li>
-          <li>인공지능의 한국어 및 한국 문화 이해 능력 평가 - 2025 국립국어원 인공지능(AI)말평 사례를 중심으로</li>
-          <li>인간과 AI의 한국어 유머 이해에 대한 비교 연구</li>
-          <li>안전성 데이터셋의 현지화(Localization) 효과</li>
-          <li>한국어 노이즈 텍스트에 대한 LLM의 강건성 평가 연구 - 에어비앤비체를 중심으로 -</li>
-          <li>보이스피싱 탐지 모델 평가를 위한 벤치마크 데이터셋 설계 연구</li>
+
+          <li>
+            AI 안전성 정렬 데이터셋 설계 및 학습 전략 연구
+          </li>
+
+          <li>
+            <strong>[우수발표논문]</strong>
+            멀티모달 AI 안전성 데이터셋 번역 구축 방법론 연구
+          </li>
+
+          <li>
+            인공지능의 한국어 및 한국 문화 이해 능력 평가 -
+            2025 국립국어원 인공지능(AI)말평 사례를 중심으로
+          </li>
+
+          <li>
+            인간과 AI의 한국어 유머 이해에 대한 비교 연구
+          </li>
+
+          <li>
+            안전성 데이터셋의 현지화(Localization) 효과
+          </li>
+
+          <li>
+            한국어 노이즈 텍스트에 대한 LLM의 강건성 평가 연구 -
+            에어비앤비체를 중심으로 -
+          </li>
+
+          <li>
+            보이스피싱 탐지 모델 평가를 위한 벤치마크 데이터셋 설계 연구
+          </li>
+
         </ul>
       </div>
+
       <div class="news-image">
-        <img src="/darc-lab/assets/images/news/HCLT2025.png" alt="HCLT 2025 Award Ceremony">
+        <img src="/darc-lab/assets/images/news/HCLT2025.png"
+             alt="HCLT 2025 Award Ceremony">
       </div>
+
     </div>
   </div>
 
